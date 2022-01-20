@@ -16,7 +16,7 @@ use App\Http\Middleware\isAdmin;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('blog.category');
 })->name('index');
 
 

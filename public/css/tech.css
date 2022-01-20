@@ -278,13 +278,13 @@ a:focus {
 .btn:hover,
 .btn:focus {
     color: #ffffff !important;
-    background: rgba(0, 0, 0, 0) linear-gradient(to right, #0091e5 0px, #00b7e5 100%) repeat scroll 0 0 !important
+    background: rgba(0, 0, 0, 0) linear-gradient(to right, #e59c00 0px, #e5a800 100%) repeat scroll 0 0 !important
 }
 
 .tag-cloud-single span,
 .navbar-inverse {
     color: #ffffff !important;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 10px rgba(34, 29, 29, 0.4);
     background: rgba(0, 0, 0, 0) linear-gradient(to right, #0091e5 0px, #00b7e5 100%) repeat scroll 0 0 !important
 }
 
