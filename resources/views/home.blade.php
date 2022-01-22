@@ -18,6 +18,11 @@
                     <div class="container">
                        <div class="carousel-caption relative">
                           <div class="row d_flex">
+                           <div class="col-md-5">
+                              <div class="agency">
+                                 <figure><img src="{{asset('images/slide1.jpeg')}}" alt="#"/></figure>
+                              </div>
+                           </div>
                              <div class="col-md-6">
                                 <div class="creative">
                                    <h1> Web agency</h1>
@@ -25,11 +30,7 @@
                                    <a class="read_more" href="Javascript:void(0)">Contact us</a>
                                 </div>
                              </div>
-                             <div class="col-md-6">
-                                <div class="agency">
-                                   <figure><img src="{{asset('images/slide1.jpeg')}}" alt="#"/></figure>
-                                </div>
-                             </div>
+                            
                           </div>
                        </div>
                     </div>
@@ -39,6 +40,11 @@
                     <div class="container">
                        <div class="carousel-caption relative">
                           <div class="row d_flex">
+                           <div class="col-md-5">
+                              <div class="agency">
+                                 <figure><img src="{{asset('images/slide2.jpeg')}}" alt="#"/></figure>
+                              </div>
+                           </div>
                              <div class="col-md-6">
                                 <div class="creative">
                                    <h1> Web agency</h1>
@@ -46,11 +52,7 @@
                                    <a class="read_more" href="Javascript:void(0)">Contact us</a>
                                 </div>
                              </div>
-                             <div class="col-md-6">
-                                <div class="agency">
-                                   <figure><img src="{{asset('images/slide2.jpeg')}}" alt="#"/></figure>
-                                </div>
-                             </div>
+                             
                           </div>
                        </div>
                     </div>
@@ -60,6 +62,11 @@
                     <div class="container">
                        <div class="carousel-caption relative">
                           <div class="row d_flex">
+                           <div class="col-md-5">
+                              <div class="agency">
+                                 <figure><img src="{{asset('images/slide3.jpeg')}}" alt="#"/></figure>
+                              </div>
+                           </div>
                              <div class="col-md-6">
                                 <div class="creative">
                                    <h1> Web agency</h1>
@@ -67,11 +74,7 @@
                                    <a class="read_more" href="Javascript:void(0)">Contact us</a>
                                 </div>
                              </div>
-                             <div class="col-md-6">
-                                <div class="agency">
-                                   <figure><img src="{{asset('images/slide3.jpeg')}}" alt="#"/></figure>
-                                </div>
-                             </div>
+                             
                           </div>
                        </div>
                     </div>

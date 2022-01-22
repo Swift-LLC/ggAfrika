@@ -16,7 +16,7 @@ use App\Http\Middleware\isAdmin;
 */
 
 Route::get('/', function () {
-    return view('blog.category');
+    return view('admin.video');
 })->name('index');
 
 
@@ -46,3 +46,6 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/admin', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('admin')->middleware(isAdmin::class);
+// Route::get('/admin/videos', [App\Http\Controllers\HomeController::class, 'videos'])->name('allvideos')->middleware(isAdmin::class);
+Route::post('/store/video', [App\Http\Controllers\VideoController::class, 'store'])->name('store_video');
+Route::get('/video', [App\Http\Controllers\VideoController::class, 'index'])->name('allvideos');

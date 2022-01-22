@@ -31,7 +31,7 @@
                     <th scope="col">ID</th>
                     <th scope="col">Date Posted</th>
                     <th scope="col">Title</th>
-                    <th scope="col">Author</th>
+                    
                     <th scope="col">Image</th>
                     <th scope="col">Actions</th>
                   </tr>
@@ -53,10 +53,8 @@
                       <td class="align-middle">
                         <span ></span >
                       </td>
-                      <td class="align-middle">
-                        <h6 class="mb-0"><span>{{$post->author}}</span></h6>
-                      </td>
-                      <td class="align-middle">
+                      
+                      <td class="align-middle d-flex w-20 justify-content-between">
                         <a href="{{route('edit',$post->id)}}" class="btn btn-warning" data-mdb-toggle="tooltip" title="Edit"><i class="fas fa-edit text-success me-3 "></i>Edit</a>
                         
                         <a href="" class="btn btn-info" data-mdb-toggle="tooltip" title="View"><i class="fas fa-eye text-success me-3"></i>View</a>

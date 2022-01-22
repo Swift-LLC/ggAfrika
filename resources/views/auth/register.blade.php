@@ -1,13 +1,14 @@
 @extends('index')
 
 @section('content')
-<div class="container">
+<br><br><br>
+<div class="container" >
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card pb-2">
                 <div class="card-header">{{ __('Register') }}</div>
 
-                <div class="card-body">
+                <div class="card-body px-2 pt-2">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
@@ -74,4 +75,5 @@
         </div>
     </div>
 </div>
+<br><br><br>
 @endsection
