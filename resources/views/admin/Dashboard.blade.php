@@ -124,7 +124,6 @@
                     <!-- Sales Chart Canvas -->
                     <canvas id="salesChart" height="180" style="height: 180px;"></canvas>
                   </div>
-                  <!-- /.chart-responsive -->
                 </div>
                 <!-- /.col -->
                 <div class="col-md-4">
@@ -554,9 +553,9 @@
           <!-- /.row -->
 
           <!-- TABLE: LATEST ORDERS -->
-         
+
             <!-- /.card-body -->
-            
+
             <!-- /.card-footer -->
           </div>
           <!-- /.card -->
@@ -676,9 +675,9 @@
           </div>
           <!-- /.card -->
 
-          
+
       <!-- /.row -->
-    </div><!--/. container-fluid -->
+    </div>
   </section>
   <!-- /.content -->
 

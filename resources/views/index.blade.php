@@ -8,14 +8,14 @@
         <meta name="keywords" content="">
         <meta name="description" content="">
         <meta name="author" content="_wawiny">
-        
+
         <!-- Site Icons -->
         <link rel="shortcut icon" href="{{asset('images/favicon.ico')}}" type="image/x-icon" />
         <link rel="apple-touch-icon" href="{{asset('images/apple-touch-icon.png')}}">
-        
+
         <!-- Design fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet"> 
-    
+        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+
         <!-- Bootstrap core CSS -->
         <link href="{{asset('css/bootstrap.css')}}" rel="stylesheet">
         <link href="{{asset('dist/css/splide.min.css')}}" rel="stylesheet">
@@ -23,19 +23,19 @@
         <link rel="stylesheet" href="{{asset('css/style2.css')}}">
  <!-- Responsive-->
         <link rel="stylesheet" href="{{asset('css/resp.css')}}">
-    
+
         <!-- FontAwesome Icons core CSS -->
         <link href="{{asset('css/font-awesome.min.css')}}" rel="stylesheet">
         <link href="{{asset('css/responsive.css')}}" rel="stylesheet">
         <link href="{{asset('css/caro.css')}}" rel="stylesheet">
-    
-        
+
+
         <link href="{{asset("style.css")}}" rel="stylesheet">
-    
+
         <link href="{{ asset('css/responsive.css') }}" rel="stylesheet">
-    
+
         <link href="{{asset('css/colors.css')}}" rel="stylesheet">
-    
+
         <link href="{{asset('css/tech.css')}}" rel="stylesheet">
 
 
@@ -72,7 +72,7 @@
             }
         </style>
         @section('custom')
-            
+
         @endsection
     </head>
     <body class="antialiased">
@@ -80,7 +80,7 @@
             <div class="container-fluid">
                 <nav class="navbar navbar-toggleable-md  fixed-top bg-warning">
                     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
+                        <span class="navbar-toggler-icon" color="secondary"></span>
                     </button>
                     <a class="navbar-brand" href="index.html">
                         <img src="{{asset('images/logo.jpeg')}}" style="width: 30px; height:20px; border-radius:50%;"  class="d-inline-block align-top" alt="">
@@ -92,7 +92,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('showcat', 4) }}">Gg la Wananchi </a>
-                            </li>                   
+                            </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('showcat', 5) }}">StartUp and SMEs</a>
                             </li>
@@ -105,9 +105,9 @@
                         </ul>
                         <ul class="navbar-nav mr-2">
                             @if (Route::has('login'))
-                            
+
                                 @auth
-                                
+
                                 <li class="nav-item">
                                     <div >
                                         <a  href="{{ route('logout') }}"
@@ -115,13 +115,13 @@
                                                          document.getElementById('logout-form').submit();">
                                             {{ __('Logout') }}
                                         </a>
-    
+
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                             @csrf
                                         </form>
                                     </div>
                                 </li>
-                                
+
                                 @else
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
@@ -132,10 +132,10 @@
                                 </li>
                                     @endif
                                 @endauth
-                            
+
                         @endif
-                            
-                           
+
+
                         </ul>
                     </div>
                 </nav>
@@ -151,24 +151,21 @@
                             <div class="footer-text text-left">
                                 <a href="index.html">GG Afrika</a>
                                 <p>GG Afrika is a culture and heritage blog, we share culture, news and wananchi articles.</p>
-                                
                                 <hr class="invis">
-        
-                                
                                 <br><br><br><br>
                                 <h2><b>Connect with us</b></h2>
                                 <div class="social">
-                                    <a href="#" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i class="fa fa-facebook"></i></a>              
+                                    <a href="#" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i class="fa fa-facebook"></i></a>
                                     <a href="#" data-toggle="tooltip" data-placement="bottom" title="Twitter"><i class="fa fa-twitter"></i></a>
                                     <a href="#" data-toggle="tooltip" data-placement="bottom" title="Instagram"><i class="fa fa-instagram"></i></a>
                                     <a href="#" data-toggle="tooltip" data-placement="bottom" title="Google Plus"><i class="fa fa-google-plus"></i></a>
                                     <a href="#" data-toggle="tooltip" data-placement="bottom" title="Pinterest"><i class="fa fa-pinterest"></i></a>
                                 </div>
-        
+
                             </div>
                         </div>
                     </div>
-        
+
                     <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
                         <div class="widget">
                             <h2 class="widget-title text-black">Email Address</h2>
@@ -177,10 +174,10 @@
                             <p class="link-widget"><a href="#">+234-556-778-88</a></p>
                             <h2 class="widget-title">Mail Address</h2>
                             <p class="link-widget"><a href="#">P.O Box 123 Afrika</a></p>
-                            
+
                         </div>
                     </div>
-        
+
                     <div class="col-lg-2 col-md-12 col-sm-12 col-xs-12">
                         <div class="widget">
                             <h2 class="widget-title">Copyrights</h2>
@@ -195,7 +192,7 @@
                             </div>
                         </div>
                     </div>
-                   
+
                 </div>
                 <br>
                 <div class="newsletter-widget float-right  ">
@@ -206,19 +203,19 @@
                 </div>
                 <br><br>   <br><br>
                 <div class="text-warning text-center">&copy; GG Afrika 2022-2030</a>.</div>
-        
-                
+
+
             </div>
         </footer>
-        
+
         <button onclick="topFunction()" id="myBtn" title="Go to top">&#8593;</button>
         <script>
             //Get the button
             var mybutton = document.getElementById("myBtn");
-            
+
             // When the user scrolls down 20px from the top of the document, show the button
             window.onscroll = function() {scrollFunction()};
-            
+
             function scrollFunction() {
               if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
                 mybutton.style.display = "block";
@@ -226,19 +223,19 @@
                 mybutton.style.display = "none";
               }
             }
-            
+
             // When the user clicks on the button, scroll to the top of the document
             function topFunction() {
               document.body.scrollTop = 0;
               document.documentElement.scrollTop = 0;
             }
             </script>
-                
-           
-        
+
+
+
             <!-- Core JavaScript
             ================================================== -->
-        
+
             {{-- <script src="js/jquery.min.js"></script>
             <script src="js/tether.min.js"></script>
             <script src="js/bootstrap.min.js"></script>
@@ -246,7 +243,7 @@
         </body> --}}
 
     <script src="{{asset('dist/js/splide.min.js')}}"></script>
-        
+
     <script src="{{asset('js/jquery.min.js')}}"></script>
     <script src="{{asset('js/tether.min.js')}}"></script>
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
