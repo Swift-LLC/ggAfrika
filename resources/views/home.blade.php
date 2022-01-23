@@ -4,13 +4,13 @@
  <link rel="stylesheet" href="{{asset('css/style2.css')}}">
  <!-- Responsive-->
  <link rel="stylesheet" href="{{asset('css/resp.css')}}">
-    
+
 @endsection
 
 @section('content')
 
 
-    
+
     <br><br><br>
     <div class="splide">
       <div class="splide__track">
@@ -31,10 +31,10 @@
                      </div>
                   </div>
                </div>
-              
+
              </li>
              @endforeach
-             
+
           </ul>
       </div>
     </div>
@@ -48,29 +48,29 @@
             <figure><img src="images/{{$post->potrait}}" alt="#"/></figure>
          </div>
          <div class="our_text_box three_box">
-           
-            
+
+
             <div class="post_box d_flex padding_top3">
                 <h3 class="awesome padding_flot">{{$post->title}}</h3>
                 <p>{{$post->about}} </p>
             <a href="{{route('show',$post->id)}}" class="btn btn-primary float-right">Read More	&#8594;</a>
-               
+
             </div>
-           
+
          </div>
-         
+
       </div>
       @endif
-     
-   
 
-   
+
+
+
    @endforeach
-   
+
 </div>
 <div class="row our_img">
       @foreach ($videos as $video)
-      
+
       @if ($video->published == 1)
       <div class="col-md-4 ">
          <div class="embed-responsive embed-responsive-16by9">
@@ -78,19 +78,10 @@
         </div>
         <h3 class="awesome padding_flot">{{$video->name}}</h3>
       </div>
-  
       @endif
-      
-  
   @endforeach
-   
-  
   </div>
   {{ $videos->links() }}
 </div>
 </div>
-   
-
-
-
 @endsection

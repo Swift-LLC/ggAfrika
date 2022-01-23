@@ -34,7 +34,7 @@ Route::get('/category/{category}', [App\Http\Controllers\PostsController::class,
 //Admin
 Route::get('/admin/calendar', function () {
     return view('admin.calendar');
-})->name('calendar')->middleware('is_admin');
+})->name('calendar');
 Route::get('/blog/create/post', [App\Http\Controllers\PostsController::class, 'create'])->name('create');//shows create post form
 Route::post('/store', [App\Http\Controllers\PostsController::class, 'store'])->name('store');//saves the created post to thed database
 Route::get('/{post}/edit', [App\Http\Controllers\PostsController::class, 'edit'])->name('edit');//shows edit post form
