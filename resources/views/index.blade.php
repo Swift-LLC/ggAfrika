@@ -19,6 +19,10 @@
         <!-- Bootstrap core CSS -->
         <link href="{{asset('css/bootstrap.css')}}" rel="stylesheet">
         <link href="{{asset('dist/css/splide.min.css')}}" rel="stylesheet">
+
+        <link rel="stylesheet" href="{{asset('css/style2.css')}}">
+ <!-- Responsive-->
+        <link rel="stylesheet" href="{{asset('css/resp.css')}}">
     
         <!-- FontAwesome Icons core CSS -->
         <link href="{{asset('css/font-awesome.min.css')}}" rel="stylesheet">
@@ -67,6 +71,9 @@
                 font-family: 'Nunito', sans-serif;
             }
         </style>
+        @section('custom')
+            
+        @endsection
     </head>
     <body class="antialiased">
         <header class="tech-header header">
@@ -84,16 +91,16 @@
                                 <a class="nav-link" href="{{ route('index') }}">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">Gg la Wananchi </a>
+                                <a class="nav-link" href="{{ route('showcat', 4) }}">Gg la Wananchi </a>
                             </li>                   
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">StartUp and SMEs</a>
+                                <a class="nav-link" href="{{ route('showcat', 5) }}">StartUp and SMEs</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">Culture & Heritage</a>
+                                <a class="nav-link" href="{{ route('showcat', 7) }}">Culture & Heritage</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('admin') }}l">Tourism and Eco-Culture</a>
+                                <a class="nav-link" href="{{ route('showcat', 6) }}l">Tourism and Eco-Culture</a>
                             </li>
                         </ul>
                         <ul class="navbar-nav mr-2">
@@ -245,7 +252,14 @@
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
     <script src="{{asset('js/custom.js')}}"></script>
 
-        
+        <script>
+            var splide = new Splide( '.splide', {
+                perPage: 1,
+                rewind : true,
+                } );
+
+                splide.mount();
+        </script>
 
 
     </body>

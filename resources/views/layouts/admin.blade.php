@@ -20,7 +20,7 @@
 
   <!-- Preloader -->
   <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__wobble" src="{{asset('images/logo.jpeg')}}" alt="AdminLTELogo" height="60" width="60">
+    <img class="animation__wobble" src="{{asset('images/logo.jpeg')}}" alt="AdminLTELogo" height="150" width="150">
   </div>
 
   <!-- Navbar -->
@@ -333,11 +333,11 @@
 <script src="{{asset('dist/js/pages/dashboard2.js')}}"></script>
 
 <!-- Bootstrap -->
-<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- jQuery UI -->
 <script src="{{asset('plugins/jquery-ui/jquery-ui.min.js')}}"></script>
 <!-- AdminLTE App -->
-<script src="dist/js/adminlte.min.js"></script>
+<script src="{{asset('dist/js/adminlte.min.js')}}"></script>
 <!-- fullCalendar 2.2.5 -->
 <script src="{{asset("plugins/moment/moment.min.js")}}"></script>
 <script src="{{asset('plugins/fullcalendar/main.js')}}"></script>

@@ -46,11 +46,23 @@ class PostsController extends Controller
         $post->title = $request->title;
         $post->about = $request->description;
         $post->body = $request->content;
+        $post->category_id = $request->category;
         $post->potrait = $newImageName;
         $post->user_id = Auth::id();
         $post->save();
         
     }
+    public function showcat($cat )
+    {
+        //show a blog post
+        
+        $category = Posts::with('categories')->where('category_id',$cat)->get();
+        $categories = Category::find($cat);
+        $name = $categories->name;
+
+        return view('blog.category',['category'=>$category], compact('name'));
+    }
+
     public function show(Posts $post )
     {
         //show a blog post
@@ -77,6 +89,23 @@ class PostsController extends Controller
         $posts->potrait = $newImageName;
         $posts->user_id = Auth::id();
         $posts->update();
+    }
+    //Published toggle
+    public function publish($id)
+    {
+        $posts = Posts::find($id);
+        if($posts->published == 0)
+        {
+            $posts->published = 1;
+            $posts->update();
+        }
+        else{
+            $posts->published = 0;
+            $posts->update();
+        }
+           
+        return redirect()->route('posts');
+
     }
     public function destroy(Posts $post)
     {

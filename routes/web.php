@@ -26,7 +26,8 @@ Auth::routes();
 
 
 Route::get('/blog', [App\Http\Controllers\PostsController::class, 'index'])->name('blog');
-Route::get('/blog/{post}', [App\Http\Controllers\PostsController::class, 'show']);
+Route::get('/blog/{post}', [App\Http\Controllers\PostsController::class, 'show'])->name('show');
+Route::get('/category/{category}', [App\Http\Controllers\PostsController::class, 'showcat'])->name('showcat');
 
 
 
@@ -41,6 +42,8 @@ Route::put('/blog/{post}/post', [App\Http\Controllers\PostsController::class, 'u
 Route::delete('/delete/{post}', [App\Http\Controllers\PostsController::class, 'destroy'])->name('delete')->middleware('is_admin');//delete posts from database
 Route::post('/store/post', [App\Http\Controllers\CategoryController::class, 'store'])->name('cat')->middleware('is_admin');
 Route::get('/posts', [App\Http\Controllers\Admin\PostController::class, 'showPosts'])->name('posts')->middleware('is_admin');
+Route::put('/blog/{post}/publish', [App\Http\Controllers\PostsController::class, 'publish'])->name('publish')->middleware('is_admin');
+Route::put('/video/{post}/publish', [App\Http\Controllers\VideoController::class, 'publish'])->name('v_publish')->middleware('is_admin');
 
 Auth::routes();
 

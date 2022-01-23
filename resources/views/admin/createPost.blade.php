@@ -34,10 +34,10 @@
     </style>
     
     
-<div class="card">
+
 
     <div class="container">
-        <div class="card">
+        <div class="">
         <a href="{{route('admin')}}" class="btn btn-success" data-toggle="tooltip" data-placement="left" title="{!! trans('tooltips.post.create') !!}">
             <i class="fas fa-plus" aria-hidden="true"></i>
             <span class="hidden-xs">
@@ -143,7 +143,7 @@
         </div>
         </div>
     </div>    
-</div>
+
 
   <script>
     $(document).ready(function() {

@@ -16,17 +16,9 @@ class VideoController extends Controller
     {
         //getting all videos
         $videos = Video::all();
-        $video_ids = array();
-        foreach($videos as $videos)
-        {
-            $url = $videos->url;
-            $split_url = explode("/",$url);
-            array_push($video_ids,end($split_url));
+       
 
-        }
-        
-
-        return view('admin.allvideos', ['videos'=>$videos,'video_ids'=>$video_ids]);
+        return view('admin.allvideos', ['videos'=>$videos]);
     }
 
     /**
@@ -55,9 +47,10 @@ class VideoController extends Controller
                 'url'=>'required',
             ]
             );
+            $split_url = explode("/",$request->url);
             $video = new Video;
             $video->name = $request->name;
-            $video->url = $request->url;
+            $video->url = end($split_url) ;
             $video->save();
     }
 
@@ -93,6 +86,23 @@ class VideoController extends Controller
     public function update(Request $request, Video $video)
     {
         //
+    }
+
+    public function publish($id)
+    {
+        $posts = Video::find($id);
+        if($posts->published == 0)
+        {
+            $posts->published = 1;
+            $posts->update();
+        }
+        else{
+            $posts->published = 0;
+            $posts->update();
+        }
+           
+        return redirect()->route('allvideos');
+
     }
 
     /**

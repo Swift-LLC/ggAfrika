@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Posts;
+use App\Models\Video;
 
 class HomeController extends Controller
 {
@@ -13,6 +15,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
+        
         $this->middleware('auth');
     }
 
@@ -23,7 +26,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $posts = Posts::paginate(3);
+        $videos = Video::paginate(3);
+        return view('home',['posts'=>$posts,'videos'=>$videos]);
     }
     public function adminHome(){
         return view('admin.Dashboard');
@@ -31,4 +36,5 @@ class HomeController extends Controller
     public function videos(){
         return view('admin.video');
     }
+    
 }

@@ -10,9 +10,10 @@ class Posts extends Model
 {
     use HasFactory;
     protected $table = 'posts';
-    public function category()
+    protected $primayKey = 'id';
+    public function categories()
     {
-        return $this->belongsTo('App\Models\Category');
+        return $this->belongsTo('App\Models\Category','category_id');
     }
     public function comments()
     {

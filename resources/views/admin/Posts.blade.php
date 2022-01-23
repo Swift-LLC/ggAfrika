@@ -64,6 +64,16 @@
 
                           <button type="submit"  class="btn btn-danger"  title="Remove"><i class="fas fa-trash-alt text-danger"></i>Delete</button>
                         </form>
+                        <form method="POST" action="{{route('publish',['post'=>$post->id])}}">
+                          @method('PUT')
+                          @csrf
+
+                          @if ($post->published == 1)
+                          <button type="submit"  class="btn btn-success"  title="publish"><i class="fas fa-trash-alt text-success"></i>Published</button> 
+                          @else
+                          <button type="submit"  class="btn btn-danger"  title="publish"><i class="fas fa-trash-alt text-danger"></i>Publish</button>
+                          @endif
+                        </form>
                         
                       </td>
                       </tr>  
