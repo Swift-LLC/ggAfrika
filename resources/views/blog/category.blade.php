@@ -5,9 +5,7 @@
     <div class="row">
        <div class="col-md-12">
           <div class="titlepage">
-            
              <h2>{{$name}} blogs</h2>
-             <span>It is a long established fact that a reader will be distracted by the readable content of a page </span>
           </div>
        </div>
     </div>
@@ -17,8 +15,6 @@
        <div class="col-md-12">
          <div class="our_two_box">
             <div class="row d_flex">
-               
-              
                   <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
                   <div class="our_img">
                      <figure><img src="{{url('/images/',$category->potrait)}}" alt="#"/></figure>
