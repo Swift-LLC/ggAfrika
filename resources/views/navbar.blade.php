@@ -86,21 +86,15 @@
                     </a>
                     <div class="collapse navbar-collapse" id="navbarCollapse">
                         <ul class="navbar-nav mr-auto">
-                            @auth 
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('admin') }}">Dashboard</a>
-                            </li>
-                            @else
+                            
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('home') }}">Home</a>
                             </li>
-                            @endauth
-                            @foreach($categories as $categories)
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('showcat', $categories->id) }}">{{$categories->name}} </a>
+                             <li class="nav-item">
+                                <a class="nav-link" href="{{ route('showcat', 1) }}">gg La Wananchi</a>
                             </li>
-                            @endforeach
-                            <!-- <li class="nav-item">
+                            
+                            <li class="nav-item">
                                 <a class="nav-link" href="{{ route('showcat', 2) }}">StartUp and SMEs</a>
                             </li>
                             <li class="nav-item">
@@ -108,7 +102,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('showcat', 4) }}l">Tourism and Eco-Culture</a>
-                            </li> -->
+                            </li>
                         </ul>
                         <ul class="navbar-nav mr-2">
                             @if (Route::has('login'))
@@ -202,18 +196,26 @@
 
                 </div>
                 <br>
-                <div class="newsletter-widget float-right  ">
-                    <form class="form-inline">
-                        <input type="text" class="form-control" placeholder="Enter your email address">
-                        <button type="submit" class="btn btn-primary">&#8594;</button>
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col-lg"></div>
+                    <div class="col"></div>
+                </div>
+                <div class="newsletter-widget " style="width:100%;" style="clear:all;">
+                    <form class="form-inline" style="">
+                        <input style="width:70%;" type="text" class="form-control" placeholder="Enter your email address">
+                        <button style="width:27%;" type="submit" class="btn float-right">&#8594;</button>
                     </form>
                 </div>
                 <br><br>   <br><br>
-                <div class="text-warning text-center">&copy; GG Afrika 2022-2030</a>.</div>
+                
 
 
             </div>
+        </div>
+        
         </footer>
+        <div style="background-color:black; width:100%; margin-top:0px;" class="text-warning text-center ">&copy; GG Afrika 2022-2030</a>.</div>
 
         <button onclick="topFunction()" id="myBtn" title="Go to top">&#8593;</button>
         <script>

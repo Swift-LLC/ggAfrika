@@ -10,15 +10,17 @@ use App\Models\Category;
 class PostsController extends Controller
 {
     //
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
+     
     public function index()
     {
         //show all blog posts
+       $categories = Category::all();
         $posts = Posts::orderBy('id', 'desc')->paginate(5);
-        return view('home', ['posts'=>$posts]);
+        return view('home', ['posts'=>$posts,'categories'=>$categories]);
     }
     public function create()
     {
@@ -50,23 +52,27 @@ class PostsController extends Controller
         $post->potrait = $newImageName;
         $post->user_id = Auth::id();
         $post->save();
+        return redirect()->route('posts');
         
     }
     public function showcat($cat )
     {
         //show a blog post
+        $categories = Category::all();
         
-        $category = Posts::with('categories')->where('category_id',$cat)->get();
-        $categories = Category::find($cat);
-        $name = $categories->name;
+        $posts = Posts::with('categories')->where('category_id',$cat)->get();
+        $category = Category::find($cat);
+        $name = $category->name;
+        
 
-        return view('blog.category',['category'=>$category], compact('name'));
+        return view('blog.category',['posts'=>$posts, 'categories'=>$categories], compact('name'));
     }
 
     public function show(Posts $post )
     {
         //show a blog post
-        return view('blog.show',['post'=>$post]);
+        $categories = Category::all();
+        return view('blog.show',['post'=>$post,'categories'=>$categories]);
     }
     public function edit(Posts $post)
     {

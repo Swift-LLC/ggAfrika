@@ -1,18 +1,33 @@
 @extends('layouts.admin')
-
 @section('content')
-<br><br><br>
-<div class="container" >
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card pb-2">
-                <div class="card-header">{{ __('Create An Editor') }}</div>
-
-                <div class="card-body px-2 pt-2">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
-
-                        <div class="row mb-3">
+ <div class="container">
+    <div class="">
+      <a href="{{route('admin')}}" class="btn btn-success" data-toggle="tooltip" data-placement="left" title="{!! trans('tooltips.post.create') !!}">
+        <i class="fas fa-arrow-left" aria-hidden="true"></i>
+        <span class="hidden-xs">
+          Back To DashBoard
+        </span>
+      </a>
+      <a href="#" class="btn btn-success" style="float:right;" data-toggle="modal" data-target="#form" data-placement="right" title="{!! trans('tooltips.post.create') !!}">
+        <i class="fas fa-plus" aria-hidden="true"></i>
+        <span class="hidden-xs">
+          Add New Editor/Admin
+        </span>
+      </a>
+      <div class="modal fade" id="form" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header border-bottom-0">
+              <h5 class="modal-title" id="exampleModalLabel">Add Users</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+             <form method="POST" action="{{ route('register') }}">
+              @csrf
+              <div class="modal-body">
+                <div class="form-group">
+                     <div class="row mb-3">
                             <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
 
                             <div class="col-md-6">
@@ -61,19 +76,49 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
+                  
 
-                        <div class="row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                        
+                  
                 </div>
-            </div>
+              </div>
+              <div class="modal-footer border-top-0 d-flex justify-content-center">
+                <button type="submit" class="btn btn-primary">
+                                    {{ __('Register') }}
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
-    </div>
+      </div>
+      <br><br>
+      <ul class="list-group">
+          <table class="table mb-0" style="width: 1200px;">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">NAME</th>
+                    <th scope="col">Email Address</th>
+                
+                  </tr>
+                </thead>
+                <tbody>
+                  @foreach ($users as $user)
+                    <tr class="fw-normal">
+                      <th>
+
+                        <span class="ms-2">{{ $user->id}}</span>
+                      </th>
+                      <td class="align-middle">
+                        <span >{{$user->name}}</span >
+                      </td>
+                      <td class="align-middle">
+                        <span >{{$user->email}}</span >
+                      </td>
+                    </tr>
+
+           @endforeach
+  
+     </ul>
 </div>
-<br><br><br>
 @endsection

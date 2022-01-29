@@ -1,4 +1,4 @@
-@extends('index')
+@extends('navbar')
 
 @section('content')
 <br><br><br>
@@ -7,7 +7,6 @@
         <div class="col-md-8">
             <div class="card pb-2">
                 <div class="card-header">{{ __('Login') }}</div>
-
                 <div class="card-body px-2 pt-2">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
@@ -42,7 +41,7 @@
 
                         <div class="row mb-3">
                             <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
+                                <div class="form-check" style="margin-left:10px;">
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
                                     <label class="form-check-label" for="remember">
@@ -59,7 +58,7 @@
                                 </button>
 
                                 @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                    <a class="" href="{{ route('password.request') }}">
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif

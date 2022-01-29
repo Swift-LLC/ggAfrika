@@ -79,10 +79,8 @@
           <a href="#" class="d-block">
             {{ Auth::user()->name }}
             </a>
-
         </div>
       </div>
-
       <!-- SidebarSearch Form -->
       <div class="form-inline">
         <div class="input-group" data-widget="sidebar-search">
@@ -108,11 +106,7 @@
 
               </p>
             </a>
-
           </li>
-
-
-
           <li class="nav-item">
             <a href="{{route('posts')}}" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
@@ -155,8 +149,6 @@
               </p>
             </a>
           </li>
-
-
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-book"></i>
@@ -166,15 +158,12 @@
               </p>
             </a>
           </li>
-
-
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->
   </aside>
-
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -193,7 +182,6 @@
         </div>
       </div><!-- /.container-fluid -->
     </section>
-
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">

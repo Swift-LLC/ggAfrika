@@ -41,6 +41,7 @@ class CategoryController extends Controller
         $cat = new Category;
         $cat->name = $request->name;
         $cat->save();
+        return redirect()->route('create');
     }
 
     /**

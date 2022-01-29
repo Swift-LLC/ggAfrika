@@ -9,10 +9,10 @@ use App\Models\Posts;
 class PostController extends Controller
 {
     //
-    public function _construct()
-    {
-        $this->middleware('is_admin');
-    }
+    // public function _construct()
+    // {
+    //     $this->middleware('is_admin');
+    // }
 
     public function showPosts()
     {

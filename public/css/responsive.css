@@ -59,7 +59,7 @@
     .newsletter-widget .btn {
         display: block;
         width: 100%;
-        margin-top: 0.5rem;
+        /* margin-top: 0.5rem; */
     }
     .blog-list .blog-meta.big-meta h4 {
         background-color: #ffffff;

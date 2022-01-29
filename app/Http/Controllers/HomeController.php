@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Posts;
 use App\Models\Video;
+use App\Models\Category;
 
 class HomeController extends Controller
 {
@@ -13,11 +14,11 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
+    // public function __construct()
+    // {
         
-        $this->middleware('auth');
-    }
+    //     $this->middleware('auth');
+    // }
 
     /**
      * Show the application dashboard.
@@ -28,7 +29,8 @@ class HomeController extends Controller
     {
         $posts = Posts::paginate(3);
         $videos = Video::paginate(3);
-        return view('home',['posts'=>$posts,'videos'=>$videos]);
+        $categories = Category::all();
+        return view('home',['posts'=>$posts,'videos'=>$videos,'categories'=>$categories]);
     }
     public function adminHome(){
         return view('admin.Dashboard');

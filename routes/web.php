@@ -15,40 +15,46 @@ use App\Http\Middleware\isAdmin;
 |
 */
 
-Route::get('/', function () {
-    return view('admin.video');
-})->name('index');
-
-
-
-
+// Route::get('/', function () {
+//     return view('');
+// })->name('index');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Auth::routes();
 
 
-Route::get('/blog', [App\Http\Controllers\PostsController::class, 'index'])->name('blog');
+
+
 Route::get('/blog/{post}', [App\Http\Controllers\PostsController::class, 'show'])->name('show');
 Route::get('/category/{category}', [App\Http\Controllers\PostsController::class, 'showcat'])->name('showcat');
 
 
-
 //Admin
-Route::get('/admin/calendar', function () {
-    return view('admin.calendar');
-})->name('calendar');
-Route::get('/blog/create/post', [App\Http\Controllers\PostsController::class, 'create'])->name('create');//shows create post form
-Route::post('/store', [App\Http\Controllers\PostsController::class, 'store'])->name('store');//saves the created post to thed database
-Route::get('/{post}/edit', [App\Http\Controllers\PostsController::class, 'edit'])->name('edit');//shows edit post form
-Route::put('/blog/{post}/post', [App\Http\Controllers\PostsController::class, 'update'])->name('update');//commits edit posts to the database
-Route::delete('/delete/{post}', [App\Http\Controllers\PostsController::class, 'destroy'])->name('delete');//delete posts from database
-Route::post('/store/post', [App\Http\Controllers\CategoryController::class, 'store'])->name('cat');
-Route::get('/posts', [App\Http\Controllers\Admin\PostController::class, 'showPosts'])->name('posts');
-Route::put('/blog/{post}/publish', [App\Http\Controllers\PostsController::class, 'publish'])->name('publish');
-Route::put('/video/{post}/publish', [App\Http\Controllers\VideoController::class, 'publish'])->name('v_publish');
+Route::get('/admin', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('admin')->middleware('auth');
+Route::get('/admin/all-editor', [App\Http\Controllers\Admin\AdminController::class, 'index'])->name('editors')->middleware('auth');
 
-Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/admin', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('admin');
+//shows create post form
+Route::get('/admin/blog/create/post', [App\Http\Controllers\PostsController::class, 'create'])->name('create')->middleware('auth');
+//saves the created post to thed database
+Route::post('/admin/store', [App\Http\Controllers\PostsController::class, 'store'])->name('store')->middleware('auth');
+//shows edit post form
+Route::get('/admin/edit/{post}', [App\Http\Controllers\PostsController::class, 'edit'])->name('edit')->middleware('auth');
+//commits edit posts to the database
+Route::put('/admin/blog/{post}', [App\Http\Controllers\PostsController::class, 'update'])->name('update')->middleware('auth');
+
+Route::delete('/admin/delete/{post}', [App\Http\Controllers\PostsController::class, 'destroy'])->name('delete')->middleware('auth');
+//delete posts from database
+Route::post('/admin/store/post', [App\Http\Controllers\CategoryController::class, 'store'])->name('cat')->middleware('auth');
+//show posts 
+Route::get('/admin/posts', [App\Http\Controllers\Admin\PostController::class, 'showPosts'])->name('posts')->middleware('auth');
+//publish posts to frontend
+Route::put('/blog/{post}/publish', [App\Http\Controllers\PostsController::class, 'publish'])->name('publish')->middleware('auth');
+Route::put('/video/{post}/publish', [App\Http\Controllers\VideoController::class, 'publish'])->name('v_publish')->middleware('auth');
+
+
+
+
+
 // Route::get('/admin/videos', [App\Http\Controllers\HomeController::class, 'videos'])->name('allvideos')->middleware(isAdmin::class);
-Route::post('/store/video', [App\Http\Controllers\VideoController::class, 'store'])->name('store_video');
-Route::get('/video', [App\Http\Controllers\VideoController::class, 'index'])->name('allvideos');
+Route::post('/admin/store/video', [App\Http\Controllers\VideoController::class, 'store'])->name('store_video')->middleware('auth');
+Route::get('/admin/video', [App\Http\Controllers\VideoController::class, 'index'])->name('allvideos')->middleware('auth');
