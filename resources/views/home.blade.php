@@ -23,7 +23,7 @@
                   </div>
                   <div class="col-md-6">
                      <div class="agency">
-                        <figure><img style="height:500px; width:100%;" src="{{url ('/images/', $post->potrait)}}" alt="#"/></figure>
+                        <figure><img style="height:500px; width:100%;" src="{{url ('/images', $post->potrait)}}" alt="#"/></figure>
                      </div>
                   </div>
                </div>

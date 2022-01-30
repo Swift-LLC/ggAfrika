@@ -5,7 +5,7 @@
     <h2 class="text-center">{!! $post->title !!}</h2>
     <br>
     <div class="our_img" style="text-align:v=center;">
-            <figure><img  src="{{url ('/images/', $post->potrait)}}" alt="post-image"/></figure>
+            <figure><img  src="{{url ('/images', $post->potrait)}}" alt="post-image"/></figure>
     </div>
     <p>{!! $post->body !!}</p>
 

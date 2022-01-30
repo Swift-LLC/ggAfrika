@@ -17,7 +17,7 @@
             <div class="row d_flex">
                   <div class="col-md-3">
                   <div class="our_img px-2" >
-                     <figure><img style="height:200px;" src="{{url('/images/',$category->potrait)}}" alt="#"/></figure>
+                     <figure><img style="height:200px;" src="{{url('/images',$category->potrait)}}" alt="#"/></figure>
                   </div>
                </div>
                <div class="col-md-6">
