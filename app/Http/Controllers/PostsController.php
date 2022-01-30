@@ -31,13 +31,13 @@ class PostsController extends Controller
     public function store(Request $request)
     {
         //store a new post
-        $request->validate([
-            'image' => 'required|mimes:jpg,png,jpeg',
-            'slug' => 'required',
-            'title' => 'required',
-            'description' => 'required',
-            'content' => 'required'
-        ]);
+        // $request->validate([
+        //     'image' => 'required|mimes:jpg,png,jpeg',
+        //     'slug' => 'required',
+        //     'title' => 'required',
+        //     'description' => 'required',
+        //     'content' => 'required'
+        // ]);
 
         $newImageName = time().'-'.$request->slug.'.'.$request->image->extension();
 

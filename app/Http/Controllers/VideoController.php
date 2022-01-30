@@ -52,6 +52,7 @@ class VideoController extends Controller
             $video->name = $request->name;
             $video->url = end($split_url) ;
             $video->save();
+            return redirect()->route('allvideos');
     }
 
     /**
