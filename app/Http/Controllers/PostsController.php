@@ -117,6 +117,6 @@ class PostsController extends Controller
     {
         //delete a post
         $post->delete();
-        return redirect()->route(' posts')->withSuccess(_('Post delete successfully'));
+        return redirect()->route('posts')->withSuccess(_('Post delete successfully'));
     }
 }
