@@ -11,6 +11,7 @@
       <div class="splide__track">
           <ul class="splide__list">
             @foreach ($posts as $post)
+             @if ($post->published == 1)
              <li class="splide__slide">
                <div class="row d_flex">
                   <div class="col-md-5">
@@ -28,12 +29,13 @@
                </div>
 
              </li>
+             @endif
              @endforeach
           </ul>
       </div>
     </div>
     <br><br><br>
-
+<hr>
     <div class="container-fluid">
        <h1> Recent Posts <i class="fa fa-feed text-warning" ></i></h1>
       <div class="row">
@@ -54,6 +56,8 @@
       @endif
    @endforeach
 </div>
+<hr>
+<h1>Recent Videos</h1>
 <div class="row our_img">
       @foreach ($videos as $video)
       @if ($video->published == 1)
