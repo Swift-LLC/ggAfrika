@@ -13,14 +13,14 @@
     <div class="row">
        @foreach ($posts as $category)
        <div class="col-md-12">
-         <div class="our_two_box">
+         <div class="our_two_box py-2">
             <div class="row d_flex">
-                  <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
-                  <div class="our_img">
-                     <figure><img src="{{url('/images/',$category->potrait)}}" alt="#"/></figure>
+                  <div class="col-md-3">
+                  <div class="our_img px-2" >
+                     <figure><img style="height:200px;" src="{{url('/images/',$category->potrait)}}" alt="#"/></figure>
                   </div>
                </div>
-               <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+               <div class="col-md-6">
                   <div class="our_text_box">
                      <h3 class="awesome pa_wi">{{$category->title}}</h3>
                      <p>{{$category->about}}</p>

@@ -19,7 +19,7 @@ class PostsController extends Controller
     {
         //show all blog posts
        $categories = Category::all();
-        $posts = Posts::orderBy('id', 'desc')->paginate(5);
+        $posts = Posts::orderBy('created_at', 'desc')->paginate(5);
         return view('home', ['posts'=>$posts,'categories'=>$categories]);
     }
     public function create()

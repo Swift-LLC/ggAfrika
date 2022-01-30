@@ -10,20 +10,20 @@
     <div class="splide">
       <div class="splide__track">
           <ul class="splide__list">
-            @foreach ($posts as $post)
+            @foreach ($post as $post)
              @if ($post->published == 1)
-             <li class="splide__slide">
+             <li class="splide__slide px-3">
                <div class="row d_flex">
                   <div class="col-md-5">
                      <div class="creative">
                         <h1> {{$post->title}}</h1>
                         <p>{{$post->about}}</p>
-                        <a class="read_more" href="Javascript:void(0)">Contact us</a>
+                         <a href="{{route('show',$post->id)}}" class="btn btn-primary float-right">Read More	&#8594;</a>
                      </div>
                   </div>
-                  <div class="col-md-5">
+                  <div class="col-md-6">
                      <div class="agency">
-                        <figure><img src="images/{{$post->potrait}}" alt="#"/></figure>
+                        <figure><img style="height:500px; width:100%;" src="images/{{$post->potrait}}" alt="#"/></figure>
                      </div>
                   </div>
                </div>
@@ -37,15 +37,15 @@
     <br><br><br>
 <hr>
     <div class="container-fluid">
-       <h1> Recent Posts <i class="fa fa-feed text-warning" ></i></h1>
+       <h2> Recent Posts <i class="fa fa-feed text-warning" ></i></h2>
       <div class="row">
       @foreach ($posts as $post)
       @if ($post->published == 1)
-      <div class="col-md-4">
-         <div class="our_img">
-            <figure><img src="images/{{$post->potrait}}" alt="#"/></figure>
+      <div class="col-md-4 our_text_box three_box">
+         <div class="our_img px-2">
+            <figure><img style="height:200px;" src="images/{{$post->potrait}}" alt="#"/></figure>
          </div>
-         <div class="our_text_box three_box">
+         <div class="">
             <div class="post_box d_flex padding_top3">
                 <h3 class="awesome padding_flot">{{$post->title}}</h3>
                 <p>{{$post->about}} </p>
@@ -57,7 +57,7 @@
    @endforeach
 </div>
 <hr>
-<h1>Recent Videos</h1>
+<h2>Recent Videos <i class="fa fa-video-camera text-warning" ></i></h2>
 <div class="row our_img">
       @foreach ($videos as $video)
       @if ($video->published == 1)

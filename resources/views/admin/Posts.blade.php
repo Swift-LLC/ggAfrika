@@ -56,7 +56,7 @@
 
                       <td class="align-middle d-flex w-20 justify-content-between">
                         <a href="{{route('edit',$post->id)}}" class="btn btn-warning" data-mdb-toggle="tooltip" title="Edit"><i class="fas fa-edit text-success me-3 "></i>Edit</a>
-                        <a href="" class="btn btn-info" data-mdb-toggle="tooltip" title="View"><i class="fas fa-eye text-success me-3"></i>View</a>
+                        <a href="{{route('show',['post'=>$post->id])}}" class="btn btn-info" data-mdb-toggle="tooltip" title="View"><i class="fas fa-eye text-success me-3"></i>View</a>
                         <form method="POST" action="{{route('delete',['post'=>$post->id])}}">
                           @method('DELETE')
                           @csrf

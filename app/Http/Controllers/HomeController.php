@@ -27,10 +27,11 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $post = Posts::all();
         $posts = Posts::paginate(3);
         $videos = Video::paginate(3);
         $categories = Category::all();
-        return view('home',['posts'=>$posts,'videos'=>$videos,'categories'=>$categories]);
+        return view('home',['post'=>$post,'posts'=>$posts,'videos'=>$videos,'categories'=>$categories]);
     }
     public function adminHome(){
         return view('admin.Dashboard');
