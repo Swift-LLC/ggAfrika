@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 @section('content')
 <br><br><br>
+
 <form class="container" action="{{route('store_video')}}"  method="POST" enctype = 'multipart/form-data'>
   @csrf
   <div class="form-group">
