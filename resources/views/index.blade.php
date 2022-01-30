@@ -260,6 +260,8 @@
             var splide = new Splide( '.splide', {
                 perPage: 1,
                 rewind : true,
+                cover  : true,
+		        heightRatio: 0.7,
                 } );
 
                 splide.mount();

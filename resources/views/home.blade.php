@@ -23,7 +23,7 @@
                   </div>
                   <div class="col-md-6">
                      <div class="agency">
-                        <figure><img style="height:500px; width:100%;" src="{{url ('/images', $post->potrait)}}" alt="#"/></figure>
+                        <figure><img style="height:500px; width:100%;" src="{{url ('/images', $post->potrait)}}" alt="post image"/></figure>
                      </div>
                   </div>
                </div>
@@ -43,7 +43,7 @@
       @if ($post->published == 1)
       <div class="col-md-4 our_text_box three_box">
          <div class="our_img px-2">
-            <figure><img style="height:200px;" src="{{url ('/images/', $post->potrait)}}" alt="#"/></figure>
+            <figure><img style="height:200px;" src="{{url ('/images', $post->potrait)}}" alt="post image"/></figure>
          </div>
          <div class="">
             <div class="post_box d_flex padding_top3">
