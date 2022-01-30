@@ -16,7 +16,7 @@ class AddToVideosTable extends Migration
         //
         Schema::table('videos', function (Blueprint $table) {
             //
-            $table->string('published')->default('0');
+            $table->string('published')->default('0')->change();
         });
     }
 
