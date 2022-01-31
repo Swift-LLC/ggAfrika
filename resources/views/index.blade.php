@@ -11,7 +11,7 @@
         <link rel="shortcut icon" href="{{asset('images/favicon.ico')}}" type="image/x-icon" />
         <link rel="apple-touch-icon" href="{{asset('images/apple-touch-icon.png')}}">
         <!-- Design fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+        <!-- <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet"> -->
         <!-- Bootstrap core CSS -->
         <link href="{{asset('css/bootstrap.css')}}" rel="stylesheet">
         <link href="{{asset('dist/css/splide.min.css')}}" rel="stylesheet">
@@ -20,7 +20,6 @@
         <!-- FontAwesome Icons core CSS -->
         <link href="{{asset('css/font-awesome.min.css')}}" rel="stylesheet">
         <link href="{{asset('css/responsive.css')}}" rel="stylesheet">
-        <!-- <link href="{{asset('css/caro.css')}}" rel="stylesheet"> -->
         <link href="{{asset('style.css')}}" rel="stylesheet">
         <link href="{{ asset('css/responsive.css') }}" rel="stylesheet">
         <link href="{{asset('css/colors.css')}}" rel="stylesheet">

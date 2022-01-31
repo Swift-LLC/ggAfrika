@@ -6,94 +6,6 @@ body {
   background-color: #ffffff;
 }
 
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 700;
-  line-height: 1.4;
-  color: #111111;
-}
-
-h1:hover a,
-h2:hover a,
-h3:hover a,
-h4:hover a,
-h5:hover a,
-h6:hover a {
-  text-decoration: underline !important;
-  color: #111111 !important;
-}
-
-h1 {
-  font-size: 32px;
-  line-height: 40px;
-  margin-bottom: 23px;
-}
-
-h2 {
-  font-size: 27px;
-  line-height: 38px;
-  margin-bottom: 20px;
-}
-
-h3 {
-  font-size: 22px;
-  line-height: 30px;
-  margin-bottom: 17px;
-}
-
-h4 {
-  font-size: 19px;
-  line-height: 29px;
-  margin-bottom: 14px;
-}
-
-h5 {
-  font-size: 17px;
-  line-height: 25px;
-  margin-bottom: 11px;
-}
-
-h6 {
-  font-size: 16px;
-  line-height: 24px;
-  margin-bottom: 11px;
-}
-
-a {
-  color: #111111;
-}
-
-body,
-p {
-  color: #5e5e5e;
-}
-
-p {
-  margin-bottom: 26px;
-  font-size: 15px;
-  line-height: 26px;
-}
-
-a {
-  text-decoration: none !important;
-}
-
-.blockquote {
-  border: 1px solid #edeff2;
-  background: #fff none repeat scroll 0 0;
-  border-left: 4px solid #eceeef;
-  font-size: 1.1rem;
-  font-style: italic;
-  margin-bottom: 1.5rem;
-  border-radius: 0 !important;
-  padding: 2rem;
-}
-
 /* HEADER 
 **************************************/
 
@@ -1012,31 +924,6 @@ div.tab button:hover {
   background-image: none;
 }
 
-.banner-spot {
-  background: #edeff2 url('images/ads-bg.png') no-repeat scroll center right /
-    auto 100%;
-  clear: both;
-  display: block;
-  height: auto;
-  margin: 0 auto;
-  padding: 15px;
-  position: relative;
-}
-
-.banner-img img {
-  margin: auto;
-  text-align: center;
-  max-width: 768px;
-  float: none;
-  width: 100%;
-  display: block;
-}
-
-.blog-meta h4 {
-  padding: 1rem 0 0.5rem;
-  margin: 0;
-  font-size: 21px;
-}
 
 .blog-meta.big-meta h4 {
   padding: 1rem 0 0.6rem;
