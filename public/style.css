@@ -4,22 +4,8 @@ body {
   font-size: 15px;
   line-height: 26px;
   background-color: #ffffff;
-  /* font-family: cursive; */
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-body,
-p,
-.topbar-section,
-.navbar-inverse .navbar-nav .nav-link,
-.header .dropdown-menu,
-.navbar-nav .nav-link {
-  /* font-family: 'Roboto', serif; */
-}
 
 h1,
 h2,
@@ -136,7 +122,6 @@ a {
   vertical-align: middle;
   content: '\f107';
   border: 0;
-  /* font-family: 'FontAwesome'; */
 }
 
 .navbar-toggleable-md .navbar-nav .nav-link {
@@ -670,28 +655,6 @@ div.tab button:hover {
   overflow: auto;
 }
 
-/* PAGES 
-**************************************/
-
-.notfound h2 {
-  /* font-family: Comic Sans MS; */
-  font-size: 140px;
-  padding: 0 0 1.7rem;
-  margin: 0;
-  line-height: 1;
-  font-weight: bold;
-}
-
-.notfound h3 {
-  font-size: 40px;
-  padding: 0 0 0.6rem;
-  margin: 0;
-}
-
-.notfound p {
-  padding: 1rem 0 1.4rem;
-  margin-bottom: 0;
-}
 
 .sitemap-wrapper {
   margin-bottom: 2rem;
@@ -1039,7 +1002,6 @@ div.tab button:hover {
 }
 
 .check li:before {
-  font-family: FontAwesome;
   content: '\f105';
   padding-right: 0.5rem;
   color: #111111;
