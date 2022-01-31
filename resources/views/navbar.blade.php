@@ -208,12 +208,8 @@
                     </form>
                 </div>
                 <br><br>   <br><br>
-                
-
-
             </div>
         </div>
-        
         </footer>
         <div style="background-color:black; width:100%; margin-top:0px;" class="text-warning text-center ">&copy; GG Afrika 2022-2030</a>.</div>
 

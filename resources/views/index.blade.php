@@ -25,8 +25,6 @@
         <link href="{{ asset('css/responsive.css') }}" rel="stylesheet">
         <link href="{{asset('css/colors.css')}}" rel="stylesheet">
         <link href="{{asset('css/tech.css')}}" rel="stylesheet">
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
             <style>
             #myBtn {
                 display: none;
