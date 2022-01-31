@@ -6,7 +6,6 @@
  <link rel="stylesheet" href="{{asset('css/resp.css')}}">
 @endsection
 @section('content')
-    
     <div class="splide">
       <div class="splide__track">
           <ul class="splide__list">
@@ -21,27 +20,12 @@
                    </div>
                 </div>
                 <br><br><br>
-               <!-- <div class="row d_flex">
-                  <div class="col-md-5">
-                     <div class="creative"> -->
-                        <!-- <h1> {{$post->title}}</h1>
-                        <p>{{$post->about}}</p>
-                         <a href="{{route('show',$post->id)}}" class="btn btn-primary float-right">Read More	&#8594;</a> -->
-                     <!-- </div>
-                  </div> -->
-                  <!-- <div class="col-md-6">
-                     <div class="agency"> -->
-                        <!-- <figure><img style="height:500px; width:100%;" src="{{url ('/images', $post->potrait)}}" alt="post image"/></figure> -->
-                     <!-- </div>
-                  </div>
-               </div> -->
              </li>
              @endif
              @endforeach
           </ul>
       </div>
     </div>
-<hr>
     <div class="container-fluid">
        <h2> Recent Posts <i class="fa fa-feed text-warning" ></i></h2>
       <div class="row">

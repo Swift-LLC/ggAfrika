@@ -1,15 +1,13 @@
 @extends('index')
 @section('content')
-<br><br><br>
-
+<br><br>
     <div class="row">
        <div class="col-md-12">
-          <div class="titlepage">
-             <h2>{{$name}} blogs</h2>
+          <div class="titlepage text-center" style="text-transform: capitalize;">
+             <h2>{{$name}}</h2>
           </div>
        </div>
     </div>
-    <!-- fist section -->
     <div class="row">
        @foreach ($posts as $category)
        <div class="col-md-12">
