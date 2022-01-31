@@ -261,7 +261,7 @@
                 perPage: 1,
                 rewind : true,
                 cover  : true,
-		        heightRatio: 0.7,
+		        // heightRatio: 0.7,
                 } );
 
                 splide.mount();

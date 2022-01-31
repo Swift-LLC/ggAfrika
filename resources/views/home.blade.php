@@ -12,7 +12,7 @@
           <ul class="splide__list">
             @foreach ($post as $post)
              @if ($post->published == 1)
-             <li class="splide__slide px-3" style="height: 20px;">
+             <li class="splide__slide px-3" >
                 <img  src="{{url ('/images', $post->potrait)}}" alt="post image"/>
                 <div class="splide_slide_container">
                    <div class="slide_content" style="padding-top: 200px;">
@@ -41,7 +41,6 @@
           </ul>
       </div>
     </div>
-    <br><br><br>
 <hr>
     <div class="container-fluid">
        <h2> Recent Posts <i class="fa fa-feed text-warning" ></i></h2>
