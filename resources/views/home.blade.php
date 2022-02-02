@@ -12,7 +12,7 @@
             @foreach ($post as $post)
              @if ($post->published == 1)
              <li class="splide__slide px-3" >
-                <img  src="{{url ('/images', $post->potrait)}}" alt="post image"/>
+                <img  src="https://i.postimg.cc/3NGvdrZV/1-0.jpg" alt="post image"/>
                 <div class="splide_slide_container">
                    <div class="slide_content" style="padding-top: 200px;">
                       <h1 class="text-white"> {{$post->title}}</h1>
@@ -33,7 +33,7 @@
       @if ($post->published == 1)
       <div class="col-md-4 our_text_box three_box">
          <div class="our_img px-2">
-            <figure><img style="height:200px;" src="{{url ('/images', $post->potrait)}}" alt="post image"/></figure>
+            <figure><img style="height:200px;" src="https://i.postimg.cc/3NGvdrZV/1-0.jpg" alt="post image"/></figure>
          </div>
          <div class="">
             <div class="post_box d_flex padding_top3">
