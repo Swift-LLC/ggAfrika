@@ -35,7 +35,7 @@
                   @foreach ($posts as $post)
                       <tr class="fw-normal">
                       <th>
-                        <span class="ms-2">{{ $post->user_id}}</span>
+                        <span class="ms-2">{{ $post->id}}</span>
                       </th>
                       <td class="align-middle">
                         <span >{{$post->created_at}}</span >
