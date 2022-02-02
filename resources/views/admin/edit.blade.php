@@ -2,8 +2,15 @@
 <head>
   <title> Creating Blog </title>
   <meta name="csrf-token" content="{{ csrf_token() }}">
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;700&family=Varela+Round&display=swap" rel="stylesheet">
 </head>
 <body>
   <style>
@@ -95,7 +102,8 @@
                 </div>
                 <div class="form-group">
                   <label for="image" class="form-label">Post Image </label>
-                  <input class="form-control form-control-lg" id="image" name="image" type="file">
+                  <input class="form-control form-control-lg" value="{{$post->potrait}}" id="image" name="image" type="text">
+                  <a href="https://postimages.org/login" class="btn btn-warning" target="_blank" rel="noopener noreferrer">Click here to get image from PostImage</a>
                 </div>
 
                 <div class="form-group">

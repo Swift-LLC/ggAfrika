@@ -33,6 +33,15 @@
               </div>
               <br><br>
               <div class="form-group">
+                <label for="category">Choose Category</label>
+                <select class="form-control" id="category" name="category">
+                  @foreach ($categories as $category)
+                  <option value="{{ $category->id}}">{{$category->name}}</option>
+                  @endforeach
+                </select>
+              </div>
+              <br><br>
+              <div class="form-group">
                 <label for="video">YOUTUBE URL</label>
                 <input type="text" name="url" id="url" class="form-control" id="video" aria-describedby="textHelp" placeholder="Enter video url here">
                 <small id="textHelp" class="form-text text-muted">Copy and paste the url video here</small>
@@ -52,11 +61,12 @@
     <div class="embed-responsive embed-responsive-16by9">
       <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{$videos->url}}" allowfullscreen></iframe>
     </div>
-    @if ($videos->published == 1)
+    <div class="d-flex justify-content-between">
+      @if ($videos->published == 1)
     <form method="POST" action="{{route('v_publish',['post'=>$videos->id])}}">
       @method('PUT')
       @csrf
-      <button type="submit"  class="btn btn-danger"  title="Remove"><i class="fas fa-ban"></i>remove</button>
+      <button type="submit"  class="btn btn-warning"  title="Remove"><i class="fas fa-ban"></i>remove</button>
     </form>
     @else
     <form method="POST" action="{{route('v_publish',['post'=>$videos->id])}}">
@@ -65,6 +75,13 @@
       <button type="submit"  class="btn btn-success"  title="Remove"><i class="fas fa-upload"></i>publish</button>
     </form>
     @endif
+     <form method="POST" action="{{route('delete_video',['video'=>$videos->id])}}">
+        @method('DELETE')
+        @csrf
+        <button type="submit"  class="btn btn-danger"  title="Remove"><i class="fas fa-trash-alt text-danger"></i>Delete</button>
+      </form>
+    </div>
+    
   </div>
     @endforeach
   </div>

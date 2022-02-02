@@ -58,3 +58,4 @@ Route::put('/video/{post}/publish', [App\Http\Controllers\VideoController::class
 // Route::get('/admin/videos', [App\Http\Controllers\HomeController::class, 'videos'])->name('allvideos')->middleware(isAdmin::class);
 Route::post('/admin/store/video', [App\Http\Controllers\VideoController::class, 'store'])->name('store_video')->middleware('auth');
 Route::get('/admin/video', [App\Http\Controllers\VideoController::class, 'index'])->name('allvideos')->middleware('auth');
+Route::delete('/admin/video/delete/{video}', [App\Http\Controllers\VideoController::class, 'destroy'])->name('delete_video')->middleware('auth');

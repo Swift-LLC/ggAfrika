@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Video;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class VideoController extends Controller
@@ -16,9 +17,9 @@ class VideoController extends Controller
     {
         //getting all videos
         $videos = Video::all();
-       
+        $categories = Category::all();
 
-        return view('admin.allvideos', ['videos'=>$videos]);
+        return view('admin.allvideos', ['videos'=>$videos,'categories'=>$categories]);
     }
 
     /**
@@ -29,6 +30,7 @@ class VideoController extends Controller
     public function create()
     {
         //creating videos
+        
         return view('admin.video');
     }
 
@@ -115,5 +117,7 @@ class VideoController extends Controller
     public function destroy(Video $video)
     {
         //
+        $video->delete();
+        return redirect()->route('allvideos');
     }
 }

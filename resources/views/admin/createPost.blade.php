@@ -108,7 +108,8 @@
               </div>
               <div class="form-group">
                 <label for="image" class="form-label">Post Image </label>
-                <input class="form-control form-control-lg" id="image" name="image" type="file">
+                <input class="form-control form-control-lg" id="image" name="image" type="text">
+                <a href="https://postimg.cc/gallery/bGTqC93" class="btn btn-warning" target="_blank" rel="noopener noreferrer">Click here to get image from PostImage</a>
               </div>
               <div class="form-group">
                 <label for="description">Description</label>

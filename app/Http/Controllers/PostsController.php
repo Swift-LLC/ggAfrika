@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\Video;
 
 class PostsController extends Controller
 {
@@ -30,9 +31,9 @@ class PostsController extends Controller
     }
     public function store(Request $request)
     {
-        $newImageName = time().'-'.$request->slug.'.'.$request->image->extension();
+        // $newImageName = time().'-'.$request->slug.'.'.$request->image->extension();
 
-        $request->image->move(public_path('/images'),$newImageName);
+        // $request->image->move(public_path('/images'),$newImageName);
 
         $post = new Posts;
         $post->slug = $request->slug;
@@ -40,7 +41,7 @@ class PostsController extends Controller
         $post->about = $request->description;
         $post->body = $request->content;
         $post->category_id = $request->category;
-        $post->potrait = $newImageName;
+        $post->potrait = $request->image;
         $post->user_id = Auth::id();
         $post->save();
         return redirect()->route('posts');
@@ -52,11 +53,12 @@ class PostsController extends Controller
         $categories = Category::all();
         
         $posts = Posts::with('categories')->where('category_id',$cat)->get();
+        $videos = Video::with('categories')->where('category_id',$cat)->get();
         $category = Category::find($cat);
         $name = $category->name;
         
 
-        return view('blog.category',['posts'=>$posts, 'categories'=>$categories], compact('name'));
+        return view('blog.category',['posts'=>$posts, 'categories'=>$categories,'videos'=>$videos], compact('name'));
     }
 
     public function show(Posts $post )
@@ -76,16 +78,17 @@ class PostsController extends Controller
     {
         //save the edited post
         $posts = Posts::find($id);
-        $newImageName = time().'-'.$request->slug.'.'.$request->image->extension();
+        // $newImageName = time().'-'.$request->slug.'.'.$request->image->extension();
 
-        $request->image->move(public_path('images'),$newImageName);
+        // $request->image->move(public_path('images'),$newImageName);
         $posts->slug = $request->slug;
         $posts->title = $request->title;
         $posts->about = $request->description;
         $posts->body = $request->content;
-        $posts->potrait = $newImageName;
+        $posts->potrait = $request->image;
         $posts->user_id = Auth::id();
         $posts->update();
+        return redirect()->route('posts');
     }
     //Published toggle
     public function publish($id)

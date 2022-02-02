@@ -14,4 +14,8 @@ class Category extends Model
     {
         return $this->hasMany('App\Models\Posts','category_id');
     }
+     public function videos()
+    {
+        return $this->hasMany('App\Models\Videos','category_id');
+    }
 }
