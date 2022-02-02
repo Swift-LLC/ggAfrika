@@ -58,9 +58,9 @@
                           @method('PUT')
                           @csrf
                           @if ($post->published == 1)
-                          <button type="submit"  class="btn btn-success"  title="publish"><i class="fas fa-trash-alt text-success"></i>Published</button>
+                          <button type="submit"  class="btn btn-danger"  title="publish"><i class="fas fa-trash-alt text-warning"></i>remove</button>
                           @else
-                          <button type="submit"  class="btn btn-danger"  title="publish"><i class="fas fa-trash-alt text-danger"></i>Publish</button>
+                          <button type="submit"  class="btn btn-success"  title="publish"><i class="fas fa-trash-alt text-success"></i>Publish</button>
                           @endif
                         </form>
                       </td>
