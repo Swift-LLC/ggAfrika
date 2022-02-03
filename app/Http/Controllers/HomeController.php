@@ -29,8 +29,8 @@ class HomeController extends Controller
     public function index()
     {
         $post = Posts::orderBy('updated_at','desc')->skip(0)->take(4)->get();
-        $posts = Posts::orderBy('updated_at','desc')->get();
-        $popular = Posts::inRandomOrder('updated_at')->get();
+        $posts = Posts::orderBy('updated_at','desc')->skip(0)->take(6)->get();
+        $popular = Posts::inRandomOrder('updated_at')->take(6)->get();
         $videos = Video::paginate(3);
         $categories = Category::all();
         return view('home',['post'=>$post,'posts'=>$posts,'videos'=>$videos,'categories'=>$categories,'popular'=>$popular]);
