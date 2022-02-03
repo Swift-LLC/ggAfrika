@@ -35,6 +35,7 @@
       @endif
       @endforeach
     </div>
+    <h3 class="text-center">{{$name}} Videos</h3>
     <div class="row">
      @foreach ($videos as $video)
       @if ($video->published == 1)

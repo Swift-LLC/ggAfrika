@@ -33,15 +33,14 @@
      
       <ul class="nav nav-tabs" id="myTab" role="tablist">
   <li class="nav-item">
-    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Latest</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Popular</a>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
-  </li>
+  
 </ul>
+<br>
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
      <div class="row">
@@ -65,25 +64,8 @@
 
   </div>
   <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-     <div class="row our_img">
-      @foreach ($videos as $video)
-      @if ($video->published == 1)
-      <div class="col-md-4 ">
-         <div class="embed-responsive embed-responsive-16by9">
-           <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{$video->url}}" allowfullscreen></iframe>
-        </div>
-        <h3 class="awesome padding_flot">{{$video->name}}</h3>
-      </div>
-      @endif
-  @endforeach
-  </div>
-  </div>
-  
-</div>
-    <div class="container-fluid">
-       <h2> Recent Posts <i class="fa fa-feed text-warning" ></i></h2>
-      <div class="row">
-      @foreach ($posts as $post)
+     <div class="row">
+      @foreach ($popular as $post)
       @if ($post->published == 1)
       <div class="col-md-4 our_text_box three_box">
          <div class="our_img px-2">
@@ -99,7 +81,11 @@
       </div>
       @endif
    @endforeach
+  </div>
+  </div>
+  
 </div>
+   
 <hr>
 <h2>Recent Videos <i class="fa fa-video-camera text-warning" ></i></h2>
 <div class="row our_img">
@@ -121,7 +107,7 @@
 <hr>
 <section class="partners text-center">
    <h1>Partners</h1>
-   <p>Sometimes the best way to envision the future is to invent it. Sometimes the best way to envision the future is to invent it. Sometimes the best way to envision the future is to invent it.</p>
+   <p>The bests company we work with to ensure you get Adventorous experience of Afrika</p>
    <div class="partners-image text-center">
       <ul>
          <li>
@@ -139,6 +125,6 @@
       </ul>
    </div>
 </div>
-</section><br><br><br>
-<hr>
+</section>
+
 @endsection

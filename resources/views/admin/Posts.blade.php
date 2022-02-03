@@ -47,20 +47,20 @@
                         <span ></span >
                       </td>
                       <td class="align-middle d-flex w-20 justify-content-between">
-                        <a href="{{route('edit',$post->id)}}" class="btn btn-warning" data-mdb-toggle="tooltip" title="Edit"><i class="fas fa-edit text-success me-3 "></i>Edit</a>
-                        <a href="{{route('show',['post'=>$post->id])}}" class="btn btn-info" data-mdb-toggle="tooltip" title="View"><i class="fas fa-eye text-success me-3"></i>View</a>
+                        <a href="{{route('edit',$post->id)}}" class="btn btn-primary" data-mdb-toggle="tooltip" title="Edit"><i class="fas fa-edit  me-3 "></i>Edit</a>
+                        <a href="{{route('show',['post'=>$post->id])}}" class="btn btn-info" data-mdb-toggle="tooltip" title="View"><i class="fas fa-eye  me-3"></i>View</a>
                         <form method="POST" action="{{route('delete',['post'=>$post->id])}}">
                           @method('DELETE')
                           @csrf
-                          <button type="submit"  class="btn btn-danger"  title="Remove"><i class="fas fa-trash-alt text-danger"></i>Delete</button>
+                          <button type="submit"  class="btn btn-danger"  title="Remove"><i class="fas fa-trash-alt"></i>Delete</button>
                         </form>
                         <form method="POST" action="{{route('publish',['post'=>$post->id])}}">
                           @method('PUT')
                           @csrf
                           @if ($post->published == 1)
-                          <button type="submit"  class="btn btn-danger"  title="publish"><i class="fas fa-trash-alt text-warning"></i>remove</button>
+                          <button type="submit"  class="btn btn-warning"  title="publish"><i class="fas fa-unlink"></i>remove</button>
                           @else
-                          <button type="submit"  class="btn btn-success"  title="publish"><i class="fas fa-trash-alt text-success"></i>Publish</button>
+                          <button type="submit"  class="btn btn-success"  title="publish"><i class="fas fa-upload"></i>Publish</button>
                           @endif
                         </form>
                       </td>

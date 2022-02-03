@@ -49,9 +49,9 @@
         @endsection
     </head>
     <body class="antialiased">
-        <header class="tech-header header">
+        <header class="tech-header header" style="margin-bottom:30px;">
             <div class="container-fluid">
-                <nav class="navbar navbar-toggleable-md  fixed-top bg-warning">
+                <nav class="navbar navbar-toggleable-md   fixed-top bg-warning" >
                     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" style="color: black; top: 10px;">
                         <span><i class="fa fa-bars"></i></span>
                     </button>
@@ -108,7 +108,8 @@
             </div>
         </header>
         @yield('content')
-        <footer class="footer" style="padding: 0;">
+        <br><br>
+        <footer class="footer pt-3" style="padding: 0;">
             <div class="container">
                 <div class="row">
                     <div class="col-lg">
@@ -116,7 +117,7 @@
                             <div class="footer-text text-left">
                                 <a href="{{ route('home') }}">GG Afrika</a>
                                 <p>GG Afrika is a culture and heritage blog, we share culture, news and wananchi articles.</p>
-                                <h5><b>Connect with us</b></h5>
+                                <h5 class="text-white"><b>Connect with us</b></h5>
                                 <div class="social">
                                     <a href="https://m.facebook.com/GG-Afrika-107646545139344" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i class="fa fa-facebook"></i></a>
                                     <a href="#" data-toggle="tooltip" data-placement="bottom" title="Twitter"><i class="fa fa-twitter"></i></a>
@@ -129,7 +130,7 @@
                     </div>
                     <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
                         <div class="">
-                            <h5>Contact Us </h5>
+                            <h4 class="text-white">Contact Us </h4>
                             <p class="link-widget"><a href="info@ggafrika.com"><i class="fa fa-envelope"></i> info@ggafrika.com </a></p>
                             <p class="link-widget"><a href="#"><i class="fa fa-phone"></i> +254 701 700 144</a></p>
                             <p class="link-widget"><a href="#"><i class="fa fa-home"></i> P.O Box 20100-00100 Nairobi, KE</a></p>
@@ -137,7 +138,7 @@
                     </div>
                     <div class="col-lg-2 col-md-12 col-sm-12 col-xs-12">
                         <div class="">
-                            <h5>About Us</h5>
+                            <h4 class="text-white">About Us </h4>
                             <div class="link-widget">
                                 <ul>
                                     <li><a href="#">About GG Afrika</a></li>
@@ -151,7 +152,12 @@
                 </div>
                 <br>
                 <div class="text-warning text-center">&copy; GG Afrika 2022-2030</a>.</div>
-                <p class="text-center">A Swift Creation </p>
+                <br>
+               <div class="developer text-center">
+                    <h3>Developers Contacts</h3>
+                    <a href="mailto:agolagordon10@gmail.com" target="_blank">A Swift Creation</a>
+               </div>
+    
             </div>
         </footer>
         <button onclick="topFunction()" id="myBtn" title="Go to top">&#8593;</button>
@@ -181,18 +187,19 @@
             <script src="{{asset('js/custom.js')}}"></script>
         <script>
             var splide1 = new Splide( '.splide1', {
+                type  : 'fade',
                 perPage: 1,
-                rewind : true,
-                cover  : true,
-		        // heightRatio: 0.7,
+                gap: 0,
+                padding: 0,
+                rewind: true,
+                width : '100vw',
+                height: 700,
+                cover: true,
+                autoplay: true,
+                interval: 4000
                 } );
                 splide1.mount();
-                var splide = new Splide( '.splide', {
                 
-                    perPage : 4,
-                    autoplay: true,
-                    } );
-                splide.mount();
         </script>
     </body>
 </html>
