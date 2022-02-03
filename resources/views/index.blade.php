@@ -11,7 +11,9 @@
         <link rel="shortcut icon" href="{{asset('images/favicon.ico')}}" type="image/x-icon" />
         <link rel="apple-touch-icon" href="{{asset('images/apple-touch-icon.png')}}">
         <!-- Design fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap" rel="stylesheet">
         <!-- Bootstrap core CSS -->
         <link href="{{asset('css/bootstrap.css')}}" rel="stylesheet">
         <link href="{{asset('dist/css/splide.min.css')}}" rel="stylesheet">
@@ -56,7 +58,7 @@
                         <span><i class="fa fa-bars"></i></span>
                     </button>
                     <a class="navbar-brand" href="{{ route('home') }}">
-                        <img src="{{asset('images/logo.jpeg')}}" style="width: 30px; height:20px; border-radius:50%;"  class="d-inline-block align-top" alt="ggafrika-logo"> 
+                        <img src="https://i.postimg.cc/j2rTp7Hm/IMG-20220202-WA0008.jpg" style="width: 30px; height:20px; border-radius:50%;"  class="d-inline-block align-top" alt="ggafrika-logo"> 
                         <span><b>gg-afrika</b></span>
                     </a>
                     <div class="collapse navbar-collapse" id="navbarCollapse">

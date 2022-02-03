@@ -15,7 +15,7 @@
              <li class="splide__slide px-3" >
                 <img  src="{{$post->potrait}}" alt="post image"/>
                 <div class="splide_slide_container">
-                   <div class="slide_content" style="padding-top: 200px;">
+                   <div class="slide_content text-center" style="padding-top: 200px;">
                       <h1 class="text-white"> {{$post->title}}</h1>
                        <a href="{{route('show',$post->id)}}" class="btn btn-primary ">Read More	&#8594;</a>
                    </div>
@@ -87,7 +87,7 @@
 </div>
    
 <hr>
-<h2>Recent Videos <i class="fa fa-video-camera text-warning" ></i></h2>
+<h3>Recent Videos <i class="fa fa-play" aria-hidden="true"></i></h3>
 <div class="row our_img">
       @foreach ($videos as $video)
       @if ($video->published == 1)
@@ -106,21 +106,21 @@
 </div>
 <hr>
 <section class="partners text-center">
-   <h1>Partners</h1>
-   <p>The bests company we work with to ensure you get Adventorous experience of Afrika</p>
+   <h3>PARTNERS</h3>
+   <p>The best companies we work with to ensure you get Adventorous experience of Afrika</p>
    <div class="partners-image text-center">
       <ul>
          <li>
-            <img class="rounded- circle" src="{{asset('images/logo.jpeg')}}" alt="">
+            <img class="rounded- circle" src="https://i.postimg.cc/63Zwb0vC/IMG-20220202-WA0009.jpg" alt="">
          </li>
          <li>
-            <img class="rounded- circle" src="{{asset('images/logo.jpeg')}}"alt="">
-         </li>
-         <li>
-            <img class="rounded- circle" src="{{asset('images/logo.jpeg')}}" alt="">
+            <img class="rounded- circle" src="https://i.postimg.cc/j2rTp7Hm/IMG-20220202-WA0008.jpg"alt="">
          </li>
          <li>
             <img class="rounded- circle" src="{{asset('images/logo.jpeg')}}" alt="">
+         </li>
+         <li>
+            <img class="rounded- circle" src="https://i.postimg.cc/63Zwb0vC/IMG-20220202-WA0009.jpg" alt="">
          </li>
       </ul>
    </div>
