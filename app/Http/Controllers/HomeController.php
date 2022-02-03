@@ -28,7 +28,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $post = Posts::orderBy('updated_at','desc')->skip(0)->take(4);
+        $post = Posts::orderBy('updated_at','desc')->skip(0)->take(4)->get();
         $posts = Posts::orderBy('updated_at','desc')->get();
         $popular = Posts::inRandomOrder('updated_at')->get();
         $videos = Video::paginate(3);
