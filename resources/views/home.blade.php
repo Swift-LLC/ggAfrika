@@ -2,6 +2,7 @@
 @section('custom')
  <!-- style css -->
  
+ 
  <link rel="stylesheet" href="{{asset('css/style2.css')}}">
  <!-- Responsive-->
  <link rel="stylesheet" href="{{asset('css/resp.css')}}">
@@ -54,7 +55,7 @@
             <div class="post_box d_flex padding_top3">
                 <h3 class="awesome padding_flot">{{$post->title}}</h3>
                 <p>{{$post->about}} </p>
-                <a href="">BY {{$post->user->name}}</a>
+                <a href=""><b>by</b> {{$post->user->name}}</a>
             <a href="{{route('show',$post->id)}}" class="btn btn-primary float-right">Read More	&#8594;</a>
             </div>
          </div>
@@ -76,7 +77,7 @@
             <div class="post_box d_flex padding_top3">
                 <h3 class="awesome padding_flot">{{$post->title}}</h3>
                 <p>{{$post->about}} </p>
-                <a href="">BY {{$post->user->name}}</a>
+                <a href=""><b>by</b> {{$post->user->name}}</a>
             <a href="{{route('show',$post->id)}}" class="btn btn-primary float-right">Read More	&#8594;</a>
             </div>
          </div>
@@ -107,27 +108,31 @@
 </div>
 </div>
 <hr>
-<section class="partners text-center">
-   <h3>PARTNERS</h3>
-   <p>The best companies we work with to ensure you get Adventorous experience of Afrika</p>
-   <div class="partners-image text-center">
-      <ul>
-         <li>
-            <img class="rounded- circle" src="https://i.postimg.cc/63Zwb0vC/IMG-20220202-WA0009.jpg" alt="">
-         </li>
-         <li>
-            <img class="rounded- circle" src="https://i.postimg.cc/j2rTp7Hm/IMG-20220202-WA0008.jpg"alt="">
-         </li>
-         <li>
-            <img class="rounded- circle" src="{{asset('images/logo.jpeg')}}" alt="">
-         </li>
-         <li>
-            <img class="rounded- circle" src="https://i.postimg.cc/63Zwb0vC/IMG-20220202-WA0009.jpg" alt="">
-         </li>
-      </ul>
-   </div>
-</div>
-</section>
+
+
+   <section id="gallery" class="gallery text-center">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Partners</h2>
+          <p>The best companies we work with to ensure you get Adventorous experience of Afrika</p>
+        </div>
+
+        <div class="gallery-slider swiper">
+          <div class="swiper-wrapper align-items-center">
+            <div class="swiper-slide"><a class="gallery-lightbox" href="https://i.postimg.cc/63Zwb0vC/IMG-20220202-WA0009.jpg"><img src="https://i.postimg.cc/63Zwb0vC/IMG-20220202-WA0009.jpg" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="gallery-lightbox" href="https://i.postimg.cc/63Zwb0vC/IMG-20220202-WA0009.jpg"><img src="https://i.postimg.cc/j2rTp7Hm/IMG-20220202-WA0008.jpg" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="gallery-lightbox" href="https://i.postimg.cc/63Zwb0vC/IMG-20220202-WA0009.jpg"><img src="{{asset('images/logo.jpeg')}}" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="gallery-lightbox" href="https://i.postimg.cc/63Zwb0vC/IMG-20220202-WA0009.jpg"><img src="https://i.postimg.cc/63Zwb0vC/IMG-20220202-WA0009.jpg" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="gallery-lightbox" href="https://i.postimg.cc/63Zwb0vC/IMG-20220202-WA0009.jpg"><img src="https://i.postimg.cc/j2rTp7Hm/IMG-20220202-WA0008.jpg" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="gallery-lightbox" href="https://i.postimg.cc/63Zwb0vC/IMG-20220202-WA0009.jpg"><img src="{{asset('images/logo.jpeg')}}" class="img-fluid" alt=""></a></div>
+           
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section>
 
 
 @endsection

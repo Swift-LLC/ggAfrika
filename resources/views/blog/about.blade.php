@@ -3,7 +3,7 @@
 @section('content')
 <br><br>
 <div class="text-center">
-    <h1>About GG Affika</h1>
+    <h1>About GG Afrika</h1>
     <p>Tales of Afrika to the world.</p>
     <br>
     <p>Social Cultural fun facts</p>

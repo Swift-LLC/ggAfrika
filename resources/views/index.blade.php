@@ -21,6 +21,7 @@
         <link rel="stylesheet" href="{{asset('css/resp.css')}}">
         <!-- FontAwesome Icons core CSS -->
         <link href="{{asset('css/font-awesome.min.css')}}" rel="stylesheet">
+        <link href="{{asset('css/swiper-bundle.min.css')}}" rel="stylesheet">
         <link href="{{asset('css/responsive.css')}}" rel="stylesheet">
         <link href="{{asset('style.css')}}" rel="stylesheet">
         <link href="{{ asset('css/responsive.css') }}" rel="stylesheet">
@@ -49,6 +50,113 @@
             #myBtn:hover {
                 background-color: #555;
             }
+            .gallery {
+  overflow: hidden;
+}
+.swiper-slider{
+    width:10em;
+}
+.swiper-slide img{
+    width:80%;
+    border-radius: 50%;
+    
+}
+.gallery .swiper-pagination {
+  margin-top: 20px;
+  position: relative;
+}
+.gallery .swiper-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  opacity: 1;
+  border: 1px solid orange;
+}
+.gallery .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: orange;
+}
+.gallery .swiper-slide-active {
+  text-align: center;
+}
+@media (min-width: 992px) {
+  .gallery .swiper-wrapper {
+    padding: 40px 0;
+  }
+  
+  
+}
+@media (max-width:640px){
+      .swiper-slider{
+    width:50px;
+}
+.swiper-slide img{
+    width:50%;
+    border-radius: 50%;
+    
+}
+  }
+
+            /*--------------------------------------------------------------
+# Testimonials
+--------------------------------------------------------------*/
+.testimonials .testimonials-carousel, .testimonials .testimonials-slider {
+  overflow: hidden;
+}
+.testimonials .testimonial-item {
+  box-sizing: content-box;
+  width:200px;
+  min-height: 100px;
+}
+.testimonials .testimonial-item .testimonial-img {
+  width: 100px;
+  border-radius: 50%;
+  padding:0px;
+  margin:0px;
+  position: relative;
+  z-index: 2;
+  border: 6px solid #fff;
+}
+.testimonials .testimonial-item {
+  font-size: 18px;
+  font-weight: bold;
+ 
+  color: #111;
+}
+.testimonials .testimonial-item  {
+  font-size: 14px;
+  color: #999;
+  
+}
+.testimonials .testimonial-item .quote-icon-left, .testimonials .testimonial-item .quote-icon-right {
+  color: #b2e4e6;
+  font-size: 26px;
+}
+.testimonials .testimonial-item .quote-icon-left {
+  display: inline-block;
+  left: -5px;
+  position: relative;
+}
+.testimonials .testimonial-item .quote-icon-right {
+  display: inline-block;
+  right: -5px;
+  position: relative;
+  top: 10px;
+}
+
+.testimonials .swiper-pagination {
+  margin-top: 20px;
+  position: relative;
+}
+.testimonials .swiper-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  opacity: 1;
+  border: 1px solid #3fbbc0;
+}
+.testimonials .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: #3fbbc0;
+}
         </style>
         @section('custom')
         @endsection
@@ -187,6 +295,7 @@
             <script src="{{asset('js/tether.min.js')}}"></script>
             <script src="{{asset('js/bootstrap.min.js')}}"></script>
             <script src="{{asset('js/custom.js')}}"></script>
+            <script src="{{asset('js/swiper-bundle.min.js')}}"></script>
         <script>
             var splide1 = new Splide( '.splide1', {
                 type  : 'fade',
@@ -201,6 +310,44 @@
                 interval: 4000
                 } );
                 splide1.mount();
+
+                 /**
+   * Testimonials slider
+   */
+/**
+   * Clients Slider
+   */
+  new Swiper('.gallery-slider', {
+    speed: 400,
+    loop: true,
+    centeredSlides: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false
+    },
+    slidesPerView: 'auto',
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+      clickable: true
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 20
+      },
+      640: {
+        slidesPerView: 2,
+        spaceBetween: 20
+      },
+      992: {
+        slidesPerView: 3,
+        spaceBetween: 10
+      }
+    }
+  });
+
+ 
                 
         </script>
     </body>
