@@ -131,7 +131,7 @@
           </li>
           <li class="nav-item">
             <a href="{{route('allvideos')}}" class="nav-link">
-              <i class="nav-icon far fa-image"></i>
+              <i class="nav-icon fa fa-play"></i>
               <p>
                 Videos
               </p>
@@ -139,53 +139,32 @@
           </li>
           <li class="nav-item">
             <a href="{{route('editors')}}" class="nav-link">
-              <i class="nav-icon far fa-image"></i>
+              <i class="nav-icon fas fa-user"></i>
               <p>
                 Users
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/gallery.html" class="nav-link">
-              <i class="nav-icon far fa-image"></i>
+            <a href="{{route('category')}}" class="nav-link">
+              <i class="nav-icon fa fa-list-alt"></i>
               <p>
-                Tables
+                Category
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/gallery.html" class="nav-link">
-              <i class="nav-icon far fa-image"></i>
+            <a href="{{route('doc')}}" class="nav-link">
+              <i class="nav-icon fas fa-file"></i>
               <p>
-                Gallery
+                Documentation
               </p>
             </a>
           </li>
+          
          
          
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-book"></i>
-              <p>
-                Pages
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="pages/examples/invoice.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Invoice</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/examples/profile.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Profile</p>
-                </a>
-              </li>
-            </ul>
-          </li>   
+           
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
@@ -212,9 +191,7 @@
       <li class="nav-item d-none d-sm-inline-block">
         <a href="{{route('home')}}" class="nav-link">Home</a>
       </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Blog</a>
-      </li>
+     
     </ul>
   </nav>
   <!-- /.navbar -->

@@ -21,12 +21,16 @@ use App\Http\Middleware\isAdmin;
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Auth::routes();
 
-
+Route::get('/about', [App\Http\Controllers\HomeController::class, 'about'])->name('about');
+Route::get('/support', [App\Http\Controllers\HomeController::class, 'support'])->name('support');
+Route::get('/advertising', [App\Http\Controllers\HomeController::class, 'advertising'])->name('advertising');
+Route::get('/documentation', [App\Http\Controllers\HomeController::class, 'doc'])->name('doc');
 
 
 Route::get('/blog/{post}', [App\Http\Controllers\PostsController::class, 'show'])->name('show');
 Route::get('/category/{category}', [App\Http\Controllers\PostsController::class, 'showcat'])->name('showcat');
 
+Route::put('/admin/user/{post}', [App\Http\Controllers\Auth\RegisterController::class, 'update'])->name('updateUser')->middleware('auth');
 
 //Admin
 Route::get('/admin', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('admin')->middleware('auth');
@@ -41,16 +45,18 @@ Route::post('/admin/store', [App\Http\Controllers\PostsController::class, 'store
 Route::get('/admin/edit/{post}', [App\Http\Controllers\PostsController::class, 'edit'])->name('edit')->middleware('auth');
 //commits edit posts to the database
 Route::put('/admin/blog/{post}', [App\Http\Controllers\PostsController::class, 'update'])->name('update')->middleware('auth');
+Route::delete('/admin/user/delete/{user}', [App\Http\Controllers\Auth\RegisterController::class, 'destroy'])->name('deleteUser')->middleware('auth');
 
 Route::delete('/admin/delete/{post}', [App\Http\Controllers\PostsController::class, 'destroy'])->name('delete')->middleware('auth');
 //delete posts from database
 Route::post('/admin/store/post', [App\Http\Controllers\CategoryController::class, 'store'])->name('cat')->middleware('auth');
 //show posts 
 Route::get('/admin/posts', [App\Http\Controllers\Admin\PostController::class, 'showPosts'])->name('posts')->middleware('auth');
+Route::get('/admin/category', [App\Http\Controllers\Admin\PostController::class, 'allCategory'])->name('category')->middleware('auth');
+Route::delete('/admin/delete/category/{cat}', [App\Http\Controllers\Admin\PostController::class, 'deleteCategory'])->name('deleteCategory')->middleware('auth');
 //publish posts to frontend
 Route::put('/blog/{post}/publish', [App\Http\Controllers\PostsController::class, 'publish'])->name('publish')->middleware('auth');
 Route::put('/video/{post}/publish', [App\Http\Controllers\VideoController::class, 'publish'])->name('v_publish')->middleware('auth');
-
 
 
 
@@ -59,3 +65,4 @@ Route::put('/video/{post}/publish', [App\Http\Controllers\VideoController::class
 Route::post('/admin/store/video', [App\Http\Controllers\VideoController::class, 'store'])->name('store_video')->middleware('auth');
 Route::get('/admin/video', [App\Http\Controllers\VideoController::class, 'index'])->name('allvideos')->middleware('auth');
 Route::delete('/admin/video/delete/{video}', [App\Http\Controllers\VideoController::class, 'destroy'])->name('delete_video')->middleware('auth');
+

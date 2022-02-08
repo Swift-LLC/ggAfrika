@@ -27,6 +27,9 @@
         <link href="{{asset('css/colors.css')}}" rel="stylesheet">
         <link href="{{asset('css/tech.css')}}" rel="stylesheet">
             <style>
+                body{
+                    height:100%;
+                }
             #myBtn {
                 display: none;
                 position: fixed;
@@ -59,7 +62,7 @@
                     </button>
                     <a class="navbar-brand" href="{{ route('home') }}">
                         <img src="https://i.postimg.cc/j2rTp7Hm/IMG-20220202-WA0008.jpg" style="width: 30px; height:20px; border-radius:50%;"  class="d-inline-block align-top" alt="ggafrika-logo"> 
-                        <span><b>gg-afrika</b></span>
+                        <span><b>GG.Afrika</b></span>
                     </a>
                     <div class="collapse navbar-collapse" id="navbarCollapse">
                         <ul class="navbar-nav mr-auto">
@@ -118,7 +121,7 @@
                         <div class="widget">
                             <div class="footer-text text-left">
                                 <a href="{{ route('home') }}">GG Afrika</a>
-                                <p>GG Afrika is a culture and heritage blog, we share culture, news and wananchi articles.</p>
+                                <p>Take courage to invent the future. Make a difference. Let love be won and shared.</p>
                                 <h5 class="text-white"><b>Connect with us</b></h5>
                                 <div class="social">
                                     <a href="https://m.facebook.com/GG-Afrika-107646545139344" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i class="fa fa-facebook"></i></a>
@@ -133,7 +136,7 @@
                     <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
                         <div class="">
                             <h4 class="text-white">Contact Us </h4>
-                            <p class="link-widget"><a href="info@ggafrika.com"><i class="fa fa-envelope"></i> info@ggafrika.com </a></p>
+                            <p class="link-widget"><a href="mailto:info@ggafrika.com" target="_blank"><i class="fa fa-envelope"></i> info@ggafrika.com </a></p>
                             <p class="link-widget"><a href="#"><i class="fa fa-phone"></i> +254 701 700 144</a></p>
                             <p class="link-widget"><a href="#"><i class="fa fa-home"></i> P.O Box 20100-00100 Nairobi, KE</a></p>
                         </div>
@@ -143,10 +146,10 @@
                             <h4 class="text-white">About Us </h4>
                             <div class="link-widget">
                                 <ul>
-                                    <li><a href="#">About GG Afrika</a></li>
-                                    <li><a href="#">Advertising</a></li>
+                                    <li><a href="{{ route('about') }}">About GG Afrika</a></li>
+                                    <li><a href="{{ route('advertising')}}">Advertising</a></li>
                                     <li><a href="#">Write for us</a></li>
-                                    <li><a href="#">Support & FAQs</a></li>
+                                    <li><a href="{{ route('support')}}">Support & FAQs</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -155,10 +158,7 @@
                 <br>
                 <div class="text-warning text-center">&copy; GG Afrika 2022-2030</a>.</div>
                 <br>
-               <div class="developer text-center">
-                    <h3>Developers Contacts</h3>
-                    <a href="mailto:agolagordon10@gmail.com" target="_blank">A Swift Creation</a>
-               </div>
+              
     
             </div>
         </footer>

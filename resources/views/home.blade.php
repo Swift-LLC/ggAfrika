@@ -33,16 +33,16 @@
      
       <ul class="nav nav-tabs" id="myTab" role="tablist">
   <li class="nav-item">
-    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Latest</a>
+    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#latest" role="tab" aria-controls="home" aria-selected="true">Latest</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Popular</a>
+    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#popular" role="tab" aria-controls="profile" aria-selected="false">Popular</a>
   </li>
   
 </ul>
 <br>
 <div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+  <div class="tab-pane fade show active" id="latest" role="tabpanel" aria-labelledby="home-tab">
      <div class="row">
       @foreach ($posts as $post)
       @if ($post->published == 1)
@@ -54,6 +54,7 @@
             <div class="post_box d_flex padding_top3">
                 <h3 class="awesome padding_flot">{{$post->title}}</h3>
                 <p>{{$post->about}} </p>
+                <a href="">BY {{$post->user->name}}</a>
             <a href="{{route('show',$post->id)}}" class="btn btn-primary float-right">Read More	&#8594;</a>
             </div>
          </div>
@@ -63,7 +64,7 @@
 </div>
 
   </div>
-  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+  <div class="tab-pane fade" id="popular" role="tabpanel" aria-labelledby="profile-tab">
      <div class="row">
       @foreach ($popular as $post)
       @if ($post->published == 1)
@@ -75,6 +76,7 @@
             <div class="post_box d_flex padding_top3">
                 <h3 class="awesome padding_flot">{{$post->title}}</h3>
                 <p>{{$post->about}} </p>
+                <a href="">BY {{$post->user->name}}</a>
             <a href="{{route('show',$post->id)}}" class="btn btn-primary float-right">Read More	&#8594;</a>
             </div>
          </div>
@@ -87,7 +89,7 @@
 </div>
    
 <hr>
-<h3>Recent Videos <i class="fa fa-play" aria-hidden="true"></i></h3>
+<h3>Recent Videos </h3>
 <div class="row our_img">
       @foreach ($videos as $video)
       @if ($video->published == 1)
@@ -126,5 +128,6 @@
    </div>
 </div>
 </section>
+
 
 @endsection

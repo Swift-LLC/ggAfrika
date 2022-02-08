@@ -89,9 +89,7 @@
                         </ul>
                         <ul class="navbar-nav mr-2">
                             @if (Route::has('login'))
-
                                 @auth
-
                                 <li class="nav-item">
                                     <div >
                                         <a  href="{{ route('logout') }}"
@@ -125,76 +123,58 @@
                 </nav>
             </div>
         </header>
+        <br><br><br>
         @yield('content')
-
-        <footer class="footer">
+        <br><br><br>
+         <footer class="footer pt-3" style="padding: 0;">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-7">
+                    <div class="col-lg">
                         <div class="widget">
                             <div class="footer-text text-left">
-                                <a href="index.html">GG Afrika</a>
-                                <p>GG Afrika is a culture and heritage blog, we share culture, news and wananchi articles.</p>
-                                <hr class="invis">
-                                <br><br><br><br>
-                                <h2><b>Connect with us</b></h2>
+                                <a href="{{ route('home') }}">GG Afrika</a>
+                                <p>Take courage to invent the future. Make a difference. Let love be won and shared.</p>
+                                <h5 class="text-white"><b>Connect with us</b></h5>
                                 <div class="social">
-                                    <a href="#" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i class="fa fa-facebook"></i></a>
+                                    <a href="https://m.facebook.com/GG-Afrika-107646545139344" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i class="fa fa-facebook"></i></a>
                                     <a href="#" data-toggle="tooltip" data-placement="bottom" title="Twitter"><i class="fa fa-twitter"></i></a>
-                                    <a href="#" data-toggle="tooltip" data-placement="bottom" title="Instagram"><i class="fa fa-instagram"></i></a>
-                                    <a href="#" data-toggle="tooltip" data-placement="bottom" title="Google Plus"><i class="fa fa-google-plus"></i></a>
-                                    <a href="#" data-toggle="tooltip" data-placement="bottom" title="Pinterest"><i class="fa fa-pinterest"></i></a>
+                                    <a href="https://www.instagram.com/ggafrika/"  target="_blank" data-toggle="tooltip" data-placement="bottom" title="Instagram"><i class="fa fa-instagram"></i></a>
+                                    <a href="https://google.com/?ggafrika" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Google Plus"><i class="fa fa-google-plus"></i></a>
+                                    <a href="https://"  target="_blank" data-toggle="tooltip" data-placement="bottom" title="YouTube"><i class="fa fa-youtube"></i></a>
                                 </div>
-
                             </div>
                         </div>
                     </div>
-
                     <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
-                        <div class="widget">
-                            <h2 class="widget-title text-black">Email Address</h2>
-                            <p class="link-widget"><a href="#">Example@gmail.com </a></p>
-                            <h2 class="widget-title">Phone Number</h2>
-                            <p class="link-widget"><a href="#">+234-556-778-88</a></p>
-                            <h2 class="widget-title">Mail Address</h2>
-                            <p class="link-widget"><a href="#">P.O Box 123 Afrika</a></p>
-
+                        <div class="">
+                            <h4 class="text-white">Contact Us </h4>
+                            <p class="link-widget"><a href="mailto:info@ggafrika.com" target="_blank"><i class="fa fa-envelope"></i> info@ggafrika.com </a></p>
+                            <p class="link-widget"><a href="#"><i class="fa fa-phone"></i> +254 701 700 144</a></p>
+                            <p class="link-widget"><a href="#"><i class="fa fa-home"></i> P.O Box 20100-00100 Nairobi, KE</a></p>
                         </div>
                     </div>
-
                     <div class="col-lg-2 col-md-12 col-sm-12 col-xs-12">
-                        <div class="widget">
-                            <h2 class="widget-title">Copyrights</h2>
+                        <div class="">
+                            <h4 class="text-white">About Us </h4>
                             <div class="link-widget">
                                 <ul>
-                                    <li><a href="#">About GG Afrika</a></li>
-                                    <li><a href="#">Advertising</a></li>
+                                    <li><a href="{{ route('about') }}">About GG Afrika</a></li>
+                                    <li><a href="{{ route('advertising')}}">Advertising</a></li>
                                     <li><a href="#">Write for us</a></li>
-                                    <li><a href="#">Trademark</a></li>
-                                    <li><a href="#">Support & FAQs</a></li>
+                                    <li><a href="{{ route('support')}}">Support & FAQs</a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-
                 </div>
                 <br>
-                <div class="row">
-                    <div class="col"></div>
-                    <div class="col-lg"></div>
-                    <div class="col"></div>
-                </div>
-                <div class="newsletter-widget " style="width:100%;" style="clear:all;">
-                    <form class="form-inline" style="">
-                        <input style="width:70%;" type="text" class="form-control" placeholder="Enter your email address">
-                        <button style="width:27%;" type="submit" class="btn float-right">&#8594;</button>
-                    </form>
-                </div>
-                <br><br>   <br><br>
+                <div class="text-warning text-center">&copy; GG Afrika 2022-2030</a>.</div>
+                <br>
+              
+    
             </div>
-        </div>
         </footer>
-        <div style="background-color:black; width:100%; margin-top:0px;" class="text-warning text-center ">&copy; GG Afrika 2022-2030</a>.</div>
+        
 
         <button onclick="topFunction()" id="myBtn" title="Go to top">&#8593;</button>
         <script>

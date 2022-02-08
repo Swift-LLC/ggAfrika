@@ -26,6 +26,25 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+    public function doc()
+    {
+        $categories = Category::all();
+        return view('admin.document',['categories'=>$categories,]);
+    }
+    public function about(){
+        $categories = Category::all();
+        return view('blog.about',['categories'=>$categories,]);
+    }
+
+     public function support(){
+         $categories = Category::all();
+        return view('blog.support',['categories'=>$categories,]);
+    }
+
+    public function advertising(){
+        $categories = Category::all();
+        return view('blog.advertising',['categories'=>$categories,]);
+    }
     public function index()
     {
         $post = Posts::orderBy('updated_at','desc')->skip(0)->take(4)->get();
@@ -46,5 +65,6 @@ class HomeController extends Controller
     public function videos(){
         return view('admin.video');
     }
+    
     
 }

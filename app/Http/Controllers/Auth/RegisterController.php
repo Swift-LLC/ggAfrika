@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -69,5 +70,25 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+    }
+     protected function update(Request $request, $id)
+    {
+        //save the edited post
+        $user = User::find($id);
+        // $newImageName = time().'-'.$request->slug.'.'.$request->image->extension();
+
+        // $request->image->move(public_path('images'),$newImageName);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password =Hash::make($request->email);
+        
+        $user->update();
+        return redirect()->route('editors');
+    }
+    public function destroy(User $user)
+    {
+        //delete a post
+        $user->delete();
+        return redirect()->route('editors');
     }
 }

@@ -53,36 +53,7 @@
           Back To DashBoard
         </span>
       </a>
-      <a href="#" class="btn btn-success" style="float:right;" data-toggle="modal" data-target="#form" data-placement="right" title="{!! trans('tooltips.post.create') !!}">
-        <i class="fas fa-plus" aria-hidden="true"></i>
-        <span class="hidden-xs">
-          Add New Category
-        </span>
-      </a>
-      <div class="modal fade" id="form" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header border-bottom-0">
-              <h5 class="modal-title" id="exampleModalLabel">Add Category</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <form method="POST" action="{{route('cat')}}" enctype='multipart/form-data'>
-              @csrf
-              <div class="modal-body">
-                <div class="form-group">
-                  <label for="name">Category Name</label>
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Enter category name">
-                </div>
-              </div>
-              <div class="modal-footer border-top-0 d-flex justify-content-center">
-                <button type="submit" class="btn btn-success">Submit</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
+      
       <div class="row">
         <div class="col-md-8 col-md-offset-2">
           <h1>Create post</h1>
@@ -114,7 +85,7 @@
               </div>
               <div class="form-group">
                 <label for="description">Description</label>
-                <textarea rows="5" class="form-control" name="description" required></textarea>
+                <textarea minlength="250" maxlength="300" rows="5" class="form-control" name="description" required></textarea>
               </div>
               <div class="form-group">
                 <label for="content">Content</label>

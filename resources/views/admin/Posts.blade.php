@@ -6,7 +6,83 @@
           {{ session('status') }}
       </div>
 @endif
+@if (Auth::user()->is_admin == 1)
+ 
 <section class="vh-100" style="background-color: #eee;">
+    <div class="fluid-container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-md-12 col-xl-10">
+          <div class="card bg-white">
+            <div class="card-header p-3">
+              <a href="{{route('create')}}" class="btn btn-success float-right" data-toggle="tooltip" data-placement="left" title="{!! trans('tooltips.post.create') !!}">
+                <i class="fas fa-plus" aria-hidden="true"></i>
+                <span class="hidden-xs">
+                    Create Post
+                </span>
+            </a>
+            <h5 class="mb-0"><i class="fas fa-tasks me-2"></i>Post List</h5>
+            </div>
+            <div class="card-body overflow-auto" data-mdb-perfect-scrollbar="true" style="position: relative; height: 400px; overflow-x:auto; ">
+              <table class="table mb-0" style="width: 1200px;">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Date Posted</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Writer</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @foreach ($allPosts as $allpost)
+                      <tr class="fw-normal">
+                      <th>
+                        <span class="ms-2">{{ $allpost->id}}</span>
+                      </th>
+                      <td class="align-middle">
+                        <span >{{$allpost->created_at}}</span >
+                      </td>
+                      <td class="align-middle">
+                        <h6 class="mb-0"><span >{{$allpost->title}}</span></h6>
+                      </td>
+
+                      <td class="align-middle">
+                        <h4 >{{$allpost->user->name}}</h4 >
+                      </td>
+                      <td class="align-middle">
+                        <span  ><img style="width:70px;" src="{{$allpost->potrait}}" alt=""></span >
+                      </td>
+                      <td class="align-middle d-flex w-20 justify-content-between">
+                        <a href="{{route('edit',$allpost->id)}}" class="btn btn-primary" data-mdb-toggle="tooltip" title="Edit"><i class="fas fa-edit  me-3 "></i>Edit</a>
+                        <a href="{{route('show',['post'=>$allpost->id])}}" class="btn btn-info" data-mdb-toggle="tooltip" title="View"><i class="fas fa-eye  me-3"></i>View</a>
+                        <form method="POST" action="{{route('delete',['post'=>$allpost->id])}}">
+                          @method('DELETE')
+                          @csrf
+                          <button type="submit"  class="btn btn-danger"  title="Remove"><i class="fas fa-trash-alt"></i>Delete</button>
+                        </form>
+                        <form method="POST" action="{{route('publish',['post'=>$allpost->id])}}">
+                          @method('PUT')
+                          @csrf
+                          @if ($allpost->published == 1)
+                          <button type="submit"  class="btn btn-warning"  title="publish"><i class="fas fa-unlink"></i>remove</button>
+                          @else
+                          <button type="submit"  class="btn btn-success"  title="publish"><i class="fas fa-upload"></i>Publish</button>
+                          @endif
+                        </form>
+                      </td>
+                      </tr>
+                   @endforeach
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  @else
+  <section class="vh-100" style="background-color: #eee;">
     <div class="fluid-container py-5 h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-md-12 col-xl-10">
@@ -44,12 +120,12 @@
                         <h6 class="mb-0"><span >{{$post->title}}</span></h6>
                       </td>
                       <td class="align-middle">
-                        <span ></span >
+                        <span  ><img style="width:70px;" src="{{$post->potrait}}" alt=""></span >
                       </td>
                       <td class="align-middle d-flex w-20 justify-content-between">
                         <a href="{{route('edit',$post->id)}}" class="btn btn-primary" data-mdb-toggle="tooltip" title="Edit"><i class="fas fa-edit  me-3 "></i>Edit</a>
                         <a href="{{route('show',['post'=>$post->id])}}" class="btn btn-info" data-mdb-toggle="tooltip" title="View"><i class="fas fa-eye  me-3"></i>View</a>
-                        <form method="POST" action="{{route('delete',['post'=>$post->id])}}">
+                        <!-- <form method="POST" action="{{route('delete',['post'=>$post->id])}}">
                           @method('DELETE')
                           @csrf
                           <button type="submit"  class="btn btn-danger"  title="Remove"><i class="fas fa-trash-alt"></i>Delete</button>
@@ -62,7 +138,7 @@
                           @else
                           <button type="submit"  class="btn btn-success"  title="publish"><i class="fas fa-upload"></i>Publish</button>
                           @endif
-                        </form>
+                        </form> -->
                       </td>
                       </tr>
                    @endforeach
@@ -74,5 +150,5 @@
       </div>
     </div>
   </section>
-
+  @endif
   @endsection
