@@ -1,4 +1,7 @@
 @extends('index')
+@section('title')
+{{$name}}
+@endsection
 @section('content')
 <br><br>
     <div class="row">

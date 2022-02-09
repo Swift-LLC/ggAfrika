@@ -1,4 +1,7 @@
 @extends('index')
+@section('title')
+support
+@endsection
 @section('content')
 <br><br>
 <div class="accordion">
@@ -10,7 +13,7 @@
         </div>
         <div class="collapse show" id="collapseOne" aria-labelledby="headingOne" data-parent="#accordion">
             <div class="card-body">
-                <p>Social media across Afika to the world.The hub of future innovations and budding entreprenuers. Do take a snap, tour with us and be part if Afrika's journey.</p>
+                <p>Social media across Afrika to the world.The hub of future innovations and budding entreprenuers. Do take a snap, tour with us and be part if Afrika's journey.</p>
             </div>
         </div>
     </div>

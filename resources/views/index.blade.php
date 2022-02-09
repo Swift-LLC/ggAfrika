@@ -3,9 +3,11 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>gg Afrika</title>
-        <meta name="keywords" content="">
-        <meta name="description" content="">
+        <title>gg Afrika- @yield('title')</title>
+        <meta name="keywords" content="ggafrika, startup and smes,tourism and ecoculture,afrika,ggafrika market place, culture and heritage, gg la wananchi,">
+        <meta name="description" content="Social media across Afika to the world.The hub of future innovations and budding entreprenuers. Do take a snap, tour with us and be part if Afrika's journey.Market place for all outlooks and outfits for growing businesses. Young and budding entreprenuers advertise across Afrika.
+Reach out, build, innovate and grow to your full potential.Take courage to invent the future. Make a difference. Let love be won and shared.">
+        <meta name="robots" content="index, follow">
         <meta name="author" content="_wawiny">
         <!-- Site Icons -->
         <link rel="shortcut icon" href="{{asset('images/favicon.ico')}}" type="image/x-icon" />
@@ -161,9 +163,9 @@
         @section('custom')
         @endsection
         <link rel="apple-touch-icon" sizes="180x180" href="{{asset('images/apple-touch-icon.png')}}">
-<link rel="icon" type="image/png" sizes="32x32" href="{{asset('images/favicon-32x32.png')}}">
-<link rel="icon" type="image/png" sizes="16x16" href="{{asset('images/favicon-16x16.png')}}">
-<link rel="manifest" href="/site.webmanifest">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{asset('images/favicon-32x32.png')}}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{asset('images/favicon-16x16.png')}}">
+        <link rel="manifest" href="{{asset('images/site.webmanifest')}}">
     </head>
     <body class="antialiased">
         <header class="tech-header header" style="margin-bottom:30px;">

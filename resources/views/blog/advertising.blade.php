@@ -1,4 +1,7 @@
 @extends('index')
+@section('title')
+Advertising
+@endsection
 @section('content')
 <br><br><br>
 <div class="container-fluid text-center">

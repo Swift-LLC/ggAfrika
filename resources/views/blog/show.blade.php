@@ -1,4 +1,7 @@
 @extends('index')
+@section('title')
+{!! $post->title !!}
+@endsection
 @section('content')
  <br><br>
 <div class="container " style="padding: 20px;">

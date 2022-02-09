@@ -1,4 +1,7 @@
 @extends('index')
+@section('title')
+Social media across Afrika to the world.The hub of future innovations and budding entreprenuers
+@endsection
 @section('custom')
  <!-- style css -->
  
