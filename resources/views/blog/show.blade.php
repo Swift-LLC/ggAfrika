@@ -8,7 +8,7 @@
     <h2 class="text-center">{!! $post->title !!}</h2>
     <br>
     <div class="our_img" style="text-align:v=center;">
-            <figure><img  src="{{$post->potrait}}" alt="post-image"/></figure>
+            <figure><img style="width:100%; height:300px;" src="{{$post->potrait}}" alt="post-image"/></figure>
     </div>
     <p>{!! $post->body !!}</p>
     <a href="{{route('showcat',['category'=>$post->category_id])}}" class="btn btn-info" data-mdb-toggle="tooltip" title="View"><i class=" me-3"></i>&#8592; Related Stories</a>
