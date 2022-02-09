@@ -58,9 +58,11 @@
 <div class="row py-2">
 @foreach ($videos as $videos)
   <div class="col-md-4">
+    <div>{{$videos->name}}</div>
     <div class="embed-responsive embed-responsive-16by9">
       <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{$videos->url}}" allowfullscreen></iframe>
     </div>
+    @if (Auth::user()->is_admin == 1)
     <div class="d-flex justify-content-between">
       @if ($videos->published == 1)
     <form method="POST" action="{{route('v_publish',['post'=>$videos->id])}}">
@@ -81,7 +83,7 @@
         <button type="submit"  class="btn btn-danger"  title="Remove"><i class="fas fa-trash-alt text-danger"></i>Delete</button>
       </form>
     </div>
-    
+    @endif
   </div>
     @endforeach
   </div>
