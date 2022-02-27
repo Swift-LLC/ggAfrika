@@ -51,7 +51,7 @@
                         <h4 >{{$allpost->user->name}}</h4 >
                       </td>
                       <td class="align-middle">
-                        <span  ><img style="width:70px;" src="{{$allpost->potrait}}" alt=""></span >
+                        <span  ><img style="width:70px;" src="/storage/{{$allpost->potrait}}" alt=""></span >
                       </td>
                       <td class="align-middle d-flex w-20 justify-content-between">
                         <a href="{{route('edit',$allpost->id)}}" class="btn btn-primary" data-mdb-toggle="tooltip" title="Edit"><i class="fas fa-edit  me-3 "></i>Edit</a>

@@ -17,7 +17,7 @@ Social media across Afrika to the world.The hub of future innovations and buddin
             @foreach ($post as $post)
              @if ($post->published == 1)
              <li class="splide__slide px-3" >
-                <img  src="{{$post->potrait}}" alt="post image"/>
+                <img  src="/storage/{{$post->potrait}}" alt="post image"/>
                 <div class="splide_slide_container">
                    <div class="slide_content text-center" style="padding-top: 200px;">
                       <h1 class="text-white"> {{$post->title}}</h1>
@@ -52,7 +52,7 @@ Social media across Afrika to the world.The hub of future innovations and buddin
       @if ($post->published == 1)
       <div class="col-md-4 our_text_box three_box">
          <div class="our_img px-2">
-            <figure><img style="height:200px;" src="{{$post->potrait}}" alt="post image"/></figure>
+            <figure><img style="height:200px;" src="/storage/{{$post->potrait}}" alt="post image"/></figure>
          </div>
          <div class="">
             <div class="post_box d_flex padding_top3">
@@ -74,7 +74,7 @@ Social media across Afrika to the world.The hub of future innovations and buddin
       @if ($post->published == 1)
       <div class="col-md-4 our_text_box three_box">
          <div class="our_img px-2">
-            <figure><img style="height:200px;" src="{{$post->potrait}}" alt="post image"/></figure>
+            <figure><img style="height:200px;" src="/storage/{{$post->potrait}}" alt="post image"/></figure>
          </div>
          <div class="">
             <div class="post_box d_flex padding_top3">

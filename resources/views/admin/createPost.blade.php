@@ -60,6 +60,9 @@
           <div class="card-body">
             <form action="{{route('store')}}" method="POST" enctype='multipart/form-data'>
               @csrf
+              @if($errors->any())
+                        <h4 class="invalid-feedback text-center alert alert-danger" role="alert">{{$errors->first()}}</h4>
+                @endif
               <div class="form-group has-error">
                 <label for="slug">Slug <span class="require">*</span> <small>(This field use in url path.)</small></label>
                 <input type="text" class="form-control" name="slug" required />
@@ -79,13 +82,12 @@
               </div>
               <div class="form-group">
                 <label for="image" class="form-label">Post Image </label>
-                <input class="form-control form-control-lg" id="image" name="image" type="text">
-                <br>
-                <a href="https://postimg.cc/gallery/bGTqC93" class="btn btn-warning" target="_blank" rel="noopener noreferrer">Click here to get image from PostImage</a>
+                <input class="form-control form-control-lg" id="image" name="image" type="file">
+               
               </div>
               <div class="form-group">
                 <label for="description">Description</label>
-                <textarea minlength="250" maxlength="300" rows="5" class="form-control" name="description" required></textarea>
+                <textarea rows="5" class="form-control" name="description" required></textarea>
               </div>
               <div class="form-group">
                 <label for="content">Content</label>

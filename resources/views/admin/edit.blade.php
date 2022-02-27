@@ -102,8 +102,8 @@
                 </div>
                 <div class="form-group">
                   <label for="image" class="form-label">Post Image </label>
-                  <input class="form-control form-control-lg" value="{{$post->potrait}}" id="image" name="image" type="text">
-                  <a href="https://postimages.org/login" class="btn btn-warning" target="_blank" rel="noopener noreferrer">Click here to get image from PostImage</a>
+                  <input class="form-control form-control-lg" value="{{ $post->potrait }}" id="image" name="image" type="file">
+                  
                 </div>
 
                 <div class="form-group">

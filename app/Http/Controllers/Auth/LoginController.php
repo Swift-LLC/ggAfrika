@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
-
+use Illuminate\Support\Facades\Redirect;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -40,23 +40,26 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
     public function login(Request $request)
-    {   
+    {
         $categories = Category::all();
         $input = $request->all();
-   
+
         $this->validate($request, [
             'email' => 'required|email',
             'password' => 'required',
         ]);
-   
-        if(auth()->attempt(array('email' => $input['email'], 'password' => $input['password'])))
-        {
-            
-                return redirect()->route('admin');
-            
-        }else{
-            return redirect()->route('login', compact('categories'))
-                ->with('error','Email-Address And Password Are Wrong.');
+
+        if (
+            auth()->attempt([
+                'email' => $input['email'],
+                'password' => $input['password'],
+            ])
+        ) {
+            return redirect()->route('admin');
+        } else {
+            return Redirect::back()->withErrors([
+                'Wrong Login credential, try again!!',
+            ]);
         }
     }
 }

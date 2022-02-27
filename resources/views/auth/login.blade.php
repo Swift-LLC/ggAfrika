@@ -3,12 +3,19 @@
 @section('content')
 <br><br><br>
 <div class="container">
+    
+   
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card pb-2">
                 <div class="card-header">{{ __('Login') }}</div>
+
+                @if($errors->any())
+                        <h4 class="invalid-feedback text-center alert alert-danger" role="alert">{{$errors->first()}}</h4>
+                @endif
                 <div class="card-body px-2 pt-2">
                     <form method="POST" action="{{ route('login') }}">
+                        
                         @csrf
 
                         <div class="row mb-3">

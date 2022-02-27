@@ -4,14 +4,13 @@
 @endsection
 @section('content')
 <br><br>
-    <div class="row">
-       <div class="col-md-12">
-          <div class="titlepage text-center" style="text-transform: capitalize;">
-             <h2>{{$name}}</h2>
-          </div>
-       </div>
+<div class="display" style="border-bottom:1.03px solid orange; padding-bottom:12px;">
+    <div class="syllabus">
+      <a href="#">Home &nbsp;/category&nbsp;/<span style="color:blue;">{{$name}}</span> </a>
     </div>
-    <div class="row">
+  </div>
+    
+    <div class="row mt-3">
        @foreach ($posts as $category)
        @if($category->published == 1)
        <div class="col-md-12">
@@ -19,7 +18,7 @@
             <div class="row d_flex">
                   <div class="col-md-3">
                   <div class="our_img px-2" >
-                     <figure><img style="height:200px;" src="{{$category->potrait}}" alt="post image"/></figure>
+                     <figure><img style="height:200px;" src="/storage/{{$category->potrait}}" alt="post image"/></figure>
                   </div>
                </div>
                <div class="col-md-6">
@@ -38,7 +37,10 @@
       @endif
       @endforeach
     </div>
+    @if (!$videos->isEmpty())
     <h3 class="text-center">{{$name}} Videos</h3>
+    @endif
+    
     <div class="row">
      @foreach ($videos as $video)
       @if ($video->published == 1)
