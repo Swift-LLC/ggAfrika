@@ -40,7 +40,7 @@ class PostsController extends Controller
         try {
             $path = $request->image->store('images', 'public');
             $post = new Posts();
-            $post->slug = $request->slug;
+            $post->slug = $request->title;
             $post->title = $request->title;
             $post->about = $request->description;
             $post->body = $request->content;
@@ -48,12 +48,12 @@ class PostsController extends Controller
             $post->potrait = $path;
             $post->user_id = Auth::id();
             $post->save();
-            return redirect()->route('posts');
         } catch (\Exception $e) {
-            return Redirect::back()->withErrors(
-                'This post title already exists, you cannot duplicate a post instead edit'
-            );
+            return back()
+                ->withInput()
+                ->withErrors('');
         }
+        return redirect()->route('posts');
     }
     public function showcat($cat)
     {
@@ -110,26 +110,26 @@ class PostsController extends Controller
     {
         $request->validate([
             'title' => 'required|min:3|max:255',
-            'about' => 'required|min:10|max:100',
         ]);
         //save the edited post
         $posts = Posts::find($id);
         // $newImageName = time().'-'.$request->slug.'.'.$request->image->extension();
         // $request->image->move(public_path('images'),$newImageName);
-        $input = $request->all();
-        if ($image = $request->image) {
+        $image = '';
+
+        if (isset($request->image)) {
             $path = $request->image->store('images', 'public');
-            $input['image'] = $path;
+            $image = $path;
         } else {
-            unset($input['image']);
+            $image = $posts->potrait;
         }
-        // $posts->slug = $request->slug;
-        // $posts->title = $request->title;
-        // $posts->about = $request->description;
-        // $posts->body = $request->content;
-        // $posts->potrait = $request->image;
-        // $posts->user_id = Auth::id();
-        $posts->update($input);
+        $posts->slug = $request->title;
+        $posts->title = $request->title;
+        $posts->about = $request->description;
+        $posts->body = $request->content;
+        $posts->potrait = $image;
+        $posts->user_id = Auth::id();
+        $posts->save();
         return redirect()->route('posts');
     }
     //Published toggle

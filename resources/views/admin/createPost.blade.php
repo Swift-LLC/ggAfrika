@@ -1,7 +1,7 @@
 <html>
 
 <head>
-  <title> Creating Blog </title>
+  <title> Admin - ggAfrika Creating Blog </title>
   <meta name="csrf-token" content="{{ csrf_token() }}">
  
 
@@ -63,14 +63,10 @@
               @if($errors->any())
                         <h4 class="invalid-feedback text-center alert alert-danger" role="alert">{{$errors->first()}}</h4>
                 @endif
-              <div class="form-group has-error">
-                <label for="slug">Slug <span class="require">*</span> <small>(This field use in url path.)</small></label>
-                <input type="text" class="form-control" name="slug" required />
-                <span class="help-block">Field not entered!</span>
-              </div>
+              
               <div class="form-group">
                 <label for="title">Title <span class="require">*</span></label>
-                <input type="text" class="form-control" name="title" required />
+                <input type="text" class="form-control" value="{{ old('title') }}"  name="title" required />
               </div>
               <div class="form-group">
                 <label for="category">Choose Category</label>
@@ -87,11 +83,11 @@
               </div>
               <div class="form-group">
                 <label for="description">Description</label>
-                <textarea rows="5" class="form-control" name="description" required></textarea>
+                <textarea rows="5" maxlength="150" value="" class="form-control" name="description" required>{{ old('description') }}</textarea>
               </div>
               <div class="form-group">
                 <label for="content">Content</label>
-                <textarea name="content" id="content" required></textarea>
+                <textarea value="{{ old('content') }}"  name="content" id="content" required>{{ old('content') }}</textarea>
               </div>
               <div class="form-group">
                 <p><span class="require">*</span> - required fields</p>

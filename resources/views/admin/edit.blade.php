@@ -81,11 +81,7 @@
               <form action="{{route('update',$post->id)}}" method="POST" enctype='multipart/form-data'>
                 @csrf
                 @method('PUT')
-                <div class="form-group has-error">
-                  <label for="slug">Slug <span class="require">*</span> <small>(This field use in url path.)</small></label>
-                  <input type="text" value="{{$post->slug}}" class="form-control" name="slug" />
-                  <span class="help-block">Field not entered!</span>
-                </div>
+                
 
                 <div class="form-group">
                   <label for="title">Title <span class="require">*</span></label>
