@@ -51,7 +51,7 @@ class PostsController extends Controller
         } catch (\Exception $e) {
             return back()
                 ->withInput()
-                ->withErrors('');
+                ->withErrors($e);
         }
         return redirect()->route('posts');
     }
