@@ -74,13 +74,13 @@ class RegisterController extends Controller
      protected function update(Request $request, $id)
     {
         //save the edited post
-        $user = User::find($id);
         // $newImageName = time().'-'.$request->slug.'.'.$request->image->extension();
 
         // $request->image->move(public_path('images'),$newImageName);
+        $user = User::find($id);
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->password =Hash::make($request->email);
+        $user->password = Hash::make($request->password);
         
         $user->update();
         return redirect()->route('editors');
