@@ -17,17 +17,12 @@
   <link rel="icon" type="image/png" sizes="32x32" href="{{asset('images/favicon-32x32.png')}}">
   <link rel="icon" type="image/png" sizes="16x16" href="{{asset('images/favicon-16x16.png')}}">
   <link rel="manifest" href="{{asset('images/site.webmanifest')}}">
-
+  
   <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
-    
-
+  <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
 </head>
 <body class="hold-transition dark-mode">
-    <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-light-primary  aside" id='mySidebar'>
-    <!-- Brand Logo -->
-    
     <a href="{{route('home')}}" class="brand-link">
       <img src="{{asset('images/logo.jpeg')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">ggAfrika</span>
@@ -110,21 +105,15 @@
 
   </div>
 
-
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="{{asset('plugins/chart.js/Chart.min.js')}}"></script>
-
 <script src="{{asset('dist/js/pages/dashboard2.js')}}"></script>
-
-<!-- AdminLTE App -->
 <script src="{{asset('dist/js/adminlte.min.js')}}"></script>
 <script>
 function openNav() {
   document.getElementById("mySidebar").style.width = "250px";
-  document.getElementById("main").style.marginLeft = "250px";
-  
+  document.getElementById("main").style.marginLeft = "250px"; 
 }
 
 function closeNav() {
@@ -132,6 +121,5 @@ function closeNav() {
   document.getElementById("main").style.marginLeft= "0";
 }
 </script>
-
 </body>
 </html>

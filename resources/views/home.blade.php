@@ -52,8 +52,8 @@ Social media across Afrika to the world.The hub of future innovations and buddin
                <img style="height:200px;" src="/storage/{{$post->potrait}}" alt="post image"/>
                <div class="card-body">
                   <div class="post_box d_flex padding_top3">
-                     <h3 class="awesome padding_flot">{{$post->title}}</h3>
-                     <p>{{$post->about}} </p>
+                     <h3 class="awesome padding_flot">{{ \Illuminate\Support\Str::limit($post->title, 10, $end='...') }}</h3>
+                     <p>{{ \Illuminate\Support\Str::limit($post->about, 30, $end='...') }}</p>
                      <div class="d-flex space-between">
                         <small><i class="bi bi-pen"></i>{{$post->user->name}}</small>
                         <a href="{{route('show',$post->id)}}" class="btn btn-warning">Read More	&#8594;</a>
