@@ -19,6 +19,7 @@
 
 <br> -->
 
+<br>
 <div class="container pt-2">
     <div class="row">
         <div class="col-lg-7 col-sm-12">
@@ -31,7 +32,7 @@
                         <h5 class="card-title">{{ $post->title }}</h5> <i class="bi bi-clock pri"></i><small> {{ $post->created_at }}</small>
                     </div>
                     <div class="container">
-                        <p>{!!  $post->about  !!}</p>
+                        <p>{!!  $post->body  !!}</p>
                     </div>
                 </div>
             </div>
@@ -43,12 +44,12 @@
             @foreach ($related as $category)
             <div class="row no gutters">
                 <div class="col">
-                    <img src="/storage/{{$category->potrait}}" alt="" class="card-img-top" style="height: 150px;">
-                </div>
-                <div class="col">
                     <h5>{{ $category->title }}</h5>
                     <p>{{ \Illuminate\Support\Str::limit($category->about, 30, $end='...') }}</p>
                     <a href="{{ route('show', $category->id ) }}" class="btn btn-warning">Read More</a>
+                </div>
+                <div class="col">
+                    <img src="/storage/{{$category->potrait}}" alt="" class="card-img-top" >
                 </div>
             </div>
             <hr>

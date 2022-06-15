@@ -49,22 +49,21 @@ Social media across Afrika to the world.The hub of future innovations and buddin
       @if ($post->published == 1)
          <div class="col-lg-4 col-md-4 ">
             <div class="card">
-               <img style="height:200px;" src="/storage/{{$post->potrait}}" alt="post image"/>
+               <img style="height:200px;" src="/storage/{{$post->potrait}}" alt="post image" class="card-img-top">
                <div class="card-body">
-                  <div class="post_box d_flex padding_top3">
-                     <h3 class="awesome padding_flot">{{ \Illuminate\Support\Str::limit($post->title, 10, $end='...') }}</h3>
-                     <p>{{ \Illuminate\Support\Str::limit($post->about, 30, $end='...') }}</p>
+                     <h3 class="">{{ \Illuminate\Support\Str::limit($post->title, 20, $end='...') }}</h3>
+                     <p>{{ \Illuminate\Support\Str::limit($post->about, 50, $end='...') }}</p>
                      <div class="d-flex space-between">
                         <small><i class="bi bi-pen"></i>{{$post->user->name}}</small>
                         <a href="{{route('show',$post->id)}}" class="btn btn-warning">Read More	&#8594;</a>
                      </div>
-                  </div>
                </div>
             </div>
          </div>
       @endif
    @endforeach
    </div>
+   <br />
 </div>
 <div class="tab-pane fade" id="popular" role="tabpanel" aria-labelledby="profile-tab">
    <div class="row">
@@ -74,13 +73,13 @@ Social media across Afrika to the world.The hub of future innovations and buddin
          <div class="card">
             <img style="height:200px;" src="/storage/{{$post->potrait}}" alt="post image"/>
             <div class="card-body">
-               <div class="post_box d_flex padding_top3">
-                  <h3 class="awesome padding_flot">{{$post->title}}</h3>
-                  <p>{{$post->about}} </p>
-                  <a href=""><b>by</b> {{$post->user->name}}</a>
-               <a href="{{route('show',$post->id)}}" class="btn btn-warning float-right">Read More	&#8594;</a>
+                     <h3>{{ \Illuminate\Support\Str::limit($post->title, 20, $end='...') }}</h3>
+                     <p>{{ \Illuminate\Support\Str::limit($post->about, 50, $end='...') }}</p>
+                     <div class="d-flex space-between">
+                        <small><i class="bi bi-pen"></i>{{$post->user->name}}</small>
+                        <a href="{{route('show',$post->id)}}" class="btn btn-warning">Read More	&#8594;</a>
+                     </div>
                </div>
-            </div>
          </div>
       </div>
       @endif
@@ -109,23 +108,21 @@ Social media across Afrika to the world.The hub of future innovations and buddin
 </div>
 </div>
 
-<hr>
-
-   <!-- <section id="gallery" class="gallery text-center">
+<br>
+   <!-- <section id="gallery" class="gallery ">
       <div class="container" data-aos="fade-up">
-        <div class="section-title">
-          <h2>Partners</h2>
+        <div class="text-center">
+          <h5>Partners</h5>
           <p>The best companies we work with to ensure you get Adventorous experience of Afrika</p>
         </div>
         <div class="gallery-slider swiper">
           <div class="swiper-wrapper align-items-center">
-            <div class="swiper-slide"><a class="gallery-lightbox" href="https://i.postimg.cc/63Zwb0vC/IMG-20220202-WA0009.jpg"><img src="https://i.postimg.cc/63Zwb0vC/IMG-20220202-WA0009.jpg" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="gallery-lightbox" href="https://i.postimg.cc/63Zwb0vC/IMG-20220202-WA0009.jpg"><img src="https://i.postimg.cc/j2rTp7Hm/IMG-20220202-WA0008.jpg" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="gallery-lightbox" href="https://i.postimg.cc/63Zwb0vC/IMG-20220202-WA0009.jpg"><img src="{{asset('images/logo.jpeg')}}" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="gallery-lightbox" href="https://i.postimg.cc/63Zwb0vC/IMG-20220202-WA0009.jpg"><img src="https://i.postimg.cc/63Zwb0vC/IMG-20220202-WA0009.jpg" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="gallery-lightbox" href="https://i.postimg.cc/63Zwb0vC/IMG-20220202-WA0009.jpg"><img src="https://i.postimg.cc/j2rTp7Hm/IMG-20220202-WA0008.jpg" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="gallery-lightbox" href="https://i.postimg.cc/63Zwb0vC/IMG-20220202-WA0009.jpg"><img src="{{asset('images/logo.jpeg')}}" class="img-fluid" alt=""></a></div>
-           
+            <div class="swiper-slide"><img src="https://i.postimg.cc/63Zwb0vC/IMG-20220202-WA0009.jpg" alt="partner"></div>
+            <div class="swiper-slide"><img src="https://i.postimg.cc/j2rTp7Hm/IMG-20220202-WA0008.jpg" alt="partner"></div>
+            <div class="swiper-slide"><img src="{{asset('images/logo.jpeg')}}" alt="partner"></div>
+            <div class="swiper-slide"><img src="https://i.postimg.cc/63Zwb0vC/IMG-20220202-WA0009.jpg" alt="partner"></div>
+            <div class="swiper-slide"><img src="https://i.postimg.cc/j2rTp7Hm/IMG-20220202-WA0008.jpg" alt="partner"></div>
+            <div class="swiper-slide"><img src="{{asset('images/logo.jpeg')}}" alt="partner"></div>
           </div>
           <div class="swiper-pagination"></div>
         </div>

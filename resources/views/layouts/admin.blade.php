@@ -17,9 +17,11 @@
   <link rel="icon" type="image/png" sizes="32x32" href="{{asset('images/favicon-32x32.png')}}">
   <link rel="icon" type="image/png" sizes="16x16" href="{{asset('images/favicon-16x16.png')}}">
   <link rel="manifest" href="{{asset('images/site.webmanifest')}}">
-  
-  <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
+  <link
+	rel="stylesheet"
+	href="//cdnjs.cloudflare.com/ajax/libs/jodit/3.18.9/jodit.min.css"
+/>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jodit/3.18.9/jodit.min.js"></script>t>
 </head>
 <body class="hold-transition dark-mode">
   <aside class="main-sidebar sidebar-light-primary  aside" id='mySidebar'>
@@ -104,6 +106,12 @@
     @yield('content')
 
   </div>
+
+  <script>
+	const editor = Jodit.make('#editor', {
+    height: 400
+  });
+</script>
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
