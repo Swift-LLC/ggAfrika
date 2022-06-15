@@ -1,59 +1,45 @@
 @extends('index')
+
 @section('title')
-{{$name}}
+   {{$name}}
 @endsection
+
 @section('content')
+<style>
+      @media screen and (max-width: 768px) {
+         .img-fluid {
+            height: 70px;
+            visibility: hidden;
+            padding-top: 0;
+         }
+         
+      }
+</style>
 <br><br>
-<div class="display" style="border-bottom:1.03px solid orange; padding-bottom:12px;">
-    <div class="syllabus">
-      <a href="#">Home &nbsp;/category&nbsp;/<span style="color:blue;">{{$name}}</span> </a>
-    </div>
-  </div>
-    
-    <div class="row mt-3">
-       @foreach ($posts as $category)
-       @if($category->published == 1)
-       <div class="col-md-12">
-         <div class="our_two_box py-2">
-            <div class="row d_flex">
-                  <div class="col-md-3">
-                  <div class="our_img px-2" >
-                     <figure><img style="height:200px;" src="/storage/{{$category->potrait}}" alt="post image"/></figure>
-                  </div>
-               </div>
-               <div class="col-md-6">
-                  <div class="our_text_box">
-                     <h3 class="awesome pa_wi">{{$category->title}}</h3>
-                     <p>{{$category->about}}</p>
-                     <br>
-                     <a href="{{route('show',$category->id)}}" class="btn btn-primary float-right">Read More	&#8594;</a>
-                  </div>
-               </div>
+   <div class="display">
+      <div class="text-center">
+         <p class="lead"><a href="#">Home &nbsp;>&nbsp;</a> </p>
+      </div>
+   </div>
+
+<div class="container">
+      @foreach ($posts as $category)
+      <div class="row g-2 pt-2">
+         <div class="col-lg-6 col-md-6 col-sm-6">
+            <h3 class="">{{$category->title}}</h3>
+            <p>{!! $category->about !!} </p>
+            <div class="text-right">
+               <a href="{{ route('show', $category->id) }}" class="btn btn-warning">Read More <i class="bi bi-arrow-right-short"></i></a>
             </div>
          </div>
-      </div>
-      @else
-      <div>No posts published yet</div>
-      @endif
+         <div class="col-lg-6 col-md-6 col-sm-6">
+            <img style="height:150px;" src="/storage/{{$category->potrait}}" alt="post image" class="img-fluid"/>
+         </div>
       @endforeach
-    </div>
-    @if (!$videos->isEmpty())
-    <h3 class="text-center">{{$name}} Videos</h3>
-    @endif
-    
-    <div class="row">
-     @foreach ($videos as $video)
-      @if ($video->published == 1)
-      <div class="col-md-4 ">
-         <div class="embed-responsive embed-responsive-16by9">
-           <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{$video->url}}" allowfullscreen></iframe>
-        </div>
-        <h3 class="awesome padding_flot">{{$video->name}}</h3>
+         <hr>
       </div>
-       @else
-      <div>No posts published yet</div>
       
-      @endif
-  @endforeach
-    </div>
+</div>
+</div>
+</div>
 @endsection

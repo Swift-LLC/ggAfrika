@@ -10,31 +10,8 @@
   <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;700&family=Varela+Round&display=swap" rel="stylesheet">
 </head>
 <body>
-  <style>
-    .card {
-      /* Add shadows to create the "card" effect */
-      margin: 20px;
-      padding: 8px;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-      transition: 0.3s;
-      border-radius: 8px;
-    }
-
-    /* On mouse-over, add a deeper shadow */
-    .card:hover {
-      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-    }
-
-    /* Add some padding inside the card container */
-    .container {
-      padding: 2px 16px;
-    }
-  </style>
-
-
   <div class="">
     <div class="container">
       <div class="">

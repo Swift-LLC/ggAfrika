@@ -3,12 +3,10 @@
 @section('content')
 <br><br><br>
 <div class="container">
-    
-   
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card pb-2">
-                <div class="card-header">{{ __('Login') }}</div>
+                <div class="card-header text-center">{{ __('Login') }}</div>
 
                 @if($errors->any())
                         <h4 class="invalid-feedback text-center alert alert-danger" role="alert">{{$errors->first()}}</h4>
@@ -60,12 +58,13 @@
 
                         <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-warning">
                                     {{ __('Login') }}
                                 </button>
 
                                 @if (Route::has('password.request'))
-                                    <a class="" href="{{ route('password.request') }}">
+                                
+                                    <a class="active-link" href="{{ route('password.request') }}">
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif

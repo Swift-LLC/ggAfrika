@@ -1,46 +1,61 @@
 @extends('index')
+
 @section('title')
-{!! $post->title !!}
+    {!! $post->title !!}
 @endsection
+
 @section('content')
- <br><br>
-<div class="row " style="text-align:center; padding-left: 40px;">
-    <div class="col-lg-8">
-        <h2 class="text-center">{!! $post->title !!}</h2>
-    <br>
-    <div class="our_img" style="text-align:v=center;">
-            <figure><img style="width:100%; height:300px;" src="/storage/{{$post->potrait}}" alt="post-image"/></figure>
-    </div>
-    <p>{!! $post->body !!}</p>
-    <a href="{{route('showcat',['category'=>$post->category_id])}}" class="btn btn-info" data-mdb-toggle="tooltip" title="View"><i class=" me-3"></i>&#8592; Related Stories</a>
-    </div>
-    <div class="col-lg-3 card">
-        <h2>Related Posts</h2>
-        <div class="card" style="width: 18rem;">
-        @foreach ($related as $category)
-        @if(strcmp($category->slug,$post->slug)!=0)
-            <img class="card-img-top" src="/storage/{{$category->potrait}}" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">{!! $category->title !!}</h5>
-                <p class="card-text">{!! $category->about !!}</p>
-                <a href="{{route('show',$category->id)}}" class="btn btn-primary float-right">Read More	&#8594;</a>
-            </div>
-        @else
-        @foreach ($posts as $category)
-        @if(strcmp($category->slug,$post->slug)!=0)
-            <img class="card-img-top" src="/storage/{{$category->potrait}}" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">{!! $category->title !!}</h5>
-                <p class="card-text">{!! $category->about !!}</p>
-                <a href="{{route('show',$category->id)}}" class="btn btn-primary float-right">Read More	&#8594;</a>
-            </div>
-        @endif
-        @endforeach
-        @endif
-        @endforeach
-        </div>
+<style>
+   .text-center > a{
+        color: #000;
+   }
+</style>
+<!-- <br>
+    <div class="bg-warning" style="height: 50px;">
+      <div class="text-center pt-2">
+         <p class="lead"><a href="">Home &nbsp;>&nbsp;</a>{!! $post->title !!}</p>
+      </div>
     </div>
 
+<br> -->
+
+<div class="container pt-2">
+    <div class="row">
+        <div class="col-lg-7 col-sm-12">
+            <div class="card">
+                <div class="justify">
+                    <img src="/storage/{{$post->potrait}}" alt="{{ $post->title }}" class="img-fluid">
+                </div>
+                <div class="card-body">
+                    <div class="text-center">
+                        <h5 class="card-title">{{ $post->title }}</h5> <i class="bi bi-clock pri"></i><small> {{ $post->created_at }}</small>
+                    </div>
+                    <div class="container">
+                        <p>{!!  $post->about  !!}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="col-lg-5 col-sm-12">
+        <h5 class="text-center">Related Posts</h5>
+        <div class="card">
+            <div class="card-body">
+            @foreach ($related as $category)
+            <div class="row no gutters">
+                <div class="col">
+                    <img src="/storage/{{$category->potrait}}" alt="" class="card-img-top" style="height: 150px;">
+                </div>
+                <div class="col">
+                    <h5>{{ $category->title }}</h5>
+                    <p>{{ \Illuminate\Support\Str::limit($category->about, 30, $end='...') }}</p>
+                    <a href="{{ route('show', $category->id ) }}" class="btn btn-warning">Read More</a>
+                </div>
+            </div>
+            <hr>
+            @endforeach
+            </div>
+        </div>
+    </div>
 </div>
-<br><br>
+</div>
 @endsection
