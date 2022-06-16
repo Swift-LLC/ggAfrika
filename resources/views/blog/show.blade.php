@@ -10,14 +10,6 @@
         color: #000;
    }
 </style>
-<!-- <br>
-    <div class="bg-warning" style="height: 50px;">
-      <div class="text-center pt-2">
-         <p class="lead"><a href="">Home &nbsp;>&nbsp;</a>{!! $post->title !!}</p>
-      </div>
-    </div>
-
-<br> -->
 
 <br>
 <div class="container pt-2">

@@ -19,7 +19,7 @@ class VideoController extends Controller
         $videos = Video::all();
         $categories = Category::all();
 
-        return view('admin.allvideos', ['videos'=>$videos,'categories'=>$categories]);
+        return view('videos.index', ['videos'=>$videos,'categories'=>$categories]);
     }
 
     /**
@@ -31,9 +31,9 @@ class VideoController extends Controller
     {
         //creating videos
         
-        return view('admin.video');
+        return view('videos.create');
     }
-
+    
     /**
      * Store a newly created resource in storage.
      *

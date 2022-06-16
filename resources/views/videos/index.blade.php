@@ -68,19 +68,19 @@
     <form method="POST" action="{{route('v_publish',['post'=>$videos->id])}}">
       @method('PUT')
       @csrf
-      <button type="submit"  class="btn btn-warning"  title="Remove"><i class="fas fa-ban"></i>remove</button>
+      <button type="submit"  class="btn btn-warning"  title="Remove"><i class="bi bi-ban"></i>remove</button>
     </form>
     @else
     <form method="POST" action="{{route('v_publish',['post'=>$videos->id])}}">
       @method('PUT')
       @csrf
-      <button type="submit"  class="btn btn-success"  title="Remove"><i class="fas fa-upload"></i>publish</button>
+      <button type="submit"  class="btn btn-success"  title="Remove"><i class="bi bi-upload"></i>publish</button>
     </form>
     @endif
      <form method="POST" action="{{route('delete_video',['video'=>$videos->id])}}">
         @method('DELETE')
         @csrf
-        <button type="submit"  class="btn btn-danger"  title="Remove"><i class="fas fa-trash-alt text-danger"></i>Delete</button>
+        <button type="submit"  class="btn btn-danger"  title="Remove"><i class="bi bi-trash text-danger"></i>Delete</button>
       </form>
     </div>
     @endif

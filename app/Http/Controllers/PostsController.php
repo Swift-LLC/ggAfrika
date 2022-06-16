@@ -26,12 +26,26 @@ class PostsController extends Controller
         $posts = Posts::orderBy('created_at', 'desc')->paginate(5);
         return view('home', ['posts' => $posts, 'categories' => $categories]);
     }
+
+    //all blogs
+    public function showPosts()
+    {
+        $user = Auth::id();
+        $posts = Posts::where('user_id',$user)->get();
+        $allPosts = Posts::all();
+        return view('admin.blogs',['posts'=>$posts,'allPosts'=>$allPosts]);
+
+    }
+
+    //create blog    
     public function create()
     {
         //show form to create a blog post
         $categories = Category::all();
-        return view('admin.createPost', ['categories' => $categories]);
+        return view('blog.create', ['categories' => $categories]);
     }
+
+    //store a new blog post
     public function store(Request $request)
     {
         // $newImageName = time().'-'.$request->slug.'.'.$request->image->extension();
@@ -48,6 +62,7 @@ class PostsController extends Controller
             $post->potrait = $path;
             $post->user_id = Auth::id();
             $post->save();
+
         } catch (\Exception $e) {
             return back()
                 ->withInput()
@@ -55,31 +70,7 @@ class PostsController extends Controller
         }
         return redirect()->route('posts');
     }
-    public function showcat($cat)
-    {
-        //show a blog post
-        $categories = Category::all();
-
-        $posts = Posts::with('categories')
-            ->where('category_id', $cat)
-            ->get();
-        $videos = Video::with('categories')
-            ->where('category_id', $cat)
-            ->get();
-        $category = Category::find($cat);
-        $name = $category->name;
-
-        return view(
-            'blog.category',
-            [
-                'posts' => $posts,
-                'categories' => $categories,
-                'videos' => $videos,
-            ],
-            compact('name')
-        );
-    }
-
+   
     public function show(Posts $post)
     {
         //show a blog post

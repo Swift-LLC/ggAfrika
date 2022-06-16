@@ -18,7 +18,7 @@
 <br><br>
    <div class="display">
       <div class="text-center">
-         <p class="lead"><a href="#">Home &nbsp;>&nbsp;</a> </p>
+         <p class="lead">Home &nbsp;</p>
       </div>
    </div>
 

@@ -1,5 +1,6 @@
 @extends('layouts.admin')
 @section('content')
+
 @if (Auth::user()->is_admin == 1)
  <div class="container">
     <div class="">

@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Posts;
+use App\Models\Video;
 use Illuminate\Support\Facades\DB;
+
 class CategoryController extends Controller
 {
     /**
@@ -19,6 +21,37 @@ class CategoryController extends Controller
         $categories = Category::all();
     }
 
+    //shows all categories
+    public function allCategory()
+    {
+        $category = Category::all();
+        return view('category.index', ['category' => $category]);
+    }
+
+    public function showcat($cat)
+    {
+        //show a blog post
+        $categories = Category::all();
+
+        $posts = Posts::with('categories')
+            ->where('category_id', $cat)
+            ->get();
+        $videos = Video::with('categories')
+            ->where('category_id', $cat)
+            ->get();
+        $category = Category::find($cat);
+        $name = $category->name;
+
+        return view(
+            'blog.category',
+            [
+                'posts' => $posts,
+                'categories' => $categories,
+                'videos' => $videos,
+            ],
+            compact('name')
+        );
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -27,6 +60,7 @@ class CategoryController extends Controller
     public function create()
     {
         //
+        return view('category.create');
     }
 
     /**
@@ -37,11 +71,11 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        $cat = new Category;
+
+        $cat = new Category();
         $cat->name = $request->name;
         $cat->save();
-        return redirect()->route('create');
+        return redirect()->route('category');
     }
 
     /**
@@ -50,8 +84,7 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    
-    
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -81,8 +114,10 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Category $cat)
     {
         //
+        $cat->delete();
+        return redirect()->route('category');
     }
 }

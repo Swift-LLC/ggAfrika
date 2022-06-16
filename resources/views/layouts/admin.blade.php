@@ -17,11 +17,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="{{asset('images/favicon-32x32.png')}}">
   <link rel="icon" type="image/png" sizes="16x16" href="{{asset('images/favicon-16x16.png')}}">
   <link rel="manifest" href="{{asset('images/site.webmanifest')}}">
-  <link
-	rel="stylesheet"
-	href="//cdnjs.cloudflare.com/ajax/libs/jodit/3.18.9/jodit.min.css"
-/>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jodit/3.18.9/jodit.min.js"></script>t>
+ 
 </head>
 <body class="hold-transition dark-mode">
   <aside class="main-sidebar sidebar-light-primary  aside" id='mySidebar'>

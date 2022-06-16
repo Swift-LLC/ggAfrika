@@ -323,6 +323,7 @@ border-radius: 50%;
                                 <li class="nav-item">
                                     <div>
                                         <a  href="{{ route('logout') }}"
+                                            class="nav-link"
                                            onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">
                                             {{ __('Logout') }}
