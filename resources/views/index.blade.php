@@ -288,6 +288,24 @@ border-radius: 50%;
       height: 500px;
       width:100%;
   } 
+
+  .pagination > li > a,
+.pagination > li > span {
+    color: #ffffff;
+    background-color: #ec971f;
+}
+
+.pagination > .active > a,
+.pagination > .active > a:focus,
+.pagination > .active > a:hover,
+.pagination > .active > span,
+.pagination > .active > span:focus,
+.pagination > .active > span:hover {
+    background-color: #ec971f;
+    border-color: #ec971f;
+    color: #ffffff;
+    
+}
         </style>
     </head>
     <body class="">
@@ -341,12 +359,13 @@ border-radius: 50%;
                         @endif
                         </ul>
                     </div>
-                </nav>
-                <br>
+                </div>
+            </nav>
+            <br>
         @yield('content')
         <br>
 
-        <footer class="footer pt-3">
+        <footer class="footer pt-5">
             <div class="container">
                 <div class="row" style="justify-content: center;">
                     <div class="col-lg-4  col-md-12 col-sm-12  ">

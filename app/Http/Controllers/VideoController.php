@@ -19,7 +19,10 @@ class VideoController extends Controller
         $videos = Video::all();
         $categories = Category::all();
 
-        return view('videos.index', ['videos'=>$videos,'categories'=>$categories]);
+        return view('videos.index', [
+            'videos' => $videos,
+            'categories' => $categories,
+        ]);
     }
 
     /**
@@ -30,10 +33,10 @@ class VideoController extends Controller
     public function create()
     {
         //creating videos
-        
-        return view('videos.create');
+        $categories = Category::all();
+        return view('videos.create', ['categories' => $categories]);
     }
-    
+
     /**
      * Store a newly created resource in storage.
      *
@@ -43,18 +46,16 @@ class VideoController extends Controller
     public function store(Request $request)
     {
         //storing to database
-        $request->validate(
-            [
-                'name'=>'required',
-                'url'=>'required',
-            ]
-            );
-            $split_url = explode("/",$request->url);
-            $video = new Video;
-            $video->name = $request->name;
-            $video->url = end($split_url) ;
-            $video->save();
-            return redirect()->route('allvideos');
+        $request->validate([
+            'name' => 'required',
+            'url' => 'required',
+        ]);
+        $split_url = explode('/', $request->url);
+        $video = new Video();
+        $video->name = $request->name;
+        $video->url = end($split_url);
+        $video->save();
+        return redirect()->route('allvideos');
     }
 
     /**
@@ -94,18 +95,15 @@ class VideoController extends Controller
     public function publish($id)
     {
         $posts = Video::find($id);
-        if($posts->published == 0)
-        {
+        if ($posts->published == 0) {
             $posts->published = 1;
             $posts->update();
-        }
-        else{
+        } else {
             $posts->published = 0;
             $posts->update();
         }
-           
-        return redirect()->route('allvideos');
 
+        return redirect()->route('allvideos');
     }
 
     /**

@@ -42,18 +42,30 @@ Route::get('/admin', [App\Http\Controllers\HomeController::class, 'adminHome'])
 
 //EDITORS
 Route::get('/admin/all-editor', [
-    App\Http\Controllers\AdminController::class,
-    'index',
+    App\Http\Controllers\HomeController::class,
+    'alleditors',
 ])
     ->name('editors')
     ->middleware('auth');
-Route::put('/admin/editor/update', [
+Route::get('/editors/create', [
+    App\Http\Controllers\Auth\RegisterController::class,
+    'show',
+])
+    ->name('createform')
+    ->middleware('auth');
+Route::get('/editors/edit/{id}', [
+    App\Http\Controllers\Auth\RegisterController::class,
+    'updateform',
+])
+    ->name('updateform')
+    ->middleware('auth');
+Route::put('/editors/update/{id}', [
     App\Http\Controllers\Auth\RegisterController::class,
     'update',
 ])
     ->name('updateUser')
     ->middleware('auth');
-Route::delete('/admin/user/delete/{user}', [
+Route::delete('/editors/delete/{user}', [
     App\Http\Controllers\Auth\RegisterController::class,
     'destroy',
 ])
@@ -96,13 +108,13 @@ Route::get('/blog/{post}', [
     App\Http\Controllers\PostsController::class,
     'show',
 ])->name('show');
-Route::get('/admin/posts', [
+Route::get('/blog-posts', [
     App\Http\Controllers\PostsController::class,
     'showPosts',
 ])
     ->name('posts')
     ->middleware('auth');
-Route::get('/admin/edit/{post}', [
+Route::get('/blog/edit/{post}', [
     App\Http\Controllers\PostsController::class,
     'edit',
 ])
@@ -114,13 +126,13 @@ Route::post('/admin/store', [
 ])
     ->name('store')
     ->middleware('auth');
-Route::get('/admin/create/post', [
+Route::get('/create/blog', [
     App\Http\Controllers\PostsController::class,
     'create',
 ])
     ->name('create')
     ->middleware('auth');
-Route::put('/admin/blog/publish/{post}', [
+Route::put('/blog/publish/{post}', [
     App\Http\Controllers\PostsController::class,
     'publish',
 ])
@@ -141,7 +153,7 @@ Route::delete('/admin/delete/{post}', [
 
 //VIDEOS
 
-Route::post('/admin/store/video', [
+Route::post('/store/video', [
     App\Http\Controllers\VideoController::class,
     'store',
 ])
@@ -152,6 +164,12 @@ Route::get('/admin/videos', [
     'index',
 ])
     ->name('allvideos')
+    ->middleware('auth');
+Route::get('/videos/create', [
+    App\Http\Controllers\VideoController::class,
+    'create',
+])
+    ->name('createvideo')
     ->middleware('auth');
 Route::delete('/admin/video/delete/{video}', [
     App\Http\Controllers\VideoController::class,

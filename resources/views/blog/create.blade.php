@@ -29,10 +29,10 @@
 </style>
 
 <body>
-  <div class="">
+  <div class="bg-white">
     <div class="container">
       <div class="">
-        <a href="{{route('admin')}}" class="btn btn-success" data-toggle="tooltip" data-placement="left" title="{!! trans('tooltips.post.create') !!}">
+        <a href="{{route('admin')}}" class="btn btn-success" data-toggle="tooltip" data-placement="left">
           <i class="bi bi-arrow-left" aria-hidden="true"></i>
           <span class="hidden-xs">
             Back
@@ -47,32 +47,63 @@
                 @method('POST')
                 
                 <div class="form-group">
-                  <label for="title">Title <span class="require">*</span></label>
-                  <input type="text" value="" class="form-control" name="title" />
+                  <label for="title" class="form-label">Blog Title <span class="require">*</span></label>
+                  <input type="text" class="form-control" name="title" />
+                            @error('title')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
                 </div>
+
                 <div class="form-group">
-                  <label for="category">Choose Category</label>
+                  <label for="category" class="form-label">Choose Blog Category</label>
                   <select class="form-control" id="category" name="category">
                     @foreach ($categories as $category)
                     <option value="{{ $category->id}}">{{$category->name}}</option>
                     @endforeach
                   </select>
+                   @error('category')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
                 </div>
+
                 <div class="form-group">
-                  <label for="image" class="form-label">Post Image </label>
+                  <label for="image" class="form-label">blog Post Image </label>
                   <input class="form-control form-control-file" value="" id="image" name="image" type="file">
+                   @error('image')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
                 </div>
+
                 <div class="form-group">
-                  <label for="description">Description</label>
-                  <textarea value="" rows="5" class="form-control" name="description"></textarea>
+                  <label for="description" class="form-label">Blog Description</label>
+                  <textarea  rows="5" class="form-control" name="description"></textarea>
+                   @error('description')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
                 </div>
+
                 <div class="form-group">
-                  <label for="content">Content</label>
-                  <textarea value="" name="content" id="editor"></textarea>
+                  <label for="content" class="form-label">Blog Content</label>
+                  <textarea  name="content" id="edito"></textarea>
+                   @error('content')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
                 </div>
+
                 <div class="form-group">
                   <p><span class="require">*</span> - required fields</p>
                 </div>
+
                 <div class="form-group">
                   <button type="submit" class="btn btn-primary">
                     Create
@@ -81,6 +112,7 @@
                     Cancel
                   </button>
                 </div>
+
               </form>
             </div>
           </div>
@@ -90,7 +122,7 @@
   </div>
   <script>
 	const editor = Jodit.make('#editor', {
-    height: 400
+    height: 370
   });
 </script>
 

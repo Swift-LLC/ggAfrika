@@ -44,30 +44,7 @@
             Add New Category
           </span>
         </a>
-        <div class="modal fade" id="form" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header border-bottom-0">
-                <h5 class="modal-title" id="exampleModalLabel">Add Category</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <form method="POST" action="{{route('cat')}}" enctype='multipart/form-data'>
-                @csrf
-                <div class="modal-body">
-                  <div class="form-group">
-                    <label for="name">Category Name</label>
-                    <input type="text" name="name" class="form-control" id="name" placeholder="Enter category name">
-                  </div>
-                </div>
-                <div class="modal-footer border-top-0 d-flex justify-content-center">
-                  <button type="submit" class="btn btn-success">Submit</button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
+
         <div class="row">
           <div class="col-md-8 col-md-offset-2">
             <h1>Edit Post</h1>
@@ -76,39 +53,40 @@
                 @csrf
                 @method('PUT')
                 
-
                 <div class="form-group">
-                  <label for="title">Title <span class="require">*</span></label>
+                  <label for="title" class="form-label">Blog Title <span class="require">*</span></label>
                   <input type="text" value="{{$post->title}}" class="form-control" name="title" />
                 </div>
+
                 <div class="form-group">
-                  <label for="category">Choose Category</label>
+                  <label for="category"  class="form-label">Choose Category</label>
                   <select class="form-control" id="category" name="category">
                     @foreach ($categories as $category)
                     <option value="{{ $category->id}}">{{$category->name}}</option>
                     @endforeach
-
                   </select>
                 </div>
+
                 <div class="form-group">
-                  <label for="image" class="form-label">Post Image </label>
+                  <label for="image" class="form-label"  class="form-label">blog Image </label>
                   <input class="form-control form-control-lg" value="{{ $post->potrait }}" id="image" name="image" type="file">
-                  
                 </div>
 
                 <div class="form-group">
-                  <label for="description">Description</label>
+                  <label for="description"  class="form-label">Blog Description</label>
                   <textarea value="" rows="5" class="form-control" name="description">{{$post->about}}</textarea>
                 </div>
+
                 <div class="form-group">
-                  <label for="content">Content</label>
+                  <label for="content"  class="form-label">Content</label>
                   <textarea value="" name="content" id="content">{{$post->body}}</textarea>
                 </div>
 
                 <div class="form-group">
                   <p><span class="require">*</span> - required fields</p>
                 </div>
-                <div class="form-group">
+
+                <div class="text-center">
                   <button type="submit" class="btn btn-primary">
                     Update
                   </button>
@@ -128,7 +106,6 @@
     height: 400
   });
 </script>
-
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 </body>

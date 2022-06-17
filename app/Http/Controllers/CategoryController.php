@@ -40,6 +40,8 @@ class CategoryController extends Controller
             ->where('category_id', $cat)
             ->get();
         $category = Category::find($cat);
+
+    dd($videos);
         $name = $category->name;
 
         return view(

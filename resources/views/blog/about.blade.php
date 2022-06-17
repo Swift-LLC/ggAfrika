@@ -3,6 +3,7 @@
 @section('title')
 About
 @endsection
+
 @section('content')
 <br><br>
 <div class="text-center">

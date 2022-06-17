@@ -52,7 +52,13 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'email' => [
+                'required',
+                'string',
+                'email',
+                'max:255',
+                'unique:users',
+            ],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
@@ -71,20 +77,32 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
     }
-     protected function update(Request $request, $id)
-    {
-        //save the edited post
-        // $newImageName = time().'-'.$request->slug.'.'.$request->image->extension();
 
-        // $request->image->move(public_path('images'),$newImageName);
+    protected function show()
+    {
+        return view('users.create');
+    }
+
+    protected function updateform($id)
+    {
+        $user = User::find($id);
+
+        return view('users.edit', compact('user'));
+    }
+
+    //update users
+    protected function update(Request $request, $id)
+    {
         $user = User::find($id);
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
-        
+
         $user->update();
         return redirect()->route('editors');
     }
+    
+    //delete user
     public function destroy(User $user)
     {
         //delete a post

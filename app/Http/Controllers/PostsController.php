@@ -6,19 +6,12 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Redirect;
-
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Video;
 
 class PostsController extends Controller
 {
-    //
-    // public function __construct()
-    // {
-    //     $this->middleware('auth');
-    // }
-
     public function index()
     {
         //show all blog posts
@@ -31,13 +24,15 @@ class PostsController extends Controller
     public function showPosts()
     {
         $user = Auth::id();
-        $posts = Posts::where('user_id',$user)->get();
+        $posts = Posts::where('user_id', $user)->get();
         $allPosts = Posts::all();
-        return view('admin.blogs',['posts'=>$posts,'allPosts'=>$allPosts]);
-
+        return view('admin.blogs', [
+            'posts' => $posts,
+            'allPosts' => $allPosts,
+        ]);
     }
 
-    //create blog    
+    //create blog
     public function create()
     {
         //show form to create a blog post
@@ -51,7 +46,8 @@ class PostsController extends Controller
         // $newImageName = time().'-'.$request->slug.'.'.$request->image->extension();
         // $request->image->move('storage/app/public/images',$newImageName);
         // Storage::disk('public/images')->put( $newImageName, File::get($request->image));
-        try {
+
+        // try {
             $path = $request->image->store('images', 'public');
             $post = new Posts();
             $post->slug = $request->title;
@@ -63,14 +59,15 @@ class PostsController extends Controller
             $post->user_id = Auth::id();
             $post->save();
 
-        } catch (\Exception $e) {
-            return back()
-                ->withInput()
-                ->withErrors($e);
-        }
-        return redirect()->route('posts');
+            // dd($post);
+        // } catch (\Exception $e) {
+        //     return back()
+        //         ->withInput()
+        //         ->withErrors($e);
+        // }
+        return redirect()->route('posts')->with('message', 'Error Retry');
     }
-   
+
     public function show(Posts $post)
     {
         //show a blog post
@@ -92,7 +89,7 @@ class PostsController extends Controller
     {
         //show form to edit the post
         $categories = Category::all();
-        return view('admin.edit', [
+        return view('blog.edit', [
             'post' => $post,
             'categories' => $categories,
         ]);

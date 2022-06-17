@@ -5,18 +5,13 @@
  
 <br><br>
 <a href="{{route('admin')}}" class="btn btn-success" data-placement="left">
-    <i class="bi bi-arrow-left" aria-hidden="true"></i>
-    <span class="hidden-xs">
-    Back
-    </span>
+    <i class="bi bi-arrow-left" aria-hidden="true"></i>Back
 </a>
+
 <div class="text-center">
     <a href="{{ route('createCategory')}}" class="btn btn-primary" >
-    <i class="bi bi-plus" aria-hidden="true"></i>
-    <span class="hidden-xs">
-    Add New Category
-    </span>
-</a>
+      <i class="bi bi-plus" aria-hidden="true"></i>Add New Category</span>
+    </a>
 </div>
 
 
