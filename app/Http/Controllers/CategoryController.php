@@ -41,7 +41,7 @@ class CategoryController extends Controller
             ->get();
         $category = Category::find($cat);
 
-    dd($videos);
+    // dd($videos);
         $name = $category->name;
 
         return view(
