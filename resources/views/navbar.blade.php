@@ -64,7 +64,7 @@
                 </li>
                 @else
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('login') }}">Account</a>
+                    <a class="nav-link" href="{{ route('login') }}"><i class="bi bi-person"></i>Account</a>
                 </li>
 
                 @endauth
