@@ -32,15 +32,13 @@
   <div class="bg-white">
     <div class="container">
       <div class="">
-        <a href="{{route('admin')}}" class="btn btn-success" data-toggle="tooltip" data-placement="left">
+        <a href="{{route('posts')}}" class="btn btn-success" data-toggle="tooltip" data-placement="left">
           <i class="bi bi-arrow-left" aria-hidden="true"></i>
-          <span class="hidden-xs">
-            Back
-          </span>
+          Back
         </a>
         <div class="row">
           <div class="col-md-8 col-md-offset-2">
-            <h4 class="text-center"> Create post </h4>
+            <h4 class="text-center"> Create a blog post for readers. </h4>
             <div class="card-body">
               <form action="{{route('store')}}" method="POST" enctype='multipart/form-data'>
                 @csrf
@@ -91,8 +89,8 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="content" class="form-label">Blog Content</label>
-                  <textarea  name="content" id="edito"></textarea>
+                  <label for="editor" class="form-label">Blog Content</label>
+                  <textarea  name="editor" id="editor"></textarea>
                    @error('content')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -122,8 +120,9 @@
   </div>
   <script>
 	const editor = Jodit.make('#editor', {
-    height: 370
+    height: 370,
   });
+  editor.value = '';
 </script>
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>

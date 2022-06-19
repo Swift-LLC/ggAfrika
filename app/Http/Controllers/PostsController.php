@@ -25,7 +25,9 @@ class PostsController extends Controller
     {
         $user = Auth::id();
         $posts = Posts::where('user_id', $user)->get();
-        $allPosts = Posts::all();
+
+        $allPosts = Posts::latest()->get();
+
         return view('admin.blogs', [
             'posts' => $posts,
             'allPosts' => $allPosts,
@@ -53,7 +55,7 @@ class PostsController extends Controller
             $post->slug = $request->title;
             $post->title = $request->title;
             $post->about = $request->description;
-            $post->body = $request->content;
+            $post->body = $request->editor;
             $post->category_id = $request->category;
             $post->potrait = $path;
             $post->user_id = Auth::id();

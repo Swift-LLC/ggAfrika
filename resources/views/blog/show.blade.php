@@ -18,12 +18,13 @@
 
 
 <div class="container pt-5">
-    <div class="display">
+
       <div class="text-center">
          <p class="lead"><a href="{{ url('/') }}" class="link">Home</a><i class="bi bi-slash"></i>{{ $post->title }}</p>
       </div>
-   </div>
+  
    <hr>
+
     <div class="row">
         <div class="col-lg-7 col-sm-12">
             <div class="card">
@@ -47,12 +48,12 @@
             @foreach ($related as $category)
             <div class="row no-gutters">
                 <div class="col">
-                    <h5>{{ $category->title }}</h5>
+                    <h5>{{ \Illuminate\Support\Str::limit($category->title, 20, $end='...') }}</h5>
                     <p>{{ \Illuminate\Support\Str::limit($category->about, 30, $end='...') }}</p>
-                    <a href="{{ route('show', $category->id ) }}" class="btn btn-warning">Read More</a>
+                    <a href="{{ route('show', $category->id ) }}" class="btn btn-warning">Read More <i class="bi bi-arrow-right-short"></i></a>
                 </div>
                 <div class="col">
-                    <img src="/storage/{{$category->potrait}}" alt="" class="card-img-top" style="height:150px;object-fit: cover;">
+                    <img src="/storage/{{$category->potrait}}" alt="{{ $category->title }}" class="card-img-top" style="height:150px;object-fit: cover;">
                 </div>
             </div>
             <hr>

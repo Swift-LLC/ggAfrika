@@ -29,25 +29,15 @@
 </style>
 
 <body>
-  <div class="">
     <div class="container">
-      <div class="">
-        <a href="{{route('admin')}}" class="btn btn-success" data-toggle="tooltip" data-placement="left" title="{!! trans('tooltips.post.create') !!}">
-          <i class="fas fa-plus" aria-hidden="true"></i>
-          <span class="hidden-xs">
-            Back To DashBoard
-          </span>
+        <a href="{{route('posts')}}" class="btn btn-success" data-toggle="tooltip" data-placement="left" >
+          <i class="bi bi-arrow-left" aria-hidden="true"></i>
+          Back
         </a>
-        <a href="#" class="btn btn-success" style="float:right;" data-toggle="modal" data-target="#form" data-placement="right" title="{!! trans('tooltips.post.create') !!}">
-          <i class="fas fa-plus" aria-hidden="true"></i>
-          <span class="hidden-xs">
-            Add New Category
-          </span>
-        </a>
-
+    
         <div class="row">
           <div class="col-md-8 col-md-offset-2">
-            <h1>Edit Post</h1>
+            <h4 class="text-center"> update a blog post for readers. </h4>
             <div class="card-body">
               <form action="{{route('update',$post->id)}}" method="POST" enctype='multipart/form-data'>
                 @csrf
@@ -69,7 +59,7 @@
 
                 <div class="form-group">
                   <label for="image" class="form-label"  class="form-label">blog Image </label>
-                  <input class="form-control form-control-lg" value="{{ $post->potrait }}" id="image" name="image" type="file">
+                  <input class="form-control form-control-file" value="{{ $post->potrait }}" id="image" name="image" type="file">
                 </div>
 
                 <div class="form-group">
@@ -79,7 +69,7 @@
 
                 <div class="form-group">
                   <label for="content"  class="form-label">Content</label>
-                  <textarea value="" name="content" id="content">{{$post->body}}</textarea>
+                  <textarea value="{{$post->body}}" name="content" id="editor">{{$post->body}}</textarea>
                 </div>
 
                 <div class="form-group">
@@ -105,6 +95,7 @@
 	const editor = Jodit.make('#editor', {
     height: 400
   });
+  editor.value = '';
 </script>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

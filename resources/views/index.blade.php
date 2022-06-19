@@ -371,15 +371,15 @@ border-radius: 50%;
                     <div class="col-lg-4  col-md-12 col-sm-12  ">
                         <div class="widget">
                             <div class="footer-text text-left">
-                                <h4 class="text-white">About GG Afrika</h4>
+                                <h4 class="text-white">GG Afrika</h4>
                                 <p>Take courage to invent the future. Make a difference. Let love be won and shared.</p>
                                 <h5 class="text-white"><b>Connect with us</b></h5>
                                 <div class="social">
                                     <a href="https://m.facebook.com/GG-Afrika-107646545139344" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i class="bi bi-facebook text-white"></i></a>&nbsp;
                                     <a href="#" data-toggle="tooltip" data-placement="bottom" title="Twitter"><i class="fa fa-twitter"></i></a>&nbsp;
                                     <a href="https://www.instagram.com/ggafrika/"  target="_blank" data-toggle="tooltip" data-placement="bottom" title="Instagram"><i class="bi bi-instagram text-white"></i></a>&nbsp;
-                                    <a href="https://google.com/?ggafrika" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Google Plus"><i class="bi bi-google text-white"></i></a>&nbsp;
-                                    <a href="https://"  target="_blank" data-toggle="tooltip" data-placement="bottom" title="YouTube"><i class="bi bi-youtube"></i></a>&nbsp;
+                                    <a href="https://google.com/q=?ggafrika" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Google Plus"><i class="bi bi-google text-white"></i></a>&nbsp;
+                                    <a href="https://"  target="_blank" data-toggle="tooltip" data-placement="bottom" title="YouTube"><i class="bi bi-youtube text-white"></i></a>&nbsp;
                                 </div>
                             </div>
                         </div>
@@ -387,9 +387,9 @@ border-radius: 50%;
                     <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
                         <div class="">
                             <h4 class="text-white">Contact Us </h4>
-                            <p class="link-widget"><a href="mailto:info@ggafrika.com" target="_blank"><i class="fa fa-envelope"></i> info@ggafrika.com </a></p>
-                            <p class="link-widget"><a href="#"><i class="fa fa-phone"></i> +254 701 700 144</a></p>
-                            <p class="link-widget"><a href="#"><i class="fa fa-home"></i> P.O Box 20100-00100 Nairobi, KE</a></p>
+                            <p class="link-widget"><a href="mailto:info@ggafrika.com" target="_blank"><i class="bi bi-envelope"></i> info@ggafrika.com </a></p>
+                            <p class="link-widget"><a href="tel:+254 701 700 144"><i class="bi bi-phone"></i> +254 701 700 144</a></p>
+                            <p class="link-widget"><a href="#"><i class="bi bi-house"></i> P.O Box 20100-00100 Nairobi, KE</a></p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
@@ -397,7 +397,7 @@ border-radius: 50%;
                             <h4 class="text-white">About Us </h4>
                                     <p class="link-widget"><a href="{{ route('about') }}">About GG Afrika</a></p>
                                     <p class="link-widget"><a href="{{ route('advertising')}}">Advertising</a></p>
-                                    <p class="link-widget"><a href="#">Write for us</a></p>
+                                    <p class="link-widget"><a href="{{ url('/') }}">Write for us</a></p>
                                     <p class="link-widget"><a href="{{ route('support')}}">Support & FAQs</a></p>
                         </div>
                     </div>
