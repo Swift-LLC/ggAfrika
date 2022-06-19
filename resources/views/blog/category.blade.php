@@ -28,8 +28,8 @@
    @foreach ($posts as $category)
    <div class="row no-gutters">
       <div class="col">
-         <h5>{{ \Illuminate\Support\Str::limit($category->title, 20, $end='...') }}</h5>
-         <p>{{ \Illuminate\Support\Str::limit($category->about, 30, $end='...') }}</p>
+         <h5>{{$category->title}}</h5>
+         <p>{{  \Illuminate\Support\Str::limit($category->about, 200, $end='...') }}</p>
          <a href="{{ route('show', $category->id ) }}" class="btn btn-warning">Read More <i class="bi bi-arrow-right-short"></i></a>
       </div>
       <div class="col">
