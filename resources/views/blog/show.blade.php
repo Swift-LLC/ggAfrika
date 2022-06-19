@@ -28,8 +28,8 @@
     <div class="row">
         <div class="col-lg-7 col-sm-12">
             <div class="card">
-                <div class="text-center">
-                        <h5 class="card-title">{{ $post->title }}</h5> <i class="bi bi-clock pri"></i><small> {{ $post->created_at }}</small>
+                <div class="text-center pt-2">
+                       <i class="bi bi-clock pri"></i><small> {{ $post->created_at }}</small>
                     </div>
                 <div class="justify">
                     <img src="/storage/{{$post->potrait}}" alt="{{ $post->title }}" class="card-img" style="height:200px; object-fit: cover;">
