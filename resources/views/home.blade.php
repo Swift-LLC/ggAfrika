@@ -52,7 +52,7 @@ Social media across Afrika to the world.The hub of future innovations and buddin
             <div class="card">
                <img style="height:200px; object-fit: cover;" src="/storage/{{$post->potrait}}" alt="{{ $post->title }}" class="card-img-top" >
                <div class="card-body">
-                     <h3 class="">{{ \Illuminate\Support\Str::limit($post->title, 20, $end='...') }}</h3>
+                     <h3 class="">{{ $post->title}}</h3>
                      <p>{{ \Illuminate\Support\Str::limit($post->about, 50, $end='...') }}</p>
                      <div class="d-flex space-between">
                         <small><i class="bi bi-pen"></i>{{$post->user->name}}</small>
@@ -74,7 +74,7 @@ Social media across Afrika to the world.The hub of future innovations and buddin
          <div class="card">
             <img style="height:200px; object-fit: cover;"  src="/storage/{{$post->potrait}}" alt="{{ $post->title }}" class="card-img-top"/>
             <div class="card-body">
-                     <h3>{{ \Illuminate\Support\Str::limit($post->title, 20, $end='...') }}</h3>
+                     <h3>{{ $post->title }}</h3>
                      <p>{{ \Illuminate\Support\Str::limit($post->about, 50, $end='...') }}</p>
                      <div class="d-flex space-between">
                         <small><i class="bi bi-pen"></i>{{$post->user->name}}</small>
