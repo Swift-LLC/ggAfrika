@@ -55,8 +55,8 @@
                         <span  ><img style="width:70px; height: 50px;" src="/storage/{{$allpost->potrait}}" alt="{{ $allpost->title}}"></span >
                       </td>
                       <td class="align-middle d-flex w-20 justify-content-between">
-                        <a href="{{route('edit',$allpost->id)}}" class="btn btn-primary" data-mdb-toggle="tooltip" title="Edit"><i class="fas fa-edit  me-3 "></i>Edit</a>
-                        <a href="{{route('show',['post'=>$allpost->id])}}" class="btn btn-info" data-mdb-toggle="tooltip" title="View"><i class="fas fa-eye  me-3"></i>View</a>
+                        <a href="{{route('edit',$allpost->id)}}" class="btn btn-primary" data-mdb-toggle="tooltip" title="Edit"><i class="bi bi-pencil-fill"></i>Edit</a>
+                        <a href="{{route('show',['post'=>$allpost->id])}}" class="btn btn-info" data-mdb-toggle="tooltip" title="View"><i class="bi bi-eye  me-3"></i>View</a>
                         <form method="POST" action="{{route('delete',['post'=>$allpost->id])}}">
                           @method('DELETE')
                           @csrf

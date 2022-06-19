@@ -70,6 +70,7 @@ class PostsController extends Controller
         return redirect()->route('posts')->with('message', 'Error Retry');
     }
 
+    //show a given post
     public function show(Posts $post)
     {
         //show a blog post
@@ -87,6 +88,8 @@ class PostsController extends Controller
             'posts' => $posts,
         ]);
     }
+
+    //edit a given post
     public function edit(Posts $post)
     {
         //show form to edit the post
@@ -96,6 +99,8 @@ class PostsController extends Controller
             'categories' => $categories,
         ]);
     }
+
+    //update the post.
     public function update(Request $request, $id)
     {
         $request->validate([
@@ -122,6 +127,7 @@ class PostsController extends Controller
         $posts->save();
         return redirect()->route('posts');
     }
+
     //Published toggle
     public function publish($id)
     {
@@ -136,6 +142,7 @@ class PostsController extends Controller
 
         return redirect()->route('posts');
     }
+    //delete a given post.
     public function destroy(Posts $post)
     {
         //delete a post
