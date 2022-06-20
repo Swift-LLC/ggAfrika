@@ -15,10 +15,9 @@ Social media across Afrika to the world.The hub of future innovations and buddin
                     <div class="carousel-item">
                         <img class="d-block " src="/storage/{{$post->potrait}}" alt="Beautiful Highlights" style="height:500px; object-fit: cover;" alt="{{ $post->title }}">
                         <div class="carousel-caption ">
-                           <a href="{{ route('show',$post->id ) }}" class="btn btn-warning">Read More <i class="bi bi-arrow-right-short"></i></a>
-                              <br><br>
                            <h5>{{ $post->title }}</h5> 
                            <p>{{ $post->about }}</p>
+                           <a href="{{ route('show',$post->id ) }}" class="btn btn-warning">Read More <i class="bi bi-arrow-right-short"></i></a>
                         </div>
                     </div>
                 @endforeach
@@ -46,14 +45,14 @@ Social media across Afrika to the world.The hub of future innovations and buddin
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="latest" role="tabpanel" aria-labelledby="home-tab">
      <div class="row">
-      @foreach ($posts as $post)
+      @forelse($posts as $post)
       @if ($post->published == 1)
-         <div class="col-lg-4 col-md-4 ">
+         <div class="col-lg-4 col-md-4 col-sm-12 ">
             <div class="card">
                <img style="height:200px; object-fit: cover;" src="/storage/{{$post->potrait}}" alt="{{ $post->title }}" class="card-img-top" >
                <div class="card-body">
                      <h3 class="">{{ $post->title}}</h3>
-                     <p>{{ \Illuminate\Support\Str::limit($post->about, 50, $end='...') }}</p>
+                     <p>{{ \Illuminate\Support\Str::limit($post->about, 90, $end='...') }}</p>
                      <div class="d-flex space-between">
                         <small><i class="bi bi-pen"></i>{{$post->user->name}}</small>
                         <a href="{{route('show',$post->id)}}" class="btn btn-warning">Read More	&#8594;</a>
@@ -62,20 +61,64 @@ Social media across Afrika to the world.The hub of future innovations and buddin
             </div>
          </div>
       @endif
-   @endforeach
+
+      @empty 
+
+           <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="card">
+               <img style="height:200px; object-fit: cover;" src="{{ asset('images/slide1.jpeg') }}" alt="Commodo error dolor" class="card-img-top" >
+               <div class="card-body">
+                     <h3 class="">Commodo error dolor</h3>
+                     <p>It is a long established fact that a reader will b...</p>
+                     <div class="d-flex space-between">
+                        <small><i class="bi bi-pen"></i>Admin</small>
+                        <a href="http://127.0.0.1:8000/blog/8" class="btn btn-warning">Read More &#8594;</a>
+                     </div>
+               </div>
+            </div>
+         </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="card">
+               <img style="height:200px; object-fit: cover;" src="/storage/images/f6NhRHorLWH5sxoNcONx9UcU3iCn2IIbIdOU5y3Y.jpg" alt="Perferendis modi min" class="card-img-top" >
+               <div class="card-body">
+                     <h3 class="">Perferendis modi min</h3>
+                     <p>It is a long established fact that a reader will b...</p>
+                     <div class="d-flex space-between">
+                        <small><i class="bi bi-pen"></i>Admin</small>
+                        <a href="http://127.0.0.1:8000/blog/9" class="btn btn-warning">Read More &#8594;</a>
+                     </div>
+               </div>
+            </div>
+         </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="card">
+               <img style="height:200px; object-fit: cover;" src="/storage/images/xhKw8dha2AcUs5X6b1S09GlZ4Ur2yYdEucZUdika.jpg" alt="Consequat Minima qu" class="card-img-top" >
+               <div class="card-body">
+                     <h3 class="">Consequat Minima qu</h3>
+                     <p>It is a long established fact that a reader will b...</p>
+                     <div class="d-flex space-between">
+                        <small><i class="bi bi-pen"></i>Admin</small>
+                        <a href="http://127.0.0.1:8000/blog/11" class="btn btn-warning">Read More &#8594;</a>
+                     </div>
+               </div>
+            </div>
+         </div>
+      @endforelse
    </div>
    <br />
 </div>
+
+<!-- Popular  -->
 <div class="tab-pane fade" id="popular" role="tabpanel" aria-labelledby="profile-tab">
    <div class="row">
-      @foreach ($popular as $post)
+      @forelse($popular as $post)
       @if ($post->published == 1)
-      <div class="col-lg-4 col-md-4 ">
+      <div class="col-lg-4 col-md-4 col-sm-12">
          <div class="card">
             <img style="height:200px; object-fit: cover;"  src="/storage/{{$post->potrait}}" alt="{{ $post->title }}" class="card-img-top"/>
             <div class="card-body">
                      <h3>{{ $post->title }}</h3>
-                     <p>{{ \Illuminate\Support\Str::limit($post->about, 50, $end='...') }}</p>
+                     <p>{{ \Illuminate\Support\Str::limit($post->about, 90, $end='...') }}</p>
                      <div class="d-flex space-between">
                         <small><i class="bi bi-pen"></i>{{$post->user->name}}</small>
                         <a href="{{route('show',$post->id)}}" class="btn btn-warning">Read More	&#8594;</a>
@@ -84,15 +127,59 @@ Social media across Afrika to the world.The hub of future innovations and buddin
          </div>
       </div>
       @endif
-   @endforeach
+
+      @empty 
+
+           <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="card">
+               <img style="height:200px; object-fit: cover;" src="/storage/images/uFkbWUG669FPxAbU6mHWBwqIE64q0ctvQx2z2bi2.jpg" alt="Commodo error dolor" class="card-img-top" >
+               <div class="card-body">
+                     <h3 class="">Commodo error dolor</h3>
+                     <p>It is a long established fact that a reader will b...</p>
+                     <div class="d-flex space-between">
+                        <small><i class="bi bi-pen"></i>Admin</small>
+                        <a href="http://127.0.0.1:8000/blog/8" class="btn btn-warning">Read More	&#8594;</a>
+                     </div>
+               </div>
+            </div>
+         </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="card">
+               <img style="height:200px; object-fit: cover;" src="/storage/images/f6NhRHorLWH5sxoNcONx9UcU3iCn2IIbIdOU5y3Y.jpg" alt="Perferendis modi min" class="card-img-top" >
+               <div class="card-body">
+                     <h3 class="">Perferendis modi min</h3>
+                     <p>It is a long established fact that a reader will b...</p>
+                     <div class="d-flex space-between">
+                        <small><i class="bi bi-pen"></i>Admin</small>
+                        <a href="http://127.0.0.1:8000/blog/9" class="btn btn-warning">Read More	&#8594;</a>
+                     </div>
+               </div>
+            </div>
+         </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="card">
+               <img style="height:200px; object-fit: cover;" src="/storage/images/xhKw8dha2AcUs5X6b1S09GlZ4Ur2yYdEucZUdika.jpg" alt="Consequat Minima qu" class="card-img-top" >
+               <div class="card-body">
+                     <h3 class="">Consequat Minima qu</h3>
+                     <p>It is a long established fact that a reader will b...</p>
+                     <div class="d-flex space-between">
+                        <small><i class="bi bi-pen"></i>Admin</small>
+                        <a href="http://127.0.0.1:8000/blog/11" class="btn btn-warning">Read More	&#8594;</a>
+                     </div>
+               </div>
+            </div>
+         </div>
+   @endforelse
   </div>
 </div>
 <br>
+
+<!-- Videos  -->
 <h3 class="text-center">Recent Videos </h3>
-<div class="row our_img">
+<div class="row">
       @foreach ($videos as $video)
       @if ($video->published == 1)
-         <div class="col-md-4 col-lg-4">
+         <div class="col-md-4 col-lg-4 col-sm-12">
             <div class="card">
                <div class="card-body">
                   <div class="embed-responsive embed-responsive-16by9">
@@ -110,7 +197,8 @@ Social media across Afrika to the world.The hub of future innovations and buddin
 </div>
 
 <br>
-   <!-- <section id="gallery" class="gallery ">
+<!-- Partners  -->
+   <!-- <section id="gallery" class="gallery">
       <div class="container" data-aos="fade-up">
         <div class="text-center">
           <h5>Partners</h5>
