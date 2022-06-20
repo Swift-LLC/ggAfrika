@@ -35,13 +35,15 @@ class CategoryController extends Controller
 
         $posts = Posts::with('categories')
             ->where('category_id', $cat)
+            ->latest()
             ->get();
-        $videos = Video::with('categories')
-            ->where('category_id', $cat)
+        $videos = Video::where('category_id', $cat)
+            ->latest()
             ->get();
+
         $category = Category::find($cat);
 
-    // dd($videos);
+        // dd($videos);
         $name = $category->name;
 
         return view(
@@ -73,7 +75,6 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-
         $cat = new Category();
         $cat->name = $request->name;
         $cat->save();

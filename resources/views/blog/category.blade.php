@@ -44,7 +44,7 @@
 <h3 class="text-center">{{ $name }} Videos </h3>
 <div class="row">
       @foreach ($videos as $video)
-      <!-- @if ($video->published == 1) --> 
+      @if ($video->published == 1) 
          <div class="col-md-4 col-lg-4">
             <div class="card">
                <div class="card-body">
@@ -55,7 +55,7 @@
                </div>
             </div>
          </div>
-      <!-- @endif -->
+      @endif
   @endforeach
 </div>
 </div>
