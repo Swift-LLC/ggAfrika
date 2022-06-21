@@ -16,7 +16,6 @@ Social media across Afrika to the world.The hub of future innovations and buddin
                         <img class="d-block " src="/storage/{{$post->potrait}}" alt="Beautiful Highlights" style="height:500px; object-fit: cover;" alt="{{ $post->title }}">
                         <div class="carousel-caption ">
                            <h5>{{ $post->title }}</h5> 
-                           <p>{{ $post->about }}</p>
                            <a href="{{ route('show',$post->id ) }}" class="btn btn-warning">Read More <i class="bi bi-arrow-right-short"></i></a>
                         </div>
                     </div>
@@ -31,7 +30,7 @@ Social media across Afrika to the world.The hub of future innovations and buddin
                 <span class="sr-only">Next</span>
             </a>
         </div>
-   <br><br>
+<br />
    <div class="container">
       <ul class="nav nav-tabs" id="myTab" role="tablist">
          <li class="nav-item">

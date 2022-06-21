@@ -308,10 +308,6 @@ border-radius: 50%;
     
 }
 
-.tab-link {
-  color: #ec971f;
-  
-}
         </style>
     </head>
     <body class="">
