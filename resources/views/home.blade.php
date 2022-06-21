@@ -48,7 +48,7 @@ Social media across Afrika to the world.The hub of future innovations and buddin
       @if ($post->published == 1)
          <div class="col-lg-4 col-md-4 col-sm-12 ">
             <div class="card">
-               <img style="height:200px; object-fit: cover;" src="/storage/{{$post->potrait}}" alt="{{ $post->title }}" class="card-img-top" >
+               <img style="height:200px; object-fit: cover;" src="/storage/{{$post->potrait}}" alt="{{ $post->title }}">
                <div class="card-body">
                      <h3 class="title">{{ $post->title}}</h3>
                      <p>{{ \Illuminate\Support\Str::limit($post->about, 90, $end='...') }}</p>

@@ -6,12 +6,12 @@
 
 @section('content')
 <style>
-      /* @media screen and (max-width: 468px) {
+      @media screen and (max-width: 468px) {
          .imej {
             visibility: hidden;
          }
          
-      } */
+      }
 </style>
 <br><br>
 
@@ -27,13 +27,13 @@
 
    @foreach ($posts as $category)
    <div class="row no-gutters">
-      <div class="col">
+      <div class="col-sm-12 col-lg-7 col-md-7">
          <h1 class="title">{{$category->title}}</h1>
          <p>{{  \Illuminate\Support\Str::limit($category->about, 200, $end='...') }}</p>
          <a href="{{ route('show', $category->id ) }}" class="btn btn-warning">Read More <i class="bi bi-arrow-right-short"></i></a>
       </div>
-      <div class="col">
-         <img src="/storage/{{$category->potrait}}" alt="{{ $category->title }}" style="height:150px; object-fit: cover; width: 200px;" class="card-img-top" >
+      <div class="col imej col-lg-5 col-md-5">
+         <img src="/storage/{{$category->potrait}}" alt="{{ $category->title }}" style="height:150px; object-fit: cover; width: 300px;" class="card-img-top" >
       </div>
    </div>
    <hr>
