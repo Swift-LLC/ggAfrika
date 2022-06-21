@@ -29,7 +29,7 @@
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
         <a class="navbar-brand" href="/">
-            <img src="{{asset('images/logo.jpeg')}}" style="width: 30px; height:20px; border-radius:50%;"  class="d-inline-block align-top" alt="">
+            <img src="https://i.postimg.cc/j2rTp7Hm/IMG-20220202-WA0008.jpg" style="width: 50px; height:49px; border-radius:50%;"  class="d-inline-block align-top" alt="">
         </a>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto"> 

@@ -312,7 +312,7 @@ border-radius: 50%;
             <nav class="navbar navbar-expand-lg fixed-top" >
                 <div class="container">
                     <a class="navbar-brand" href="{{ route('home') }}">
-                        <img src="https://i.postimg.cc/j2rTp7Hm/IMG-20220202-WA0008.jpg" style="width: 30px; height:20px; border-radius:50%;"  class="d-inline-block align-top" alt="ggafrika-logo"> 
+                        <img src="https://i.postimg.cc/j2rTp7Hm/IMG-20220202-WA0008.jpg" style="width: 50px; height:49px; border-radius:50%;"  class="d-inline-block align-center" alt="ggafrika-logo"> 
                         <span><b>GG.Afrika</b></span>
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" style="color: black; top: 10px;">
@@ -371,7 +371,7 @@ border-radius: 50%;
                     <div class="col-lg-4  col-md-12 col-sm-12  ">
                         <div class="widget">
                             <div class="footer-text text-left">
-                                <h4 class="text-white">GG Afrika</h4>
+                                <h4 class="text-white">GG AFRIKA</h4>
                                 <p>Take courage to invent the future. Make a difference. Let love be won and shared.</p>
                                 <h5 class="text-white"><b>Connect with us</b></h5>
                                 <div class="social">
@@ -386,7 +386,7 @@ border-radius: 50%;
                     </div>
                     <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
                         <div class="">
-                            <h4 class="text-white">Contact Us </h4>
+                            <h4 class="text-white">CONTACT US</h4>
                             <p class="link-widget"><a href="mailto:info@ggafrika.com" target="_blank"><i class="bi bi-envelope"></i> info@ggafrika.com </a></p>
                             <p class="link-widget"><a href="tel:+254 701 700 144"><i class="bi bi-phone"></i> +254 701 700 144</a></p>
                             <p class="link-widget"><a href="#"><i class="bi bi-house"></i> P.O Box 20100-00100 Nairobi, KE</a></p>
@@ -394,7 +394,7 @@ border-radius: 50%;
                     </div>
                     <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
                         <div class="">
-                            <h4 class="text-white">About Us </h4>
+                            <h4 class="text-white">ABOUT US</h4>
                                     <p class="link-widget"><a href="{{ route('about') }}">About GG Afrika</a></p>
                                     <p class="link-widget"><a href="{{ route('advertising')}}">Advertising</a></p>
                                     <p class="link-widget"><a href="{{ url('/') }}">Write for us</a></p>
