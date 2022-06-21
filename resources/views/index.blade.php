@@ -382,7 +382,7 @@ border-radius: 50%;
                             <div class="footer-text text-left">
                                 <h4 class="text-white title">GG AFRIKA</h4>
                                 <p>Take courage to invent the future. Make a difference. Let love be won and shared.</p>
-                                <h5 class="text-white"><b>Connect with us</b></h5>
+                                <h5 class="text-white title"><b>Connect with us</b></h5>
                                 <div class="social">
                                     <a href="https://m.facebook.com/GG-Afrika-107646545139344" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i class="bi bi-facebook text-white"></i></a>&nbsp;
                                     <a href="#" data-toggle="tooltip" data-placement="bottom" title="Twitter"><i class="fa fa-twitter"></i></a>&nbsp;
@@ -392,7 +392,7 @@ border-radius: 50%;
                                 </div>
                             </div>
                     </div>
-                    <br>
+                    <br> <br>
                     <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
                         <div class="">
                             <h4 class="text-white title">CONTACT US</h4>
