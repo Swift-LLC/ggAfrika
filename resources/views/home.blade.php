@@ -35,10 +35,10 @@ Social media across Afrika to the world.The hub of future innovations and buddin
    <div class="container">
       <ul class="nav nav-tabs" id="myTab" role="tablist">
          <li class="nav-item">
-            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#latest" role="tab" aria-controls="home" aria-selected="true">Latest</a>
+            <a class="nav-link active" style="color: #ec971f; font-weight: bold;" id="home-tab" data-toggle="tab" href="#latest" role="tab" aria-controls="home" aria-selected="true">Latest</a>
          </li>
          <li class="nav-item">
-            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#popular" role="tab" aria-controls="profile" aria-selected="false">Popular</a>
+            <a class="nav-link " style="color: #ec971f; font-weight: bold;"  id="profile-tab" data-toggle="tab" href="#popular" role="tab" aria-controls="profile" aria-selected="false">Popular</a>
          </li>
       </ul>
 <br>
