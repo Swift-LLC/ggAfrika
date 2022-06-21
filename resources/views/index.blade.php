@@ -65,6 +65,7 @@
 }
 .nav-link:hover{
     color: #000000;
+    text-decoration: underline;
 }
 
 .navbar-brand {
