@@ -20,7 +20,7 @@
 <div class="container pt-5">
 
       <div class="text-center">
-         <p class="lead"><a href="{{ url('/') }}" class="link">Home</a><i class="bi bi-slash"></i>{{ $post->title }}</p>
+         <h3 class="title"><a href="{{ url('/') }}" class="link">Home</a><i class="bi bi-slash"></i>{{ $post->title }}</h3>
       </div>
   
    <hr>
@@ -42,13 +42,13 @@
             </div>
         </div>
     <div class="col-lg-5 col-sm-12">
-        <h5 class="text-center">Related Posts</h5>
+        <h2 class="text-center title">Related Posts</h2>
         <div class="card">
             <div class="card-body">
             @foreach ($related as $category)
             <div class="row no-gutters">
                 <div class="col">
-                    <h5>{{ \Illuminate\Support\Str::limit($category->title, 20, $end='...') }}</h5>
+                    <h3 class="title">{{ \Illuminate\Support\Str::limit($category->title, 20, $end='...') }}</h3>
                     <p>{{ \Illuminate\Support\Str::limit($category->about, 30, $end='...') }}</p>
                     <a href="{{ route('show', $category->id ) }}" class="btn btn-warning">Read More <i class="bi bi-arrow-right-short"></i></a>
                 </div>

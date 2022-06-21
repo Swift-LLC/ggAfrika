@@ -15,7 +15,7 @@ Social media across Afrika to the world.The hub of future innovations and buddin
                     <div class="carousel-item">
                         <img class="d-block " src="/storage/{{$post->potrait}}" alt="Beautiful Highlights" style="height:500px; object-fit: cover;" alt="{{ $post->title }}">
                         <div class="carousel-caption ">
-                           <h5>{{ $post->title }}</h5> 
+                           <h4 class="title">{{ $post->title }}</h4> 
                            <a href="{{ route('show',$post->id ) }}" class="btn btn-warning">Read More <i class="bi bi-arrow-right-short"></i></a>
                         </div>
                     </div>
@@ -44,13 +44,13 @@ Social media across Afrika to the world.The hub of future innovations and buddin
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="latest" role="tabpanel" aria-labelledby="home-tab">
      <div class="row">
-      @forelse($posts as $post)
+      @foreach($posts as $post)
       @if ($post->published == 1)
          <div class="col-lg-4 col-md-4 col-sm-12 ">
             <div class="card">
                <img style="height:200px; object-fit: cover;" src="/storage/{{$post->potrait}}" alt="{{ $post->title }}" class="card-img-top" >
                <div class="card-body">
-                     <h3 class="">{{ $post->title}}</h3>
+                     <h3 class="title">{{ $post->title}}</h3>
                      <p>{{ \Illuminate\Support\Str::limit($post->about, 90, $end='...') }}</p>
                      <div class="d-flex space-between">
                         <small><i class="bi bi-pen"></i>{{$post->user->name}}</small>
@@ -60,49 +60,7 @@ Social media across Afrika to the world.The hub of future innovations and buddin
             </div>
          </div>
       @endif
-
-      @empty 
-
-           <div class="col-lg-4 col-md-4 col-sm-12">
-            <div class="card">
-               <img style="height:200px; object-fit: cover;" src="{{ asset('images/slide1.jpeg') }}" alt="Commodo error dolor" class="card-img-top" >
-               <div class="card-body">
-                     <h3 class="">Commodo error dolor</h3>
-                     <p>It is a long established fact that a reader will b...</p>
-                     <div class="d-flex space-between">
-                        <small><i class="bi bi-pen"></i>Admin</small>
-                        <a href="http://127.0.0.1:8000/blog/8" class="btn btn-warning">Read More &#8594;</a>
-                     </div>
-               </div>
-            </div>
-         </div>
-                        <div class="col-lg-4 col-md-4 col-sm-12">
-            <div class="card">
-               <img style="height:200px; object-fit: cover;" src="/storage/images/f6NhRHorLWH5sxoNcONx9UcU3iCn2IIbIdOU5y3Y.jpg" alt="Perferendis modi min" class="card-img-top" >
-               <div class="card-body">
-                     <h3 class="">Perferendis modi min</h3>
-                     <p>It is a long established fact that a reader will b...</p>
-                     <div class="d-flex space-between">
-                        <small><i class="bi bi-pen"></i>Admin</small>
-                        <a href="http://127.0.0.1:8000/blog/9" class="btn btn-warning">Read More &#8594;</a>
-                     </div>
-               </div>
-            </div>
-         </div>
-                        <div class="col-lg-4 col-md-4 col-sm-12">
-            <div class="card">
-               <img style="height:200px; object-fit: cover;" src="/storage/images/xhKw8dha2AcUs5X6b1S09GlZ4Ur2yYdEucZUdika.jpg" alt="Consequat Minima qu" class="card-img-top" >
-               <div class="card-body">
-                     <h3 class="">Consequat Minima qu</h3>
-                     <p>It is a long established fact that a reader will b...</p>
-                     <div class="d-flex space-between">
-                        <small><i class="bi bi-pen"></i>Admin</small>
-                        <a href="http://127.0.0.1:8000/blog/11" class="btn btn-warning">Read More &#8594;</a>
-                     </div>
-               </div>
-            </div>
-         </div>
-      @endforelse
+      @endforeach
    </div>
    <br />
 </div>
@@ -110,13 +68,13 @@ Social media across Afrika to the world.The hub of future innovations and buddin
 <!-- Popular  -->
 <div class="tab-pane fade" id="popular" role="tabpanel" aria-labelledby="profile-tab">
    <div class="row">
-      @forelse($popular as $post)
+      @foreach($popular as $post)
       @if ($post->published == 1)
       <div class="col-lg-4 col-md-4 col-sm-12">
          <div class="card">
             <img style="height:200px; object-fit: cover;"  src="/storage/{{$post->potrait}}" alt="{{ $post->title }}" class="card-img-top"/>
             <div class="card-body">
-                     <h3>{{ $post->title }}</h3>
+                     <h3 class="title">{{ $post->title }}</h3>
                      <p>{{ \Illuminate\Support\Str::limit($post->about, 90, $end='...') }}</p>
                      <div class="d-flex space-between">
                         <small><i class="bi bi-pen"></i>{{$post->user->name}}</small>
@@ -126,55 +84,13 @@ Social media across Afrika to the world.The hub of future innovations and buddin
          </div>
       </div>
       @endif
-
-      @empty 
-
-           <div class="col-lg-4 col-md-4 col-sm-12">
-            <div class="card">
-               <img style="height:200px; object-fit: cover;" src="/storage/images/uFkbWUG669FPxAbU6mHWBwqIE64q0ctvQx2z2bi2.jpg" alt="Commodo error dolor" class="card-img-top" >
-               <div class="card-body">
-                     <h3 class="">Commodo error dolor</h3>
-                     <p>It is a long established fact that a reader will b...</p>
-                     <div class="d-flex space-between">
-                        <small><i class="bi bi-pen"></i>Admin</small>
-                        <a href="http://127.0.0.1:8000/blog/8" class="btn btn-warning">Read More	&#8594;</a>
-                     </div>
-               </div>
-            </div>
-         </div>
-                        <div class="col-lg-4 col-md-4 col-sm-12">
-            <div class="card">
-               <img style="height:200px; object-fit: cover;" src="/storage/images/f6NhRHorLWH5sxoNcONx9UcU3iCn2IIbIdOU5y3Y.jpg" alt="Perferendis modi min" class="card-img-top" >
-               <div class="card-body">
-                     <h3 class="">Perferendis modi min</h3>
-                     <p>It is a long established fact that a reader will b...</p>
-                     <div class="d-flex space-between">
-                        <small><i class="bi bi-pen"></i>Admin</small>
-                        <a href="http://127.0.0.1:8000/blog/9" class="btn btn-warning">Read More	&#8594;</a>
-                     </div>
-               </div>
-            </div>
-         </div>
-                        <div class="col-lg-4 col-md-4 col-sm-12">
-            <div class="card">
-               <img style="height:200px; object-fit: cover;" src="/storage/images/xhKw8dha2AcUs5X6b1S09GlZ4Ur2yYdEucZUdika.jpg" alt="Consequat Minima qu" class="card-img-top" >
-               <div class="card-body">
-                     <h3 class="">Consequat Minima qu</h3>
-                     <p>It is a long established fact that a reader will b...</p>
-                     <div class="d-flex space-between">
-                        <small><i class="bi bi-pen"></i>Admin</small>
-                        <a href="http://127.0.0.1:8000/blog/11" class="btn btn-warning">Read More	&#8594;</a>
-                     </div>
-               </div>
-            </div>
-         </div>
-   @endforelse
+   @endforeach
   </div>
 </div>
 <br>
 
 <!-- Videos  -->
-<h3 class="text-center">Recent Videos </h3>
+<h3 class="text-center title">Recent Videos </h3>
 <div class="row">
       @foreach ($videos as $video)
       @if ($video->published == 1)
@@ -184,7 +100,7 @@ Social media across Afrika to the world.The hub of future innovations and buddin
                   <div class="embed-responsive embed-responsive-16by9">
                      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{$video->url}}" allowfullscreen></iframe>
                   </div>
-                  <p class="awesome padding_flot text-center">{{$video->name}}</p>
+                  <h3 class="title text-center">{{$video->name}}</h3>
                </div>
             </div>
          </div>

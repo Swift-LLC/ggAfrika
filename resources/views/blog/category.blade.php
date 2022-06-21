@@ -17,7 +17,7 @@
 
    <div class="display">
       <div class="text-center">
-         <p class="lead">Home<i class="bi bi-slash"></i>{{ $name }}</p>
+         <h3 class="title">Home<i class="bi bi-slash"></i>{{ $name }}</h3>
       </div>
    </div>
 
@@ -28,7 +28,7 @@
    @foreach ($posts as $category)
    <div class="row no-gutters">
       <div class="col">
-         <h5>{{$category->title}}</h5>
+         <h1 class="title">{{$category->title}}</h1>
          <p>{{  \Illuminate\Support\Str::limit($category->about, 200, $end='...') }}</p>
          <a href="{{ route('show', $category->id ) }}" class="btn btn-warning">Read More <i class="bi bi-arrow-right-short"></i></a>
       </div>
@@ -41,7 +41,7 @@
         
 
 
-<h3 class="text-center">{{ $name }} Videos </h3>
+<h2 class="text-center title">{{ $name }} Videos </h2>
 <div class="row">
       @foreach ($videos as $video)
       @if ($video->published == 1) 
@@ -51,7 +51,7 @@
                   <div class="embed-responsive embed-responsive-16by9">
                      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{$video->url}}" allowfullscreen></iframe>
                   </div>
-                  <p class="awesome padding_flot text-center">{{$video->name}}</p>
+                  <h3 class="title text-center">{{$video->name}}</h3>
                </div>
             </div>
          </div>

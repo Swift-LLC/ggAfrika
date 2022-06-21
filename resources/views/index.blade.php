@@ -14,6 +14,10 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=League+Gothic&display=swap" rel="stylesheet">
         <!-- Bootstrap core CSS -->
         <!-- CSS only --> 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
@@ -23,6 +27,10 @@
         <link rel="stylesheet" href="{{asset('css/resp.css')}}">
         <link href="{{asset('css/swiper-bundle.min.css')}}" rel="stylesheet">
         <style>
+
+          .title {
+            font-family: 'League Gothic', sans-serif !important;
+          }
             .btn-warning {
     color: #fff;
     background-color: #ec971f !important;
@@ -371,9 +379,8 @@ border-radius: 50%;
             <div class="container">
                 <div class="row" style="justify-content: center;">
                     <div class="col-lg-4  col-md-12 col-sm-12  ">
-                        <div class="widget">
                             <div class="footer-text text-left">
-                                <h4 class="text-white">GG AFRIKA</h4>
+                                <h4 class="text-white title">GG AFRIKA</h4>
                                 <p>Take courage to invent the future. Make a difference. Let love be won and shared.</p>
                                 <h5 class="text-white"><b>Connect with us</b></h5>
                                 <div class="social">
@@ -384,19 +391,20 @@ border-radius: 50%;
                                     <a href="https://"  target="_blank" data-toggle="tooltip" data-placement="bottom" title="YouTube"><i class="bi bi-youtube text-white"></i></a>&nbsp;
                                 </div>
                             </div>
-                        </div>
                     </div>
+                    <br>
                     <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
                         <div class="">
-                            <h4 class="text-white">CONTACT US</h4>
+                            <h4 class="text-white title">CONTACT US</h4>
                             <p class="link-widget"><a href="mailto:info@ggafrika.com" target="_blank"><i class="bi bi-envelope"></i> info@ggafrika.com </a></p>
                             <p class="link-widget"><a href="tel:+254 701 700 144"><i class="bi bi-phone"></i> +254 701 700 144</a></p>
                             <p class="link-widget"><a href="#"><i class="bi bi-house"></i> P.O Box 20100-00100 Nairobi, KE</a></p>
                         </div>
                     </div>
+                    <br>
                     <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
                         <div class="">
-                            <h4 class="text-white">ABOUT US</h4>
+                            <h4 class="text-white title">ABOUT US</h4>
                                     <p class="link-widget"><a href="{{ route('about') }}">About GG Afrika</a></p>
                                     <p class="link-widget"><a href="{{ route('advertising')}}">Advertising</a></p>
                                     <p class="link-widget"><a href="{{ url('/') }}">Write for us</a></p>
