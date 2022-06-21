@@ -142,6 +142,7 @@
 
 body {
     font-family: 'Varela Round', sans-serif;
+    min-height: 90vh;
   }
 #myBtn {
   display: none;
@@ -382,7 +383,7 @@ border-radius: 50%;
                             <div class="footer-text text-left">
                                 <h4 class="text-white title">GG AFRIKA</h4>
                                 <p>Take courage to invent the future. Make a difference. Let love be won and shared.</p>
-                                <h5 class="text-white title"><b>Connect with us</b></h5>
+                                <h4 class="text-white title">Connect with us</h4>
                                 <div class="social">
                                     <a href="https://m.facebook.com/GG-Afrika-107646545139344" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i class="bi bi-facebook text-white"></i></a>&nbsp;
                                     <a href="#" data-toggle="tooltip" data-placement="bottom" title="Twitter"><i class="fa fa-twitter"></i></a>&nbsp;
@@ -407,19 +408,24 @@ border-radius: 50%;
                             <h4 class="text-white title">ABOUT US</h4>
                                     <p class="link-widget"><a href="{{ route('about') }}">About GG Afrika</a></p>
                                     <p class="link-widget"><a href="{{ route('advertising')}}">Advertising</a></p>
-                                    <p class="link-widget"><a href="{{ url('/') }}">Write for us</a></p>
+                                    <p class="link-widget"><a href="{{ url('support') }}">Write for us</a></p>
                                     <p class="link-widget"><a href="{{ route('support')}}">Support & FAQs</a></p>
                         </div>
                     </div>
                 </div>
                 <br>
-                <div class="text-warning text-center">&copy; GG Afrika 2022-2030</a>.</div>
+                <div class="text-warning text-center">&copy; GG Afrika <span id="year"></span>.</div>
                 <br>
             </div>
         </footer>
+        
         <button onclick="topFunction()" id="myBtn" title="Go to top">&#8593;</button>
         </body>
             <script>
+            // Get Year
+            var d = new Date();
+            document.getElementById("year").innerHTML = d.getFullYear();
+            
             //Get the button
             var mybutton = document.getElementById("myBtn");
             // When the user scrolls down 20px from the top of the document, show the button

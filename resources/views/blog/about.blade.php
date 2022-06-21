@@ -5,17 +5,17 @@ About
 @endsection
 
 @section('content')
-<br><br>
-<div class="text-center">
-    <h1>About GG Afrika</h1>
-    <p>Tales of Afrika to the world.</p>
-    <br>
-    <p>Social Cultural fun facts</p>
-    <br>
-    <p>Heritage and Splendor</p>
-    <br>
-    <p>Keeping it music & entertainment </p>
-    <br>
-    <p>This is how to do business in Afrika</p>
+<br><br> <br><br>
+<div class="container">
+     <h1 class="title text-center">About GG Afrika</h1>
+    <img src="{{ asset('about.svg') }}" alt="About gg Afrika" style="height: 150px;" class="text-center">
+    <ul>
+        <li><p>Tales of Afrika to the world.</p></li>
+        <li><p>Social Cultural fun facts</p></li>
+        <li><p>Heritage and Splendor</p></li>
+        <li><p>Keeping it music & entertainment </p></li>
+        <li><p>This is how to do business in Afrika</p></li>
+    </ul>
+    
 </div>
 @endsection

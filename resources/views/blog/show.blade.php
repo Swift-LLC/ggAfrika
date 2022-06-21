@@ -14,6 +14,9 @@
     color: #ec971f;
     text-decoration: none;
    }
+   .show > img {
+    object-fit: cover;
+   }
 </style>
 
 
@@ -35,7 +38,7 @@
                     <img src="/storage/{{$post->potrait}}" alt="{{ $post->title }}" class="card-img" style="height:200px; object-fit: cover;">
                 </div>
                 <div class="card-body">
-                    <div class="container">
+                    <div class="container show">
                         {!!  $post->body  !!}
                     </div>
                 </div>

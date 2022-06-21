@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\DefaultPost;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,6 +14,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+    //     $defaultpost = [
+    //         'title'=>'Welcome to my blog',
+    //         'about'=>'This is my first blog',
+    //         'potrait' =>  
+    //     ];
     }
 }

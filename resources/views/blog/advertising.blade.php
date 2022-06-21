@@ -5,16 +5,16 @@ Advertising
 @section('content')
 <br><br><br>
 <div class="container-fluid text-center">
-    <h2>GG Afrika brings you closer to your prospective clients.</h2>
+    <img src="{{ asset('media.svg') }}" alt="Advertising" style="height: 150px;" class="text-center">
+    <h2 class="title">GG Afrika brings you closer to your prospective clients.</h2>
     <div class='text-center'>
-        <h3>To Advertise on the platform contact us.</h3>
+        <h3 class="title">To Advertise on the platform contact us.</h3>
         <div>
-            <p>Email us at</p>
-            <a href="mailto: info@ggafrika.com">info@ggafrika.com</a>
-            <br>
-            <p>Call For Assistance </p>
-            <p>+254 701 700 144</p>
-            <br>
+            <p>Reach us via</p>
+            <ul>
+                <li><a href="mailto: info@ggafrika.com" target="_blank" >info@ggafrika.com</a></li>
+                <li> <a href="tel: 254 701 700 144">+254 701 700 144</p></li>
+            </ul>
         </div>
     </div>
 </div>
