@@ -9,15 +9,11 @@ Social media across Afrika to the world.The hub of future innovations and buddin
       <div id="carouselExampleControls" class="carousel slide carousel-slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="d-block " src="https://i.postimg.cc/j2rTp7Hm/IMG-20220202-WA0008.jpg" alt="Beautiful Highlights" style="height:500px; object-fit: cover;">
+                    <img class="d-block " src="https://i.postimg.cc/j2rTp7Hm/IMG-20220202-WA0008.jpg" alt="Beautiful Highlights" style=" object-fit: cover;">
                 </div>
-                @foreach($posts as $post)
+                @foreach($slides as $slide)
                     <div class="carousel-item">
-                        <img class="d-block " src="/storage/{{$post->potrait}}" alt="Beautiful Highlights" style="height:500px; object-fit: cover;" alt="{{ $post->title }}">
-                        <div class="carousel-caption ">
-                           <h4 class="title">{{ $post->title }}</h4> 
-                           <a href="{{ route('show',$post->id ) }}" class="btn btn-warning">Read More <i class="bi bi-arrow-right-short"></i></a>
-                        </div>
+                        <img class="d-block " src="/storage/{{$slide->image}}" alt="Beautiful Highlights" style="object-fit: cover;" alt="{{ $slide->name }}">
                     </div>
                 @endforeach
             </div>

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Middleware\isAdmin;
+use App\Http\Controllers\SlideController;
 
 /*
 |--------------------------------------------------------------------------
@@ -182,4 +183,24 @@ Route::put('/admin/video/{post}/remove', [
     'publish',
 ])
     ->name('v_publish')
+    ->middleware('auth');
+
+//SLIDES
+Route::get('/all-slides', [SlideController::class, 'index'])
+    ->name('slides')
+    ->middleware('auth');
+Route::get('/slide/new', [SlideController::class, 'create'])
+    ->name('newSlide')
+    ->middleware('auth');
+Route::post('/slide/create', [SlideController::class, 'store'])
+    ->name('createSlide')
+    ->middleware('auth');
+Route::delete('/slide/delete/{slide}', [SlideController::class, 'destroy'])
+    ->name('deleteSlide')
+    ->middleware('auth');
+Route::put('/slide/publish/{slide}', [
+    App\Http\Controllers\SlideController::class,
+    'publish',
+])
+    ->name('s_publish')
     ->middleware('auth');

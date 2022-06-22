@@ -24,7 +24,7 @@
 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
         <link rel="stylesheet" href="{{asset('css/style2.css')}}">
-        <link rel="stylesheet" href="{{asset('css/resp.css')}}">
+        <!-- <link rel="stylesheet" href="{{asset('css/resp.css')}}"> -->
         <link href="{{asset('css/swiper-bundle.min.css')}}" rel="stylesheet">
         <style>
 
@@ -32,290 +32,292 @@
             font-family: 'League Gothic', sans-serif !important;
           }
             .btn-warning {
-    color: #fff;
-    background-color: #ec971f !important;
-    border-color: #ec971f;
-  }
+              color: #fff;
+              background-color: #ec971f !important;
+              border-color: #ec971f;
+            }
   
-  .btn-warning:hover {
-    color: #fff;
-    background-color: #ec971f;
-    border-color: #eb9316;
-  }
-.bg-warning {
-    background-color: #ec971f !important;
-}
-.card-header {
-    background-color: #ec971f !important;
-}
+            .btn-warning:hover {
+              color: #fff;
+              background-color: #ec971f;
+              border-color: #eb9316;
+            }
+            .bg-warning {
+                background-color: #ec971f !important;
+            }
+            .card-header {
+                background-color: #ec971f !important;
+            }
 
-.d-flex {
-    justify-content: space-between;
-}
-.link-widget > a  {
-    text-decoration: none;
-}
+            .d-flex {
+                justify-content: space-between;
+            }
+            .link-widget > a  {
+                text-decoration: none;
+            }
 
-.navbar {
-    background-color: #ec971f !important;
-    
-}
-.active-link {
-    color: #000;
-}
+            .navbar {
+                background-color: #ec971f !important;
+                
+            }
+            .active-link {
+                color: #000;
+            }
 
-.active-link:hover{
-    color: #ec971f;
-}
+            .active-link:hover{
+                color: #ec971f;
+            }
 
-.nav-link {
-    color: #000000;
-}
-.nav-link:hover{
-    color: #000000;
-    text-decoration: underline;
-}
+            .nav-link {
+                color: #000000;
+                text-transform: uppercase;
+                font-size: .9rem;
+            }
+            .nav-link:hover{
+                color: #000000;
+                text-decoration: underline;
+            }
 
-.navbar-brand {
-    color: #000000;
-}
-.navbar-brand:hover{
-    color: #000000;
-}
-.footer {
-    background-color: #000000;
-    /* min-height: fit-content; */
-    /* background-image: none; */
-    bottom: 0;
-    /* position: fixed; */
-}
-
-
-.footer p {
-    color: #999999 !important;
-}
-
-.footer a {
-    color: #999999 !important;
-}
+            .navbar-brand {
+                color: #000000;
+            }
+            .navbar-brand:hover{
+                color: #000000;
+            }
+            .footer {
+                background-color: #000000;
+                /* min-height: fit-content; */
+                /* background-image: none; */
+                bottom: 0;
+                /* position: fixed; */
+            }
 
 
+            .footer p {
+                color: #999999 !important;
+            }
 
-.bg-orange {
-    background-color: #ff6347 !important;
-}
-
-.footer a:hover,
-.footer .fa:hover,
-.footer .fa:focus {
-    color: #ec971f !important;
-}
-
-.text-warning {
-    color: #ec971f !important;
-}
-
-/* Partners Sections */
-.partners p {
-    margin-left: 20%;
-    margin-right: 20%;
-}
-.partners img {
-    width: 12.5em;
-    border-radius: 50%;
-    margin-top: 0.75em;
-    margin-left: 0.25em;
-    margin-bottom: 0.75em;
-}
-.partners ul li {
-    display: inline-flex;
-}
-@media (max-width: 722px) {
-    .partners img {
-        width: 10em;
-        border-radius: 50%;
-        margin-top: 0.75em;
-        margin-left: 0.1em;
-        margin-bottom: 0.75em;
-    }
-}
-
-body {
-    font-family: 'Varela Round', sans-serif;
-    min-height: 90vh;
-  }
-#myBtn {
-  display: none;
-  position: fixed;
-  bottom: 20px;
-  right: 30px;
-  z-index: 99;
-  font-size: 18px;
-  border: none;
-  outline: none;
-  background-color: #ec971f;
-  color: white;
-  cursor: pointer;
-  padding: 10px;
-  border-radius: 4px;
-}
-
-#myBtn:hover {
-  background-color: #ec971f;
-}
-.gallery {
-overflow: hidden;
-}
-.swiper-slider{
-width:10em;
-}
-.swiper-slide img{
-width:80%;
-border-radius: 50%;
-
-}
-.gallery .swiper-pagination {
-margin-top: 20px;
-position: relative;
-}
-.gallery .swiper-pagination .swiper-pagination-bullet {
-width: 12px;
-height: 12px;
-background-color: #fff;
-opacity: 1;
-border: 1px solid orange;
-}
-.gallery .swiper-pagination .swiper-pagination-bullet-active {
-background-color: orange;
-}
-.gallery .swiper-slide-active {
-text-align: center;
-}
-@media (min-width: 992px) {
-.gallery .swiper-wrapper {
-padding: 40px 0;
-}
+            .footer a {
+                color: #999999 !important;
+            }
 
 
-}
-@media (max-width:640px){
-  .swiper-slider{
-width:50px;
-}
-.swiper-slide img{
-width:50%;
-border-radius: 50%;
 
-}
-}
+            .bg-orange {
+                background-color: #ff6347 !important;
+            }
 
-/*--------------------------------------------------------------
-  # Testimonials
-  --------------------------------------------------------------*/
-  .testimonials .testimonials-carousel, .testimonials .testimonials-slider {
-    overflow: hidden;
-  }
-  .testimonials .testimonial-item {
-    box-sizing: content-box;
-    width:200px;
-    min-height: 100px;
-  }
-  .testimonials .testimonial-item .testimonial-img {
-    width: 100px;
-    border-radius: 50%;
-    padding:0px;
-    margin:0px;
-    position: relative;
-    z-index: 2;
-    border: 6px solid #fff;
-  }
-  .testimonials .testimonial-item {
-    font-size: 18px;
-    font-weight: bold;
-  
-    color: #111;
-  }
-  .testimonials .testimonial-item  {
-    font-size: 14px;
-    color: #999;
-    
-  }
-  .testimonials .testimonial-item .quote-icon-left, .testimonials .testimonial-item .quote-icon-right {
-    color: #b2e4e6;
-    font-size: 26px;
-  }
-  .testimonials .testimonial-item .quote-icon-left {
-    display: inline-block;
-    left: -5px;
-    position: relative;
-  }
-  .testimonials .testimonial-item .quote-icon-right {
-    display: inline-block;
-    right: -5px;
-    position: relative;
-    top: 10px;
-  }
+            .footer a:hover,
+            .footer .fa:hover,
+            .footer .fa:focus {
+                color: #ec971f !important;
+            }
 
-  .testimonials .swiper-pagination {
-    margin-top: 20px;
-    position: relative;
-  }
-  .testimonials .swiper-pagination .swiper-pagination-bullet {
-    width: 12px;
-    height: 12px;
-    background-color: #fff;
-    opacity: 1;
-    border: 1px solid #3fbbc0;
-  }
-  .testimonials .swiper-pagination .swiper-pagination-bullet-active {
-    background-color: #3fbbc0;
-  }
-  .carousel {
-          /* max-height: 600px; */
-          overflow: hidden;
-          margin:auto;
+            .text-warning {
+                color: #ec971f !important;
+            }
 
-      }
+            /* Partners Sections */
+            .partners p {
+                margin-left: 20%;
+                margin-right: 20%;
+            }
+            .partners img {
+                width: 12.5em;
+                border-radius: 50%;
+                margin-top: 0.75em;
+                margin-left: 0.25em;
+                margin-bottom: 0.75em;
+            }
+            .partners ul li {
+                display: inline-flex;
+            }
+            @media (max-width: 722px) {
+                .partners img {
+                    width: 10em;
+                    border-radius: 50%;
+                    margin-top: 0.75em;
+                    margin-left: 0.1em;
+                    margin-bottom: 0.75em;
+                }
+            }
 
-  @media only screen and (max-width: 768px){
-      
-      .carousel {
-      max-height: 500px;
-      overflow: hidden;
-      margin:auto;
-      }
-      .carousel-inner .carousel-item > img {
-          /* position: absolute; */
-          object-fit: cover;
-          height: 500px;
-          width:100%;
-      }
-  }
+            body {
+                font-family: 'Varela Round', sans-serif;
+                min-height: 90vh;
+              }
+            #myBtn {
+              display: none;
+              position: fixed;
+              bottom: 20px;
+              right: 30px;
+              z-index: 99;
+              font-size: 18px;
+              border: none;
+              outline: none;
+              background-color: #ec971f;
+              color: white;
+              cursor: pointer;
+              padding: 10px;
+              border-radius: 4px;
+            }
 
-  .carousel-inner .carousel-item > img {
-      /* position: absolute; */
-      object-fit: cover;
-      height: 500px;
-      width:100%;
-  } 
+            #myBtn:hover {
+              background-color: #ec971f;
+            }
+            .gallery {
+            overflow: hidden;
+            }
+            .swiper-slider{
+            width:10em;
+            }
+            .swiper-slide img{
+            width:80%;
+            border-radius: 50%;
 
-  .pagination > li > a,
-.pagination > li > span {
-    color: #ffffff;
-    background-color: #ec971f;
-}
+            }
+            .gallery .swiper-pagination {
+            margin-top: 20px;
+            position: relative;
+            }
+            .gallery .swiper-pagination .swiper-pagination-bullet {
+            width: 12px;
+            height: 12px;
+            background-color: #fff;
+            opacity: 1;
+            border: 1px solid orange;
+            }
+            .gallery .swiper-pagination .swiper-pagination-bullet-active {
+            background-color: orange;
+            }
+            .gallery .swiper-slide-active {
+            text-align: center;
+            }
+            @media (min-width: 992px) {
+            .gallery .swiper-wrapper {
+            padding: 40px 0;
+            }
 
-.pagination > .active > a,
-.pagination > .active > a:focus,
-.pagination > .active > a:hover,
-.pagination > .active > span,
-.pagination > .active > span:focus,
-.pagination > .active > span:hover {
-    background-color: #ec971f;
-    border-color: #ec971f;
-    color: #ffffff;
-    
-}
+
+            }
+            @media (max-width:640px){
+              .swiper-slider{
+            width:50px;
+            }
+            .swiper-slide img{
+            width:50%;
+            border-radius: 50%;
+
+            }
+            }
+
+            /*--------------------------------------------------------------
+              # Testimonials
+              --------------------------------------------------------------*/
+              .testimonials .testimonials-carousel, .testimonials .testimonials-slider {
+                overflow: hidden;
+              }
+              .testimonials .testimonial-item {
+                box-sizing: content-box;
+                width:200px;
+                min-height: 100px;
+              }
+              .testimonials .testimonial-item .testimonial-img {
+                width: 100px;
+                border-radius: 50%;
+                padding:0px;
+                margin:0px;
+                position: relative;
+                z-index: 2;
+                border: 6px solid #fff;
+              }
+              .testimonials .testimonial-item {
+                font-size: 18px;
+                font-weight: bold;
+              
+                color: #111;
+              }
+              .testimonials .testimonial-item  {
+                font-size: 14px;
+                color: #999;
+                
+              }
+              .testimonials .testimonial-item .quote-icon-left, .testimonials .testimonial-item .quote-icon-right {
+                color: #b2e4e6;
+                font-size: 26px;
+              }
+              .testimonials .testimonial-item .quote-icon-left {
+                display: inline-block;
+                left: -5px;
+                position: relative;
+              }
+              .testimonials .testimonial-item .quote-icon-right {
+                display: inline-block;
+                right: -5px;
+                position: relative;
+                top: 10px;
+              }
+
+              .testimonials .swiper-pagination {
+                margin-top: 20px;
+                position: relative;
+              }
+              .testimonials .swiper-pagination .swiper-pagination-bullet {
+                width: 12px;
+                height: 12px;
+                background-color: #fff;
+                opacity: 1;
+                border: 1px solid #3fbbc0;
+              }
+              .testimonials .swiper-pagination .swiper-pagination-bullet-active {
+                background-color: #3fbbc0;
+              }
+              .carousel {
+                      /* max-height: 600px; */
+                      overflow: hidden;
+                      margin:auto;
+
+                  }
+
+              @media only screen and (max-width: 768px){
+                  
+                  .carousel {
+                  /* max-height: 500px; */
+                  overflow: hidden;
+                  margin:auto;
+                  }
+                  .carousel-inner .carousel-item > img {
+                      /* position: absolute; */
+                      object-fit: cover;
+                      height: 600px;
+                      width:100%;
+                  }
+              }
+
+              .carousel-inner .carousel-item > img {
+                  /* position: absolute; */
+                  object-fit: cover;
+                  height: 600px;
+                  width:100%;
+              } 
+
+              .pagination > li > a,
+            .pagination > li > span {
+                color: #ffffff;
+                background-color: #ec971f;
+            }
+
+            .pagination > .active > a,
+            .pagination > .active > a:focus,
+            .pagination > .active > a:hover,
+            .pagination > .active > span,
+            .pagination > .active > span:focus,
+            .pagination > .active > span:hover {
+                background-color: #ec971f;
+                border-color: #ec971f;
+                color: #ffffff;
+                
+            }
 
         </style>
     </head>
@@ -323,13 +325,12 @@ border-radius: 50%;
             <nav class="navbar navbar-expand-lg fixed-top" >
                 <div class="container">
                     <a class="navbar-brand" href="{{ route('home') }}">
-                        <img src="https://i.postimg.cc/j2rTp7Hm/IMG-20220202-WA0008.jpg" style="width: 50px; height:49px; border-radius:50%;"  class="d-inline-block align-center" alt="ggafrika-logo"> 
-                        <span><b>GG.Afrika</b></span>
+                        <b>GG.Afrika</b>
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" style="color: black; top: 10px;">
                         <span><i class="bi bi-list"></i></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="collapse navbar-collapse justify-content-center" id="navbarCollapse">
                         <ul class="navbar-nav mr-auto">
                             @auth 
                             <li class="nav-item">

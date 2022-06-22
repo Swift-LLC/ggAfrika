@@ -36,7 +36,15 @@
                 Dashboard 
               </p>
             </a>
-          </li>   
+          </li> 
+           <li class="nav-item">
+            <a href="{{route('slides')}}" class="nav-link">
+              <i class="nav-icon bi bi-image"></i>
+              <p>
+                Slides
+              </p>
+            </a>
+          </li>  
           <li class="nav-item">
             <a href="{{route('posts')}}" class="nav-link">
               <i class="nav-icon bi bi-table"></i>

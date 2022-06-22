@@ -7,6 +7,7 @@ use App\Models\Posts;
 use App\Models\Video;
 use App\Models\Category;
 use App\Models\User;
+use App\Models\Slides;
 
 class HomeController extends Controller
 {
@@ -65,7 +66,11 @@ class HomeController extends Controller
         $popular = Posts::inRandomOrder('updated_at')
             ->take(6)
             ->get();
+
+        $slides = Slides::latest()->get();
+
         $videos = Video::paginate(3);
+
         $categories = Category::all();
         return view('home', [
             'post' => $post,
@@ -73,6 +78,7 @@ class HomeController extends Controller
             'videos' => $videos,
             'categories' => $categories,
             'popular' => $popular,
+            'slides' => $slides
         ]);
     }
 
@@ -81,6 +87,7 @@ class HomeController extends Controller
     {
         $post_count = Posts::all()->count();
         $admins = User::all()->count();
+        $slide_count = Slides::all()->count();
         $video_count = Video::all()->count();
         $ppost_count = Posts::all()
             ->where('published', '1')
@@ -93,6 +100,7 @@ class HomeController extends Controller
             'video_count' => $video_count,
             'ppost_count' => $ppost_count,
             'pvideo_count' => $pvideo_count,
+            'slide_count' => $slide_count,
             'admins' => $admins,
         ]);
     }
