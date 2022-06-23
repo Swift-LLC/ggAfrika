@@ -160,7 +160,7 @@ Route::post('/store/video', [
 ])
     ->name('store_video')
     ->middleware('auth');
-Route::get('/admin/videos', [
+Route::get('/videos', [
     App\Http\Controllers\VideoController::class,
     'index',
 ])

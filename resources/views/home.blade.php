@@ -112,7 +112,7 @@ Social media across Afrika to the world.The hub of future innovations and buddin
    <section id="gallery" class="gallery">
       <div class="container" data-aos="fade-up">
         <div class="text-center">
-          <h5 class="title">Partners</h5>
+          <h3 class="title">Partners</h3>
           <p>The best companies we work with to ensure you get Adventorous experience of Afrika</p>
         </div>
         <div class="gallery-slider swiper">

@@ -17,12 +17,21 @@
   <link rel="icon" type="image/png" sizes="32x32" href="{{asset('images/favicon-32x32.png')}}">
   <link rel="icon" type="image/png" sizes="16x16" href="{{asset('images/favicon-16x16.png')}}">
   <link rel="manifest" href="{{asset('images/site.webmanifest')}}">
+
+  <style>
+
+    @media only screen and (max-width: 768px) {
+        .menu {
+          visibility: hidden;
+        }
+    }
+  </style>
  
 </head>
 <body class="hold-transition dark-mode">
   <aside class="main-sidebar sidebar-light-primary  aside" id='mySidebar'>
     <a href="{{route('home')}}" class="brand-link">
-      <img src="{{asset('images/logo.jpeg')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <img src="{{asset('images/logo.jpeg')}}" alt="GG Afrika Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">ggAfrika</span>
        <a href="javascript:void(0)" class="closebtn " onclick="closeNav()">×</a>
     </a>
@@ -31,7 +40,7 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item menu-open">
             <a href="{{route('admin')}}" class="nav-link active">
-              <i class="nav-icon bi bi-tachometer-alt"></i>
+              <i class="nav-icon bi bi-tachometer"></i>
               <p>
                 Dashboard 
               </p>
@@ -91,18 +100,29 @@
   </aside>
 <div style="margin-left" id="main">
   <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__wobble" src="https://i.postimg.cc/j2rTp7Hm/IMG-20220202-WA0008.jpg" alt="AdminLTELogo" height="150" width="150">
+    <img class="animation__wobble" src="https://i.postimg.cc/j2rTp7Hm/IMG-20220202-WA0008.jpg" alt="gg afrika logo" height="150" width="150" style="border-radius: 50px;">
   </div>
   <nav class="main-header navbar navbar-expand navbar-dark" style="margin-left:0px;">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <div id="">
+        <div class="menu">
           <button class="openbtn" onclick="openNav()">☰</button>  
         </div>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="{{route('home')}}" class="nav-link">Home</a>
       </li>
+      <li class="nav-item d-none d-sm-inline-block ms-auto">
+                    <a  href="{{ route('logout') }}"
+                    class="nav-link"
+                        onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">
+                    {{ __('Logout') }}
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+                </li>
     </ul>
   </nav>
   <div class="content-wrapper" style="margin-left:0px;">

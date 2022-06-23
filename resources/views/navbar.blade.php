@@ -28,7 +28,7 @@
 <body class="">
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-        <a class="navbar-brand" href="/">
+        <a class="navbar-brand" href="{{ url('/') }}">
             <img src="https://i.postimg.cc/j2rTp7Hm/IMG-20220202-WA0008.jpg" style="width: 50px; height:49px; border-radius:50%;"  class="d-inline-block align-top" alt="">
         </a>
         <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -66,9 +66,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('login') }}"><i class="bi bi-person"></i>Account</a>
                 </li>
-
                 @endauth
-
                 @endif
                 </ul>
             </div>
