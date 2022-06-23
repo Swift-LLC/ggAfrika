@@ -109,10 +109,10 @@ Social media across Afrika to the world.The hub of future innovations and buddin
 
 <br>
 <!-- Partners  -->
-   <!-- <section id="gallery" class="gallery">
+   <section id="gallery" class="gallery">
       <div class="container" data-aos="fade-up">
         <div class="text-center">
-          <h5>Partners</h5>
+          <h5 class="title">Partners</h5>
           <p>The best companies we work with to ensure you get Adventorous experience of Afrika</p>
         </div>
         <div class="gallery-slider swiper">
@@ -127,7 +127,7 @@ Social media across Afrika to the world.The hub of future innovations and buddin
           <div class="swiper-pagination"></div>
         </div>
       </div>
-    </section> -->
+    </section>
 
 
 @endsection

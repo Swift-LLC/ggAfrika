@@ -114,7 +114,6 @@ class SlideController extends Controller
      */
     public function destroy(Slides $slides)
     {
-    
         $slides->delete();
 
         return redirect()

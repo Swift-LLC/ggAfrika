@@ -13,36 +13,43 @@
   <div class="row py-2">
     @foreach ($videos as $videos)
     <div class="col-md-4 col-lg-4 col-sm-12">
-      <h5 class="text-center">{{$videos->name}}</h5>
-      <div class="embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{$videos->url}}" allowfullscreen></iframe>
-      </div>
+      <div class="card">
+        <div class="card-body">
+            <h5 class="text-center">{{$videos->name}}</h5>
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{$videos->url}}" allowfullscreen></iframe>
+            </div>
+              
+            <br>
+            @if (Auth::user()->is_admin == 1)
+            <div class="d-flex text-center justify-content-between">
+              @if ($videos->published == 1)
+              <form method="POST" action="{{route('v_publish',['post'=>$videos->id])}}">
+                @method('PUT')
+                @csrf
+                <button type="submit"  class="btn btn-warning"  title="Remove"><i class="bi bi-x-octagon"></i> Remove</button>
+              </form>
+              @else
+              <form method="POST" action="{{route('v_publish',['post'=>$videos->id])}}">
+                @method('PUT')
+                @csrf
+                <button type="submit"  class="btn btn-success"  title="Remove"><i class="bi bi-upload"></i> Publish</button>
+              </form>
+              @endif
 
-      @if (Auth::user()->is_admin == 1)
-      <div class="d-flex text-center">
-        @if ($videos->published == 1)
-        <form method="POST" action="{{route('v_publish',['post'=>$videos->id])}}">
-          @method('PUT')
-          @csrf
-          <button type="submit"  class="btn btn-warning"  title="Remove"><i class="bi bi-ban"></i>remove</button>
-        </form>
-        @else
-        <form method="POST" action="{{route('v_publish',['post'=>$videos->id])}}">
-          @method('PUT')
-          @csrf
-          <button type="submit"  class="btn btn-success"  title="Remove"><i class="bi bi-upload"></i>publish</button>
-        </form>
-        @endif
-
-        <form method="POST" action="{{route('delete_video',['video'=>$videos->id])}}">
-          @method('DELETE')
-          @csrf
-          <button type="submit"  class="btn btn-danger"  title="Remove"><i class="bi bi-trash text-danger"></i>Delete</button>
-        </form>
+              <form method="POST" action="{{route('delete_video',['video'=>$videos->id])}}">
+                @method('DELETE')
+                @csrf
+                <button type="submit"  class="btn btn-danger"  title="Remove"><i class="bi bi-trash text-danger"></i> Delete</button>
+              </form>
+            </div>
+            @endif
+           
+        </div>
       </div>
-      @endif
     </div>
-      @endforeach
-    </div>
+     @endforeach
+  </div>
+</div>
 </div>
 @endsection

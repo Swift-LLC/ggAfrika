@@ -117,31 +117,6 @@
                 color: #ec971f !important;
             }
 
-            /* Partners Sections */
-            .partners p {
-                margin-left: 20%;
-                margin-right: 20%;
-            }
-            .partners img {
-                width: 12.5em;
-                border-radius: 50%;
-                margin-top: 0.75em;
-                margin-left: 0.25em;
-                margin-bottom: 0.75em;
-            }
-            .partners ul li {
-                display: inline-flex;
-            }
-            @media (max-width: 722px) {
-                .partners img {
-                    width: 10em;
-                    border-radius: 50%;
-                    margin-top: 0.75em;
-                    margin-left: 0.1em;
-                    margin-bottom: 0.75em;
-                }
-            }
-
             body {
                 font-family: 'Varela Round', sans-serif;
                 min-height: 90vh;
@@ -165,121 +140,56 @@
             #myBtn:hover {
               background-color: #ec971f;
             }
+
             .gallery {
-            overflow: hidden;
+              overflow: hidden;
             }
             .swiper-slider{
-            width:10em;
+              width:7em;
             }
             .swiper-slide img{
-            width:80%;
-            border-radius: 50%;
+              width:30%;
+              /* border-radius: 50%; */
 
             }
             .gallery .swiper-pagination {
-            margin-top: 20px;
-            position: relative;
+              margin-top: 20px;
+              position: relative;
             }
             .gallery .swiper-pagination .swiper-pagination-bullet {
-            width: 12px;
-            height: 12px;
-            background-color: #fff;
-            opacity: 1;
-            border: 1px solid orange;
+              width: 12px;
+              height: 12px;
+              background-color: #fff;
+              opacity: 1;
+              border: 1px solid orange;
             }
             .gallery .swiper-pagination .swiper-pagination-bullet-active {
-            background-color: orange;
+              background-color: orange;
             }
             .gallery .swiper-slide-active {
-            text-align: center;
+              text-align: center;
             }
-            @media (min-width: 992px) {
+
+            @media (max-width: 768px) {
             .gallery .swiper-wrapper {
-            padding: 40px 0;
+              padding: 40px 0;
             }
 
-
             }
-            @media (max-width:640px){
+            @media (max-width:468px){
               .swiper-slider{
-            width:50px;
+                  width:50px;
+              }
+              .swiper-slide > img{
+                width:50%;
+              }
             }
-            .swiper-slide img{
-            width:50%;
-            border-radius: 50%;
-
-            }
-            }
-
-            /*--------------------------------------------------------------
-              # Testimonials
-              --------------------------------------------------------------*/
-              .testimonials .testimonials-carousel, .testimonials .testimonials-slider {
+            .carousel {
                 overflow: hidden;
-              }
-              .testimonials .testimonial-item {
-                box-sizing: content-box;
-                width:200px;
-                min-height: 100px;
-              }
-              .testimonials .testimonial-item .testimonial-img {
-                width: 100px;
-                border-radius: 50%;
-                padding:0px;
-                margin:0px;
-                position: relative;
-                z-index: 2;
-                border: 6px solid #fff;
-              }
-              .testimonials .testimonial-item {
-                font-size: 18px;
-                font-weight: bold;
-              
-                color: #111;
-              }
-              .testimonials .testimonial-item  {
-                font-size: 14px;
-                color: #999;
-                
-              }
-              .testimonials .testimonial-item .quote-icon-left, .testimonials .testimonial-item .quote-icon-right {
-                color: #b2e4e6;
-                font-size: 26px;
-              }
-              .testimonials .testimonial-item .quote-icon-left {
-                display: inline-block;
-                left: -5px;
-                position: relative;
-              }
-              .testimonials .testimonial-item .quote-icon-right {
-                display: inline-block;
-                right: -5px;
-                position: relative;
-                top: 10px;
-              }
+                margin:auto;
+            }
 
-              .testimonials .swiper-pagination {
-                margin-top: 20px;
-                position: relative;
-              }
-              .testimonials .swiper-pagination .swiper-pagination-bullet {
-                width: 12px;
-                height: 12px;
-                background-color: #fff;
-                opacity: 1;
-                border: 1px solid #3fbbc0;
-              }
-              .testimonials .swiper-pagination .swiper-pagination-bullet-active {
-                background-color: #3fbbc0;
-              }
-              .carousel {
-                      /* max-height: 600px; */
-                      overflow: hidden;
-                      margin:auto;
-
-                  }
-
-              @media only screen and (max-width: 768px){
+            @media only screen and (max-width: 768px){
                   
                   .carousel {
                   /* max-height: 500px; */
@@ -301,7 +211,7 @@
                   width:100%;
               } 
 
-              .pagination > li > a,
+            .pagination > li > a,
             .pagination > li > span {
                 color: #ffffff;
                 background-color: #ec971f;
@@ -321,7 +231,7 @@
 
         </style>
     </head>
-    <body class="">
+    <body>
             <nav class="navbar navbar-expand-lg fixed-top" >
                 <div class="container">
                     <a class="navbar-brand" href="{{ route('home') }}">
@@ -374,7 +284,9 @@
                 </div>
             </nav>
             <br>
+
         @yield('content')
+
         <br>
 
         <footer class="footer pt-5">
@@ -419,87 +331,59 @@
                 <br>
             </div>
         </footer>
-        
         <button onclick="topFunction()" id="myBtn" title="Go to top">&#8593;</button>
-        </body>
+         <script src="{{asset('js/swiper-bundle.min.js')}}"></script>
             <script>
-            // Get Year
-            var d = new Date();
-            document.getElementById("year").innerHTML = d.getFullYear();
-            
-            //Get the button
-            var mybutton = document.getElementById("myBtn");
-            // When the user scrolls down 20px from the top of the document, show the button
-            window.onscroll = function() {scrollFunction()};
-            function scrollFunction() {
-              if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                mybutton.style.display = "block";
-              } else {
-                mybutton.style.display = "none";
+              // Get Year
+              var d = new Date();
+              document.getElementById("year").innerHTML = d.getFullYear();
+              
+              //Get the button
+              var mybutton = document.getElementById("myBtn");
+              // When the user scrolls down 20px from the top of the document, show the button
+              window.onscroll = function() {scrollFunction()};
+              function scrollFunction() {
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                  mybutton.style.display = "block";
+                } else {
+                  mybutton.style.display = "none";
+                }
+              }
+              // When the user clicks on the button, scroll to the top of the document
+              function topFunction() {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+              }
+          /* Clients Slider */
+          new Swiper('.gallery-slider', {
+            speed: 400,
+            loop: true,
+            centeredSlides: true,
+            autoplay: {
+              delay: 5000,
+              disableOnInteraction: false
+            },
+            slidesPerView: 'auto',
+            pagination: {
+              el: '.swiper-pagination',
+              type: 'bullets',
+              clickable: true
+            },
+            breakpoints: {
+              320: {
+                slidesPerView: 1,
+                spaceBetween: 20
+              },
+              640: {
+                slidesPerView: 2,
+                spaceBetween: 20
+              },
+              992: {
+                slidesPerView: 4,
+                spaceBetween: 5
               }
             }
-            // When the user clicks on the button, scroll to the top of the document
-            function topFunction() {
-              document.body.scrollTop = 0;
-              document.documentElement.scrollTop = 0;
-            }
+          });
             </script>
-            <script src="{{asset('dist/js/splide.min.js')}}"></script>
-            <script src="{{asset('js/jquery.min.js')}}"></script>
-            <script src="{{asset('js/tether.min.js')}}"></script>
-            <script src="{{asset('js/bootstrap.min.js')}}"></script>
-            <script src="{{asset('js/custom.js')}}"></script>
-            <script src="{{asset('js/swiper-bundle.min.js')}}"></script>
-        <script>
-            var splide1 = new Splide( '.splide1', {
-                type  : 'fade',
-                perPage: 1,
-                gap: 0,
-                padding: 0,
-                rewind: true,
-                width : '100vw',
-                height: 700,
-                cover: true,
-                autoplay: true,
-                interval: 4000
-                } );
-                splide1.mount();
-
-                 /**
-   * Testimonials slider
-   */
-/**
-   * Clients Slider
-   */
-      new Swiper('.gallery-slider', {
-        speed: 400,
-        loop: true,
-        centeredSlides: true,
-        autoplay: {
-          delay: 5000,
-          disableOnInteraction: false
-        },
-        slidesPerView: 'auto',
-        pagination: {
-          el: '.swiper-pagination',
-          type: 'bullets',
-          clickable: true
-        },
-        breakpoints: {
-          320: {
-            slidesPerView: 1,
-            spaceBetween: 20
-          },
-          640: {
-            slidesPerView: 2,
-            spaceBetween: 20
-          },
-          992: {
-            slidesPerView: 3,
-            spaceBetween: 10
-          }
-        }
-      });
-        </script>
     </body>
 </html>

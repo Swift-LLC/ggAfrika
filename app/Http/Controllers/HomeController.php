@@ -78,7 +78,7 @@ class HomeController extends Controller
             'videos' => $videos,
             'categories' => $categories,
             'popular' => $popular,
-            'slides' => $slides
+            'slides' => $slides,
         ]);
     }
 

@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Comment extends Model
 {
     use HasFactory;
+    
     public function posts()
     {
         return $this->belongsTo('App\Models\Posts');

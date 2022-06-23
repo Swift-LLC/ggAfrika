@@ -83,9 +83,9 @@ class RegisterController extends Controller
         return view('users.create');
     }
 
-    protected function updateform($id)
+    protected function updateform(User $user)
     {
-        $user = User::find($id);
+        // $user = User::find($id);
 
         return view('users.edit', compact('user'));
     }
@@ -96,17 +96,18 @@ class RegisterController extends Controller
         $user = User::find($id);
         $user->name = $request->name;
         $user->email = $request->email;
+
         $user->password = Hash::make($request->password);
 
         $user->update();
-        return redirect()->route('editors');
+        return redirect()->route('editors')->with('updated sucessfully');
     }
-    
+
     //delete user
     public function destroy(User $user)
     {
         //delete a post
         $user->delete();
-        return redirect()->route('editors');
+        return redirect()->route('editors')->with('user deleted!');
     }
 }

@@ -50,24 +50,26 @@ class PostsController extends Controller
         // Storage::disk('public/images')->put( $newImageName, File::get($request->image));
 
         // try {
-            $path = $request->image->store('images', 'public');
-            $post = new Posts();
-            $post->slug = $request->title;
-            $post->title = $request->title;
-            $post->about = $request->description;
-            $post->body = $request->editor;
-            $post->category_id = $request->category;
-            $post->potrait = $path;
-            $post->user_id = Auth::id();
-            $post->save();
+        $path = $request->image->store('images', 'public');
+        $post = new Posts();
+        $post->slug = $request->title;
+        $post->title = $request->title;
+        $post->about = $request->description;
+        $post->body = $request->editor;
+        $post->category_id = $request->category;
+        $post->potrait = $path;
+        $post->user_id = Auth::id();
+        $post->save();
 
-            // dd($post);
+        // dd($post);
         // } catch (\Exception $e) {
         //     return back()
         //         ->withInput()
         //         ->withErrors($e);
         // }
-        return redirect()->route('posts')->with('message', 'Error Retry');
+        return redirect()
+            ->route('posts')
+            ->with('message', 'Error Retry');
     }
 
     //show a given post

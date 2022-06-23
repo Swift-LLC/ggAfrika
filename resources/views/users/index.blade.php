@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('content')
-
+<br >
 @if (Auth::user()->is_admin == 1)
  <div class="container">
     <div class="">
@@ -9,8 +9,10 @@
       </a>
 
       <a href="{{ route('createform') }}" class="btn btn-success" style="float:right;" data-toggle="modal" data-target="#form" data-placement="right" title="{!! trans('tooltips.post.create') !!}">
-        <i class="bi bi-plus" aria-hidden="true"></i>Add New Editor/Admin
+        <i class="bi bi-plus" aria-hidden="true"></i>Add New Editor
       </a>
+
+      <br >
 
       <ul class="list-group">
           <table class="table mb-0" style="width: 1200px;">
@@ -26,7 +28,6 @@
                   @foreach ($users as $user)
                     <tr class="fw-normal">
                       <th>
-
                         <span class="ms-2">{{ $user->id}}</span>
                       </th>
                       <td class="align-middle">
@@ -37,7 +38,7 @@
                       </td>
                       <td class="align-middle d-flex w-20 justify-content-between">
                         @if (Auth::user()->id == $user->id )
-                          <a href="{{ route('updateform', ['user'=>$user->id])}}" class="btn btn-success" style="float:right;" data-placement="right">
+                          <a href="{{ route('updateform', Auth::user()->id )}}" class="btn btn-success" style="float:right;" data-placement="right">
                             <i class="bi bi-plus" aria-hidden="true"></i> Edit
                           </a>    
                         @else

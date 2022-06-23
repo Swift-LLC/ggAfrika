@@ -12,10 +12,11 @@ class Category extends Model
 
     public function posts()
     {
-        return $this->hasMany('App\Models\Posts','category_id');
+        return $this->hasMany('App\Models\Posts', 'category_id');
     }
-     public function videos()
+
+    public function videos()
     {
-        return $this->hasMany('App\Models\Videos','category_id');
+        return $this->hasMany('App\Models\Videos', 'category_id');
     }
 }

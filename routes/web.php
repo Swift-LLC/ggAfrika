@@ -42,7 +42,7 @@ Route::get('/admin', [App\Http\Controllers\HomeController::class, 'adminHome'])
     ->middleware('auth');
 
 //EDITORS
-Route::get('/admin/all-editor', [
+Route::get('/all-editors', [
     App\Http\Controllers\HomeController::class,
     'alleditors',
 ])
@@ -78,26 +78,26 @@ Route::get('/category/{category}', [
     App\Http\Controllers\CategoryController::class,
     'showcat',
 ])->name('showcat');
-Route::get('/admin/category', [
+Route::get('/blog-categories', [
     App\Http\Controllers\CategoryController::class,
     'allCategory',
 ])
     ->name('category')
     ->middleware('auth');
 
-Route::get('/admin/category/create', [
+Route::get('/category/create', [
     App\Http\Controllers\CategoryController::class,
     'create',
 ])
     ->name('createCategory')
     ->middleware('auth');
-Route::post('/admin/create/category', [
+Route::post('/create/category', [
     App\Http\Controllers\CategoryController::class,
     'store',
 ])
     ->name('newCat')
     ->middleware('auth');
-Route::delete('/admin/delete/category/{cat}', [
+Route::delete('/delete/category/{cat}', [
     App\Http\Controllers\CategoryController::class,
     'destroy',
 ])

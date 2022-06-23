@@ -3,3 +3,4 @@ Disallow:/admin
 
 User-agent: * 
 Allow: /
+

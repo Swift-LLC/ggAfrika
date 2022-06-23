@@ -17,25 +17,25 @@
              <img src="/storage/{{$slide->image}}" alt="{{$slide->name}}" class="card-img-top" style="object-fit: cover; height: 250px;">
              <div class="card-body">
                 <h5 class="text-center">{{$slide->name}}</h5>
-                <div class="d-flex space-content">
+                <div class="d-flex justify-content-between">
                     @if ($slide->published == 1)
                     <form method="POST" action="{{route('s_publish',['slide'=>$slide->id])}}">
                     @method('PUT')
                     @csrf
-                    <button type="submit"  class="btn btn-warning" ><i class="bi bi-ban"></i>remove</button>
+                    <button type="submit"  class="btn btn-warning" ><i class="bi bi-x-octagon"></i> Remove</button>
                     </form>
                     @else
                     <form method="POST" action="{{route('s_publish',['slide'=>$slide->id])}}">
                     @method('PUT')
                     @csrf
-                    <button type="submit"  class="btn btn-success" ><i class="bi bi-upload"></i>publish</button>
+                    <button type="submit"  class="btn btn-success" ><i class="bi bi-upload"></i> Publish</button>
                     </form>
                     @endif
 
                     <form method="POST" action="{{route('deleteSlide', ['slide' => $slide->id])}}">
                     @method('DELETE')
                     @csrf
-                    <button type="submit"  class="btn btn-danger"><i class="bi bi-trash text-danger"></i>Delete</button>
+                    <button type="submit"  class="btn btn-danger"><i class="bi bi-trash text-danger"></i> Delete</button>
                     </form>
                 </div>
              </div>

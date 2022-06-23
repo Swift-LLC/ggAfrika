@@ -9,7 +9,7 @@
 
 @if (Auth::user()->is_admin == 1)
  
-<section class="vh-100" style="background-color: #eee;">
+<section class="" style="background-color: #eee;">
     <div class="fluid-container py-5 h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-md-12 col-xl-10">
@@ -21,7 +21,7 @@
                     Create Post
                 </span>
             </a>
-            <h5 class="mb-0"><i class="bi bi-tasks me-2"></i>Blog Post List</h5>
+            <h5 class="mb-0 text-center"><i class="bi bi-tasks me-2"></i>Blog Post you can share to your users</h5>
             </div>
             <div class="card-body overflow-auto" data-mdb-perfect-scrollbar="true" style="position: relative; height: 400px; overflow-x:auto; ">
               <table class="table mb-0" style="width: 1200px;">
@@ -32,7 +32,7 @@
                     <th scope="col">Title</th>
                     <th scope="col">Writer</th>
                     <th scope="col">Image</th>
-                    <th scope="col">Actions</th>
+                    <th scope="col" width="280px">Actions</th>
                   </tr>
                 </thead>
                 <tbody>
