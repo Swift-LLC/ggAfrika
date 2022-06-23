@@ -18,7 +18,7 @@ class RouteServiceProvider extends ServiceProvider
      * @var string
      */
     public const HOME = '/';
-    public const EDITORS = '/admin/all-editor';
+    public const EDITORS = '/all-editors';
     
 
     /**

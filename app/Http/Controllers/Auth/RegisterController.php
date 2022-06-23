@@ -31,7 +31,6 @@ class RegisterController extends Controller
      * @var string
      */
     protected $redirectTo = RouteServiceProvider::EDITORS;
-
     /**
      * Create a new controller instance.
      *
@@ -76,6 +75,8 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+
+        return view('editors');
     }
 
     protected function show()
@@ -100,7 +101,9 @@ class RegisterController extends Controller
         $user->password = Hash::make($request->password);
 
         $user->update();
-        return redirect()->route('editors')->with('updated sucessfully');
+        return redirect()
+            ->route('editors')
+            ->with('updated sucessfully');
     }
 
     //delete user
@@ -108,6 +111,8 @@ class RegisterController extends Controller
     {
         //delete a post
         $user->delete();
-        return redirect()->route('editors')->with('user deleted!');
+        return redirect()
+            ->route('editors')
+            ->with('user deleted!');
     }
 }
