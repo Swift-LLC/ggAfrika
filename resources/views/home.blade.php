@@ -9,7 +9,7 @@ Social media across Afrika to the world.The hub of future innovations and buddin
       <div id="carouselExampleControls" class="carousel slide carousel-slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="d-block " src="https://i.postimg.cc/j2rTp7Hm/IMG-20220202-WA0008.jpg" alt="Beautiful Highlights" style=" object-fit: cover;">
+                    <img class="d-block " src="https://cdn.pixabay.com/photo/2015/09/17/16/40/africa-944465_960_720.jpg" alt="Beautiful Highlights" style=" object-fit: cover;">
                 </div>
                 @foreach($slides as $slide)
                     <div class="carousel-item">

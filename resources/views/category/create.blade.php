@@ -2,7 +2,7 @@
 @section("content")
 
 <div class="container px-2 py-2">
-  <form method="POST" action="{{route('newCat')}}" enctype='multipart/form-data'>
+  <form method="POST" action="{{route('newCat')}}">
     @csrf
     @method('POST')
     <div class="modal-body">

@@ -85,7 +85,7 @@ Route::get('/blog-categories', [
     ->name('category')
     ->middleware('auth');
 
-Route::get('/category/create', [
+Route::get('/blog-categories/create', [
     App\Http\Controllers\CategoryController::class,
     'create',
 ])

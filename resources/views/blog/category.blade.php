@@ -1,7 +1,7 @@
 @extends('index')
 
 @section('title')
-   {{$name}}
+   {{ $name }}
 @endsection
 
 @section('content')
@@ -12,12 +12,16 @@
          }
          
       }
+
+      .new{
+         color: #ec971f !important;
+      }
 </style>
 <br><br>
 
    <div class="display">
       <div class="text-center">
-         <h3 class="title">Home<i class="bi bi-slash"></i>{{ $name }}</h3>
+         <h3 class="title"><a href="{{ url('/') }}" class="new" >Home</a><i class="bi bi-slash"></i>{{ $name }}</h3>
       </div>
    </div>
 

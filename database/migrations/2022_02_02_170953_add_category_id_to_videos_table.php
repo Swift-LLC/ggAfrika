@@ -15,7 +15,7 @@ class AddCategoryIdToVideosTable extends Migration
     {
         Schema::table('videos', function (Blueprint $table) {
             //
-            $table->integer('category_id')->nullable()->after('published')->unsigned();
+            $table->string('category_name')->nullable()->after('published');
         });
     }
 

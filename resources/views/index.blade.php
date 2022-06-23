@@ -251,9 +251,10 @@
                                 <a class="nav-link" href="{{ route('home') }}">Home</a>
                             </li>
                             @endauth
-                            @foreach($categories as $categories)
+                            
+                            @foreach($categories as $category)
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('showcat', $categories->id) }}">{{$categories->name}} </a>
+                                <a class="nav-link" href="{{ route('showcat', $category->name) }}">{{ $category->name }}</a>
                             </li>
                             @endforeach
                         </ul>

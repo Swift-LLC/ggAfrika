@@ -53,7 +53,7 @@ class VideoController extends Controller
         $split_url = explode('/', $request->url);
         $video = new Video();
         $video->name = $request->name;
-        $video->category_id = $request->category;
+        $video->category_name = $request->category;
         $video->url = end($split_url);
         $video->save();
         return redirect()->route('allvideos');

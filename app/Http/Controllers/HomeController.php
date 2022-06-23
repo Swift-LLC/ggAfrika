@@ -72,6 +72,9 @@ class HomeController extends Controller
         $videos = Video::paginate(3);
 
         $categories = Category::all();
+
+        // dd($categories);
+
         return view('home', [
             'post' => $post,
             'posts' => $posts,

@@ -34,17 +34,19 @@ class CategoryController extends Controller
         $categories = Category::all();
 
         $posts = Posts::with('categories')
-            ->where('category_id', $cat)
-            ->latest()
-            ->get();
-        $videos = Video::where('category_id', $cat)
+            ->where('category_name', $cat)
             ->latest()
             ->get();
 
-        $category = Category::find($cat);
+        $videos = Video::where('category_name', $cat)
+            ->latest()
+            ->get();
 
-        // dd($videos);
-        $name = $category->name;
+        // $category = Category::where('name', $cat)->get();
+
+        // dd($category);
+
+        $name = $cat;
 
         return view(
             'blog.category',
@@ -63,7 +65,6 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
         return view('category.create');
     }
 
@@ -76,8 +77,11 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $cat = new Category();
+
         $cat->name = $request->name;
+
         $cat->save();
+
         return redirect()->route('category');
     }
 

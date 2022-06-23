@@ -16,7 +16,7 @@ class AddCategoryIdToPosts extends Migration
         Schema::table('posts', function (Blueprint $table) {
             //
             $table->string('slug')->unique()->after('id');
-            $table->integer('category_id')->nullable()->after('slug')->unsigned();
+            $table->string('category_name')->nullable()->after('slug');
             $table->string('Author')->nullable();
             
         });

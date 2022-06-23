@@ -14,7 +14,7 @@ class Posts extends Model
 
     public function categories()
     {
-        return $this->belongsTo('App\Models\Category', 'category_id');
+        return $this->belongsTo('App\Models\Category', 'category_name');
     }
     public function comments()
     {
