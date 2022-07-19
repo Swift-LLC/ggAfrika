@@ -39,34 +39,37 @@ class PostsController extends Controller
     {
         //show form to create a blog post
         $categories = Category::all();
-
         return view('blog.create', ['categories' => $categories]);
     }
 
     //store a new blog post
     public function store(Request $request)
     {
-        // $request->validate([
-        //     'title' => 'required',
-        //     'about' => 'required',
-        //     'body' => 'required',
-        // ]);
+        // $newImageName = time().'-'.$request->slug.'.'.$request->image->extension();
+        // $request->image->move('storage/app/public/images',$newImageName);
+        // Storage::disk('public/images')->put( $newImageName, File::get($request->image));
 
+        // try {
         $path = $request->image->store('images', 'public');
         $post = new Posts();
         $post->slug = $request->title;
         $post->title = $request->title;
         $post->about = $request->description;
         $post->body = $request->editor;
-        $post->category_name = $request->category;
+        $post->category_id = $request->category;
         $post->potrait = $path;
         $post->user_id = Auth::id();
-
         $post->save();
 
+        // dd($post);
+        // } catch (\Exception $e) {
+        //     return back()
+        //         ->withInput()
+        //         ->withErrors($e);
+        // }
         return redirect()
             ->route('posts')
-            ->with('blog added successfully');
+            ->with('message', 'Error Retry');
     }
 
     //show a given post
@@ -74,9 +77,8 @@ class PostsController extends Controller
     {
         //show a blog post
         $cat = $post->category_id;
-
         $related = Posts::with('categories')
-            ->where('category_name', $cat)
+            ->where('category_id', $cat)
             ->get();
         $posts = Posts::all();
 
@@ -108,7 +110,8 @@ class PostsController extends Controller
         ]);
         //save the edited post
         $posts = Posts::find($id);
-
+        // $newImageName = time().'-'.$request->slug.'.'.$request->image->extension();
+        // $request->image->move(public_path('images'),$newImageName);
         $image = '';
 
         if (isset($request->image)) {
@@ -124,7 +127,6 @@ class PostsController extends Controller
         $posts->potrait = $image;
         $posts->user_id = Auth::id();
         $posts->save();
-
         return redirect()->route('posts');
     }
 

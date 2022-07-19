@@ -3,16 +3,9 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>gg Afrika- @yield('title')</title>
-        <meta
-            name="keywords"
-            content="ggafrika, startup and smes,tourism and ecoculture,afrika,ggafrika market place, culture and heritage, gg la wananchi,"
-        />
-        <meta
-            name="description"
-            content="Social media across Afika to the world.The hub of future innovations and budding entreprenuers. Do take a snap, tour with us and be part if Afrika's journey.Market place for all outlooks and outfits for growing businesses. Young and budding entreprenuers advertise across Afrika.
-          Reach out, build, innovate and grow to your full potential.Take courage to invent the future. Make a difference. Let love be won and shared."
-        />
+        <title>GG Afrika - @yield('title')</title>
+        <meta name="keywords" content="gg afrika, startup and smes,tourism and ecoculture,afrika, ggafrika market place, culture and heritage, gg la wananchi,">
+        <meta name="description" content="Social interaction across Afrika and to the world.The hub of future innovations and budding entreprenuers.">
         <meta name="robots" content="index, follow" />
         <meta name="author" content="_wawiny" />
 
@@ -253,7 +246,7 @@
                     aria-label="Toggle navigation"
                     style="color: black; top: 10px"
                 >
-                    <span><i class="bi bi-list"></i></span>
+                    <span><i class="bi bi-list fw-bold"></i></span>
                 </button>
                 <div
                     class="collapse navbar-collapse justify-content-center"
@@ -261,11 +254,19 @@
                 >
                     <ul class="navbar-nav mr-auto">
                         @auth
+                        @if(Auth::user()->is_admin == 1)
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('admin') }}"
                                 >Dashboard</a
                             >
                         </li>
+                        @else
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('home') }}"
+                                >Home</a
+                            >
+                        </li>
+                        @endif
                         @else
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('home') }}"

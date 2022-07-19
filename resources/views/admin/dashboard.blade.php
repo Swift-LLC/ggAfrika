@@ -1,5 +1,6 @@
 @extends('layouts.admin')
 @section('content')
+@if(Auth::user()->is_admin == 1)
 <section class="content">
   <div class="content-header">
     <div class="container-fluid">
@@ -170,6 +171,11 @@
             </div>
     </div>
   </section>
-  <!-- /.content -->
+@else
+
+<p class="lead text-danger"><i class="bi bi-warning"></i>Unauthorised</a></p>
+<img src="{{asset('denied.svg') }}" alt="">
+
+@endif
 
 @endsection

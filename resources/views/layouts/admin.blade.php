@@ -1,3 +1,5 @@
+@if(Auth::user()->is_admin == 1)
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -154,4 +156,12 @@ function closeNav() {
 }
 </script>
 </body>
+@else 
+
+<div class="text-center">
+
+@yield('content')
+</div>
+
+@endif
 </html>

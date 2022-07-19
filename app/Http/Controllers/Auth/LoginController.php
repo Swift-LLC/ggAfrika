@@ -55,7 +55,7 @@ class LoginController extends Controller
                 'password' => $input['password'],
             ])
         ) {
-            return redirect()->route('admin');
+            return redirect()->route('home');
         } else {
             return Redirect::back()->withErrors([
                 'Wrong Login credential, try again!!',
