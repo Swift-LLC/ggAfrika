@@ -36,10 +36,10 @@ class RegisterController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
 
     /**
      * Get a validator for an incoming registration request.
@@ -78,6 +78,38 @@ class RegisterController extends Controller
 
         return view('editors');
     }
+
+
+    /**
+     * Create a new user instance after a valid registration.
+     *
+     * @param  array  $data
+     * @return \App\Models\User
+     */
+    protected function adminCreate(Request $request)
+    {
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => [
+                'required',
+                'string',
+                'email',
+                'max:255',
+                'unique:users',
+            ],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ]);
+
+        $user = new User;
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->name);
+
+        $user->save();
+
+        return view('editors.index');
+    }
+
 
     protected function show()
     {

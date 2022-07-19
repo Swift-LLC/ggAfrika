@@ -52,6 +52,17 @@ class HomeController extends Controller
         return view('blog.advertising', ['categories' => $categories]);
     }
 
+    public function policy()
+    {
+        
+        return view('blog.policy');
+    }
+    public function terms()
+    {
+        
+        return view('blog.terms');
+    }
+
     //home page
     public function index()
     {

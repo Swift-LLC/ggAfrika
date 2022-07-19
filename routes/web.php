@@ -25,6 +25,14 @@ Route::get('/about', [
     App\Http\Controllers\HomeController::class,
     'about',
 ])->name('about');
+Route::get('/terms', [
+    App\Http\Controllers\HomeController::class,
+    'terms',
+])->name('terms');
+Route::get('/policy', [
+    App\Http\Controllers\HomeController::class,
+    'policy',
+])->name('policy');
 Route::get('/support', [
     App\Http\Controllers\HomeController::class,
     'support',
@@ -54,6 +62,13 @@ Route::get('/editors/create', [
 ])
     ->name('createform')
     ->middleware('auth');
+    Route::post('/editors/new', [
+        App\Http\Controllers\Auth\RegisterController::class,
+        'adminCreate',
+    ])
+        ->name('adminCreate')
+        ->middleware('auth');
+
 Route::get('/editors/edit/{id}', [
     App\Http\Controllers\Auth\RegisterController::class,
     'updateform',

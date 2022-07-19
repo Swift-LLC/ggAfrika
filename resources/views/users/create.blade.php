@@ -7,7 +7,7 @@
         <i class="bi bi-arrow-left" aria-hidden="true"></i>Back
       </a>
       
-    <form method="POST" action="{{ route('register') }}">
+    <form method="POST" action="{{ route('adminCreate') }}">
         @csrf
         <div class="form-group">
             <div class="row mb-3">
