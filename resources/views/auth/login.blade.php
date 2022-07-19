@@ -1,4 +1,4 @@
-@extends('navbar') @section('content') <br /><br /><br />
+@extends('navbar') @section('content') <br />
 <style>
     input {
         border: #000 solid 1px;

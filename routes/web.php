@@ -25,6 +25,14 @@ Route::get('/about', [
     App\Http\Controllers\HomeController::class,
     'about',
 ])->name('about');
+Route::get('/terms', [
+    App\Http\Controllers\HomeController::class,
+    'terms',
+])->name('terms');
+Route::get('/policy', [
+    App\Http\Controllers\HomeController::class,
+    'policy',
+])->name('policy');
 Route::get('/support', [
     App\Http\Controllers\HomeController::class,
     'support',

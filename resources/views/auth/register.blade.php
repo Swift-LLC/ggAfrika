@@ -1,4 +1,4 @@
-@extends('navbar') @section('content') <br />
+@extends('navbar') @section('content') 
 <style>
     ::placeholder {
         font-weight: 300;
