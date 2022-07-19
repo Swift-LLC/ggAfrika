@@ -5,9 +5,9 @@
         font-size: .9rem;
     }
 </style>
-<div class="container">
+<div class="container-fluid">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-8 col-sm-12">
             <div class="pb-2">
                 <div class="text-center pb-1">
                     <h5 style="font-weight: 900; font-size: 1.2rem;">
@@ -32,7 +32,7 @@
                                 ><b>{{ __('What\'s your email?') }}</b></small
                             >
 
-                            <div class="" style="width: 390px">
+                            <div class="w-100" >
                                 <input
                                     id="email"
                                     type="email"
@@ -58,7 +58,7 @@
                                 ><b>{{ __('Create Password') }}</b></small
                             >
 
-                            <div class="" style="width: 390px">
+                            <div class="w-100" >
                                 <input
                                     id="password"
                                     type="password"
@@ -84,7 +84,7 @@
                                 ><b>{{ __('Confirm Password') }}</b></small
                             >
 
-                            <div class="" style="width: 390px">
+                            <div class="w-100" >
                                 <input
                                     id="password"
                                     type="password"
@@ -108,7 +108,7 @@
                                 ><b>{{ __('What\'s your Name?') }}</b> <small class="text-center fw-light"> (This appears on your profile)</small></small
                             >
 
-                            <div class="" style="width: 390px">
+                            <div class="w-100" >
                                 <input
                                     id="name"
                                     type="text"
@@ -131,7 +131,7 @@
                          
 
                         <div class="offset-md-3">
-                            <div class="" style="width: 500px;">
+                            <div class="w-100" >
                                 <small>By clicking on sign-up, you agree to Spotify's <a href="{{route('terms')}}">Terms and Conditions of Use</a>.
                                     <br><br> 
 To learn more about how GG Afrika collects, uses, shares and protects your personal data, please see ggAfrika's  <a href="{{ route('policy') }}">Privacy Policy</a>.</small>

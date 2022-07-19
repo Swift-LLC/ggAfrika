@@ -238,7 +238,7 @@
             }
         </style>
     </head>
-<body class="">
+<body class="h-100">
     <nav class="navbar navbar-expand-lg ">
         <div class="container justify-content-center">
             <h2 class="text-center">GG Afrika</h2>

@@ -6,7 +6,7 @@
 </style>
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-8 col-sm-12">
             <div class="pb-2">
                 <div class="text-center pb-3">
                     <b>{{ __('To Continue Login to GG Afrika') }}</b>
@@ -24,12 +24,12 @@
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
-                        <div class="form-group offset-md-3">
+                        <div class="form-group offset-md-2">
                             <small for="email" class="form-label"
                                 ><b>{{ __('Email address') }}</b></small
                             >
 
-                            <div class="" style="width: 390px">
+                            <div class="w-100" >
                                 <input
                                     id="email"
                                     type="email"
@@ -48,12 +48,12 @@
                             </div>
                         </div>
 
-                        <div class="form-group offset-md-3 ">
+                        <div class="form-group offset-md-2">
                             <small for="password" class="form-label"
                                 ><b>{{ __('Password') }}</b></small
                             >
 
-                            <div class="pb-2" style="width: 390px">
+                            <div class="pb-2 w-100">
                                 <input
                                     id="password"
                                     type="password"
@@ -83,7 +83,7 @@
                         </div>
 
                         <div class="row offset-md-3">
-                            <div class="col">
+                            <div class="col-6">
                                 <div
                                     class="form-check"
                                     style="margin-left: 10px"
@@ -101,7 +101,7 @@
                                     </label>
                                 </div>
                             </div>
-                            <div class="col">
+                            <div class="col-6">
                                 <div class="" >
                                     <button
                                         type="submit"
