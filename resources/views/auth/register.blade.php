@@ -27,14 +27,15 @@
                 </h4>
                 @endif
                 <div class="card-body px-2 pt-2">
-                    <form method="POST" action="{{ route('login') }}">
+                    <form method="POST" action="{{ route('register') }}">
                         @csrf
 
-                        <div class="form-group offset-md-3">
+                        <div class="form-group offset-md-2">
+                            <label for='email'>
                             <small for="email" class="form-label"
                                 ><b>{{ __('What\'s your email?') }}</b></small
                             >
-
+                        </label>
                             <div class="w-100">
                                 <input
                                     id="email"
@@ -56,11 +57,12 @@
                             </div>
                         </div>
 
-                        <div class="form-group offset-md-3">
-                            <small for="password" class="form-label"
+                        <div class="form-group offset-md-2">
+                            <label for="password">
+                            <small  class="form-label"
                                 ><b>{{ __('Create Password') }}</b></small
                             >
-
+                        </label>
                             <div class="w-100">
                                 <input
                                     id="password"
@@ -80,23 +82,24 @@
                             </div>
                         </div>
 
-                        <div class="form-group offset-md-3">
+                        <div class="form-group offset-md-2">
+                            <label for="password-confirm">
                             <small for="password" class="form-label"
                                 ><b>{{ __('Confirm Password') }}</b></small
                             >
-
+                        </label>
                             <div class="w-100">
                                 <input
                                     id="password"
                                     type="password"
                                     class="form-control @error('password') is-invalid @enderror"
-                                    name="password"
+                                    name="password_confirmation"
                                     placeholder="Re-enter the password"
                                     required
                                     autocomplete="new-password"
                                 />
 
-                                @error('password')
+                                @error('password-confirm')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
@@ -104,20 +107,21 @@
                             </div>
                         </div>
 
-                        <div class="form-group offset-md-3">
-                            <small for="email" class="form-label"
+                        <div class="form-group offset-md-2">
+                            <label for="name">
+                            <small class="form-label"
                                 ><b>{{ __('What\'s your Name?') }}</b>
                                 <small class="text-center fw-light">
                                     (This appears on your profile)</small
                                 ></small
                             >
-
+                        </label>
                             <div class="w-100">
                                 <input
                                     id="name"
                                     type="text"
                                     class="form-control @error('name') is-invalid @enderror"
-                                    name="email"
+                                    name="name"
                                     value="{{ old('name') }}"
                                     required
                                     placeholder="Enter a profile name"
@@ -131,7 +135,7 @@
                             </div>
                         </div>
 
-                        <div class="offset-md-3">
+                        <div class="offset-md-2">
                             <div class="w-100">
                                 <small
                                     >By clicking on sign-up, you agree to

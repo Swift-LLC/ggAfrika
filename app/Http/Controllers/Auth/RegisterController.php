@@ -76,7 +76,7 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
 
-        return view('editors');
+        return view('home');
     }
 
 
