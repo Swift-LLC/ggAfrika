@@ -212,3 +212,7 @@ Route::put('/slide/publish/{slide}', [
 ])
     ->name('s_publish')
     ->middleware('auth');
+
+
+    Route::get('/redirect', 'Auth\LoginController@redirectToProvider');
+    Route::get('/callback', 'Auth\LoginController@handleProviderCallback');
