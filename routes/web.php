@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Middleware\isAdmin;
 use App\Http\Controllers\SlideController;
+use Illuminate\Http\Request;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,11 +18,37 @@ use App\Http\Controllers\SlideController;
 |
 */
 
-Auth::routes();
+Auth::routes(['auth' => true, 'verify' => true]);
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name(
+//EMAIL VERIFICATIONS.
+Route::get('/email-verification/error', 'Auth\VerificationController@error')->name('email-verification.error');
+
+
+Route::get('/email/verify', function () {
+    return view('auth.verify');
+})->middleware('auth')->name('verification.notice');
+
+
+ //link verification
+Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+    $request->fulfill();
+ 
+    return redirect('/');
+})->middleware(['auth', 'signed'])->name('verification.verify');
+
+
+
+// resending emails
+Route::post('/email/verification-notification', function (Request $request) {
+    $request->user()->sendEmailVerificationNotification();
+ 
+    return back()->with('message', 'Verification link sent!');
+})->middleware(['auth', 'throttle:6,1'])->name('verification.send');
+
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->middleware('verified')->name(
     'home'
 );
+
 Route::get('/about', [
     App\Http\Controllers\HomeController::class,
     'about',

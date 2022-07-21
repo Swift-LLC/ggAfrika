@@ -12,6 +12,12 @@ use App\Models\Video;
 
 class PostsController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware(['auth', 'verified']);
+    }
+
     public function index()
     {
         //show all blog posts
