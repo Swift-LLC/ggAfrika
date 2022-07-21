@@ -241,11 +241,11 @@
 <body class="h-100">
     <nav class="navbar navbar-expand-lg ">
         <div class="container justify-content-center">
-            <h2 class="text-center">GG Afrika</h2>
+            <h2 class="text-center title"><img src="{{asset('images/logo.jpeg') }}" alt="gg afrika" style="width: 50px; height: 40px; border-radius: 50px;">GG Afrika</h2>
         </div>
         </nav>
         
-        <br>
+        
         @yield('content')
 
        
