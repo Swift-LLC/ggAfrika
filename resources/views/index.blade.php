@@ -39,22 +39,25 @@
             .title {
                 font-family: "Roboto Condensed", sans-serif !important;
             }
+            .nav-item {
+                font-family: "Roboto Condensed", sans-serif !important;
+            }
             .btn-warning {
                 color: #fff;
-                background-color: #ec971f !important;
-                border-color: #ec971f;
+                background-color: #ffbd59 !important;
+                border-color: #ffbd59;
             }
 
             .btn-warning:hover {
                 color: #fff;
-                background-color: #ec971f;
+                background-color: #ffbd59;
                 border-color: #eb9316;
             }
             .bg-warning {
-                background-color: #ec971f !important;
+                background-color: #ffbd59 !important;
             }
             .card-header {
-                background-color: #ec971f !important;
+                background-color: #ffbd59 !important;
             }
 
             .d-flex {
@@ -65,14 +68,14 @@
             }
 
             .navbar {
-                background-color: #ec971f !important;
+                background-color: #ffbd59 !important;
             }
             .active-link {
                 color: #000;
             }
 
             .active-link:hover {
-                color: #ec971f;
+                color: #ffbd59;
             }
 
             .nav-link {
@@ -114,11 +117,11 @@
             .footer a:hover,
             .footer .fa:hover,
             .footer .fa:focus {
-                color: #ec971f !important;
+                color: #ffbd59 !important;
             }
 
             .text-warning {
-                color: #ec971f !important;
+                color: #ffbd59 !important;
             }
 
             body {
@@ -134,7 +137,7 @@
                 font-size: 18px;
                 border: none;
                 outline: none;
-                background-color: #ec971f;
+                background-color: #ffbd59;
                 color: white;
                 cursor: pointer;
                 padding: 10px;
@@ -142,7 +145,7 @@
             }
 
             #myBtn:hover {
-                background-color: #ec971f;
+                background-color: #ffbd59;
             }
 
             .gallery {
@@ -215,7 +218,7 @@
             .pagination > li > a,
             .pagination > li > span {
                 color: #ffffff;
-                background-color: #ec971f;
+                background-color: #ffbd59;
             }
 
             .pagination > .active > a,
@@ -224,8 +227,8 @@
             .pagination > .active > span,
             .pagination > .active > span:focus,
             .pagination > .active > span:hover {
-                background-color: #ec971f;
-                border-color: #ec971f;
+                background-color: #ffbd59;
+                border-color: #ffbd59;
                 color: #ffffff;
             }
         </style>
@@ -261,7 +264,7 @@
                             >
                         </li>
                         @else
-                        <li class="nav-item">
+                        <li class="nav-item ">
                             <a class="nav-link" href="{{ route('home') }}"
                                 >Home</a
                             >
@@ -274,7 +277,7 @@
                             >
                         </li>
                         @endauth @foreach($categories as $category)
-                        <li class="nav-item">
+                        <li class="nav-item ">
                             <a
                                 class="nav-link"
                                 href="{{ route('showcat', $category->name) }}"
@@ -308,7 +311,7 @@
                         @else
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('login') }}"
-                                ><i class="bi bi-person"></i>Account</a
+                                ><i class="bi bi-person-outlined"></i>Login</a
                             >
                         </li>
                         @endauth @endif
