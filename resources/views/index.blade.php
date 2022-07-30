@@ -3,9 +3,15 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>GG Afrika - @yield('title')</title>
-        <meta name="keywords" content="gg afrika, startup and smes,tourism and ecoculture,afrika, ggafrika market place, culture and heritage, gg la wananchi,">
-        <meta name="description" content="Social interaction across Afrika and to the world.The hub of future innovations and budding entreprenuers.">
+        <title>GG Afrika @yield('title')</title>
+        <meta
+            name="keywords"
+            content="gg afrika, startup and smes,tourism and ecoculture,afrika, ggafrika market place, culture and heritage, gg la wananchi,"
+        />
+        <meta
+            name="description"
+            content="Social interaction across Afrika and to the world.The hub of future innovations and budding entreprenuers."
+        />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="_wawiny" />
 
@@ -15,10 +21,12 @@
             href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&display=swap"
             rel="stylesheet"
         />
-
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&display=swap"
+            rel="stylesheet"
+        />
         <!-- Bootstrap core CSS -->
         <!-- CSS only -->
         <link
@@ -256,28 +264,26 @@
                     id="navbarCollapse"
                 >
                     <ul class="navbar-nav mr-auto">
-                        @auth
-                        @if(Auth::user()->is_admin == 1)
+                        @auth @if(Auth::user()->is_admin == 1)
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('admin') }}"
                                 >Dashboard</a
                             >
                         </li>
                         @else
-                        <li class="nav-item ">
+                        <li class="nav-item">
                             <a class="nav-link" href="{{ route('home') }}"
                                 >Home</a
                             >
                         </li>
-                        @endif
-                        @else
+                        @endif @else
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('home') }}"
                                 >Home</a
                             >
                         </li>
                         @endauth @foreach($categories as $category)
-                        <li class="nav-item ">
+                        <li class="nav-item">
                             <a
                                 class="nav-link"
                                 href="{{ route('showcat', $category->name) }}"
@@ -312,6 +318,11 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('login') }}"
                                 ><i class="bi bi-person-outlined"></i>Login</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('register') }}"
+                                ><i class="bi bi-person-outlined"></i>Register</a
                             >
                         </li>
                         @endauth @endif
@@ -423,7 +434,7 @@
                                 <a href="{{ route('advertising')}}"
                                     >Advertising</a
                                 >
-        </p>
+                            </p>
                             <p class="link-widget">
                                 <a href="{{ route('support')}}"
                                     >Support & FAQs</a

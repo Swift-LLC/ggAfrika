@@ -1,13 +1,13 @@
-@extends('navbar') @section('content') 
+@extends('navbar') @section('content')
 <style>
     ::placeholder {
         font-weight: 300;
         font-size: 0.9rem;
     }
 </style>
-<div class="container-fluid">
-    <div class="row justify-content-center">
-        <div class="col-md-8 col-sm-12">
+<div class="container h-100">
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
             <div class="pb-2">
                 <div class="text-center pb-1">
                     <h5 style="font-weight: 900; font-size: 1.2rem">
@@ -18,25 +18,58 @@
                     </h5>
                 </div>
 
-                @if($errors->any())
-                <h4
-                    class="invalid-feedback text-center alert alert-danger"
-                    role="alert"
-                >
-                    {{$errors->first()}}
-                </h4>
-                @endif
+                <div class="">
+                    <br />
+                    <a
+                        style="
+                            margin-left: 30px;
+                            background: #405a93;
+                            color: #ffffff;
+                            border: #405a93 solid 1px;
+                            width: 300px;
+                            border-radius: 20px;
+                        "
+                        class="btn"
+                        href="{{ route('register') }}"
+                    >
+                        <i class="bi bi-facebook"></i>
+                        {{ __('Sign up with Facebook') }}
+                    </a>
+                    <br />
+                    <br />
+
+                    <a
+                        style="
+                            margin-left: 30px;
+                            background: #ffffff;
+                            color: #000;
+                            border: #000 solid 1px;
+                            width: 300px;
+                            border-radius: 20px;
+                        "
+                        class="btn"
+                        href="{{ route('register') }}"
+                    >
+                        <i class="bi bi-google"></i>
+                        {{ __('Sign up with Google') }}
+                    </a>
+                </div>
+
                 <div class="card-body px-2 pt-2">
+                    <p class="lead">
+                        <b>{{ __('Sign up with your email address') }}</b>
+                    </p>
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
-
-                        <div class="form-group offset-md-2">
-                            <label for='email'>
-                            <small for="email" class="form-label"
-                                ><b>{{ __('What\'s your email?') }}</b></small
-                            >
-                        </label>
-                            <div class="w-100">
+                        <div class="form-group">
+                            <label for="email">
+                                <small for="email" class="form-label"
+                                    ><b
+                                        >{{ __('What\'s your email?') }}</b
+                                    ></small
+                                >
+                            </label>
+                            <div class="">
                                 <input
                                     id="email"
                                     type="email"
@@ -57,13 +90,13 @@
                             </div>
                         </div>
 
-                        <div class="form-group offset-md-2">
+                        <div class="form-group">
                             <label for="password">
-                            <small  class="form-label"
-                                ><b>{{ __('Create Password') }}</b></small
-                            >
-                        </label>
-                            <div class="w-100">
+                                <small class="form-label"
+                                    ><b>{{ __('Create Password') }}</b></small
+                                >
+                            </label>
+                            <div class="">
                                 <input
                                     id="password"
                                     type="password"
@@ -82,13 +115,13 @@
                             </div>
                         </div>
 
-                        <div class="form-group offset-md-2">
+                        <div class="form-group">
                             <label for="password-confirm">
-                            <small for="password" class="form-label"
-                                ><b>{{ __('Confirm Password') }}</b></small
-                            >
-                        </label>
-                            <div class="w-100">
+                                <small for="password" class="form-label"
+                                    ><b>{{ __('Confirm Password') }}</b></small
+                                >
+                            </label>
+                            <div class="">
                                 <input
                                     id="password"
                                     type="password"
@@ -107,15 +140,15 @@
                             </div>
                         </div>
 
-                        <div class="form-group offset-md-2">
+                        <div class="form-group">
                             <label for="name">
-                            <small class="form-label"
-                                ><b>{{ __('What\'s your Name?') }}</b>
-                                <small class="text-center fw-light">
-                                    (This appears on your profile)</small
-                                ></small
-                            >
-                        </label>
+                                <small class="form-label"
+                                    ><b>{{ __('What\'s your Name?') }}</b>
+                                    <small class="text-center fw-light">
+                                        (This appears on your profile)</small
+                                    ></small
+                                >
+                            </label>
                             <div class="w-100">
                                 <input
                                     id="name"
@@ -135,8 +168,20 @@
                             </div>
                         </div>
 
-                        <div class="offset-md-2">
-                            <div class="w-100">
+                        <div class="form-group">
+                            {!! NoCaptcha::display() !!} 
+                            @if($errors->has('g-recaptcha-response'))
+                            <span class="help-block">
+                                <strong
+                                    >{{ $errors->first('g-recaptcha-response')
+                                    }}</strong
+                                >
+                            </span>
+                            @endif
+                        </div>
+
+                        <div class="">
+                            <div class="">
                                 <small
                                     >By clicking on sign-up, you agree to
                                     Spotify's
@@ -188,5 +233,6 @@
         </p>
     </div>
     <br /><br /><br />
-    @endsection
 </div>
+
+@endsection
