@@ -10,7 +10,7 @@
             <div class="">
                 <hr />
                 <div class="" style="margin-left: 30px;">
-                    <b>{{ __('To Continue Login to GG Afrika') }}</b>
+                    <b>{{ __('To Continue, Login to GG Afrika.') }}</b>
                 </div>
 
                 <div class="">
@@ -160,9 +160,9 @@
 
     <hr />
     <div class="text-center">
-        <small>
+        <h5>
             <b>{{ __('Don\'t have an account?') }}</b>
-        </small>
+                                    </h5>
         <br />
         <br />
         <a

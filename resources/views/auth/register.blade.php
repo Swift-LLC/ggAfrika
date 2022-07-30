@@ -228,7 +228,7 @@
     </div>
 
     <div class="text-center">
-        <p>
+        <h5>
             <b
                 >{{ __('Already have an account?') }}<a
                     href="{{ route('login') }}"
@@ -236,7 +236,7 @@
                     {{ __('Login') }}
                 </a></b
             >
-        </p>
+                                </h5>
     </div>
     <br /><br /><br />
 </div>

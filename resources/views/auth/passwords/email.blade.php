@@ -43,6 +43,18 @@
                                 @enderror
                             </div>
                         </div>
+                        <br>
+                        <div class="form-group col-md-4 offset-md-4">
+                            {!! NoCaptcha::display() !!} 
+                            @if($errors->has('g-recaptcha-response'))
+                            <span class="invalid-feedback" role="alert">
+                                <strong
+                                    >{{ $errors->first('g-recaptcha-response')
+                                    }}</strong
+                                >
+                            </span>
+                            @endif
+                        </div>
 
                         <div class="col-md-4 offset-md-4 pt-3">
                             <div class="text-center">
@@ -75,4 +87,5 @@
         </div>
     </div>
 </div>
+{!! NoCaptcha::renderJs() !!}
 @endsection

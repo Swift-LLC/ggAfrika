@@ -19,13 +19,9 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&display=swap"
+            href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
             rel="stylesheet"
         />
-
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&display=swap" rel="stylesheet">
         <!-- Bootstrap core CSS -->
         <!-- CSS only -->
         <link
@@ -44,7 +40,7 @@
         <link href="{{asset('css/swiper-bundle.min.css')}}" rel="stylesheet" />
         <style>
             .title {
-                font-family: "Roboto Condensed", sans-serif !important;
+                font-family: "Jost", sans-serif;
             }
             .btn-warning {
                 color: #fff;
@@ -129,10 +125,13 @@
             }
 
             body {
-                font-family: "Montserrat", sans-serif;
+                font-family: "Open Sans", sans-serif;
                 min-height: 90vh;
                 background: #fffffff;
             }
+            h1, h2, h3, h4, h5, h6 {
+    font-family: "Jost", sans-serif;
+  }
             #myBtn {
                 display: none;
                 position: fixed;
