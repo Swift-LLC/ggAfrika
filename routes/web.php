@@ -6,6 +6,8 @@ use App\Http\Middleware\isAdmin;
 use App\Http\Controllers\SlideController;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use App\Http\Controllers\FbController;
+use App\Http\Controllers\GoogleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,8 +39,18 @@ Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $requ
 })->middleware(['auth', 'signed'])->name('verification.verify');
 
 
+//-Facebook Login---------------------------------------------------------------------------------------------------------------------
+Route::get('auth/facebook', [FbController::class, 'redirectToFacebook']);
 
-// resending emails
+Route::get('auth/facebook/callback', [FbController::class, 'facebookSignin']);
+
+//-Google Signin ---------------------------------------------------------------------------------------------------------------------
+  
+Route::get('auth/google', [GoogleController::class, 'redirectToGoogle']);
+Route::get('auth/google/callback', [GoogleController::class, 'googleSignin']);
+
+//-Email Verifiation---------------------------------------------------------------------------------------------------------------------
+
 Route::post('/email/verification-notification', function (Request $request) {
     $request->user()->sendEmailVerificationNotification();
  

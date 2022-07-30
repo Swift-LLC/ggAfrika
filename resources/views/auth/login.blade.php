@@ -9,7 +9,7 @@
         <div class="col-md-4 offset-md-4">
             <div class="">
                 <hr />
-                <div class="text-center">
+                <div class="" style="margin-left: 30px;">
                     <b>{{ __('To Continue Login to GG Afrika') }}</b>
                 </div>
 
@@ -17,7 +17,7 @@
                     <br />
                     <a
                         style="
-                            margin-left: 30px;
+                            margin-left: 20px;
                             background: #405a93;
                             color: #ffffff;
                             border: #405a93 solid 1px;
@@ -35,7 +35,7 @@
 
                     <a
                         style="
-                            margin-left: 30px;
+                            margin-left: 20px;
                             background: #ffffff;
                             color: #000;
                             border: #000 solid 1px;
@@ -49,7 +49,11 @@
                         {{ __('Continue with Google') }}
                     </a>
                 </div>
-
+                <br>
+                <div class="text-center">
+                    ________OR________
+                </div>
+                <br>
                 <div class="card-body px-2 pt-2">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf

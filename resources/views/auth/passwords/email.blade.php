@@ -1,6 +1,6 @@
 @extends('navbar') @section('content')
 <hr />
-<div class="container">
+<div class="container h-90">
     <div class="row">
         <div class="">
             <div class="pt-5">

@@ -22,7 +22,7 @@
                     <br />
                     <a
                         style="
-                            margin-left: 30px;
+                            margin-left: 20px;
                             background: #405a93;
                             color: #ffffff;
                             border: #405a93 solid 1px;
@@ -30,7 +30,7 @@
                             border-radius: 20px;
                         "
                         class="btn"
-                        href="{{ route('register') }}"
+                        href="{{ url('auth/facebook') }}"
                     >
                         <i class="bi bi-facebook"></i>
                         {{ __('Sign up with Facebook') }}
@@ -40,7 +40,7 @@
 
                     <a
                         style="
-                            margin-left: 30px;
+                            margin-left: 20px;
                             background: #ffffff;
                             color: #000;
                             border: #000 solid 1px;
@@ -48,17 +48,23 @@
                             border-radius: 20px;
                         "
                         class="btn"
-                        href="{{ route('register') }}"
+                        href="{{ url('auth/google') }}"
                     >
                         <i class="bi bi-google"></i>
                         {{ __('Sign up with Google') }}
                     </a>
                 </div>
 
+                <br>
+                <div class="text-center">
+                    ________OR________
+                </div>
+                <br>
+
                 <div class="card-body px-2 pt-2">
-                    <p class="lead">
+                    <small class="pb-1" style="margin-left: 40px" >
                         <b>{{ __('Sign up with your email address') }}</b>
-                    </p>
+                        </small>
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
                         <div class="form-group">
