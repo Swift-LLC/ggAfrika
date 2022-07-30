@@ -58,21 +58,14 @@ class PostsController extends Controller
         // try {
         $path = $request->image->store('images', 'public');
         $post = new Posts();
-        $post->slug = $request->title;
+        $post->slug = $request->title.time();
         $post->title = $request->title;
-        $post->about = $request->description;
         $post->body = $request->editor;
         $post->category_id = $request->category;
         $post->potrait = $path;
         $post->user_id = Auth::id();
         $post->save();
 
-        // dd($post);
-        // } catch (\Exception $e) {
-        //     return back()
-        //         ->withInput()
-        //         ->withErrors($e);
-        // }
         return redirect()
             ->route('posts')
             ->with('message', 'Error Retry');
@@ -83,6 +76,7 @@ class PostsController extends Controller
     {
         //show a blog post
         $cat = $post->category_id;
+        
         $related = Posts::with('categories')
             ->where('category_id', $cat)
             ->get();

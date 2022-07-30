@@ -36,12 +36,10 @@
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
         />
-        <link rel="stylesheet" href="{{asset('css/style2.css')}}" />
-        <!-- <link rel="stylesheet" href="{{asset('css/resp.css')}}"> -->
         <link href="{{asset('css/swiper-bundle.min.css')}}" rel="stylesheet" />
         <link rel="stylesheet" href=" {{ asset('css/main.css') }}">
     </head>
-    <body>
+    <body class="h-100">
         <nav class="navbar navbar-expand-lg fixed-top">
             <div class="container">
                 <a class="navbar-brand" href="{{ route('home') }}">
@@ -86,7 +84,7 @@
                         <li class="nav-item">
                             <a
                                 class="nav-link"
-                                href="{{ route('showcat', $category->name) }}"
+                                href="{{ route('showcat', [$category->id ,$category->name]) }}"
                                 >{{ $category->name }}</a
                             >
                         </li>
@@ -136,7 +134,7 @@
 
         <br />
 
-        <footer class="footer pt-5">
+        <footer class="footer pt-5 pb-0">
             <div class="container">
                 <div class="row" style="justify-content: center">
                     <div class="col-lg-4 col-md-12 col-sm-12">

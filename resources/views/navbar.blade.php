@@ -48,15 +48,20 @@
                 border-color: #ec971f;
             }
 
+            a {
+                color: #000000;
+            }
+            a:hover {
+                color: #000000;
+                text-decoration: none;
+            }
+
             .btn-warning:hover {
                 color: #fff;
                 background-color: #ec971f;
                 border-color: #eb9316;
             }
             .bg-warning {
-                background-color: #ec971f !important;
-            }
-            .card-header {
                 background-color: #ec971f !important;
             }
 
@@ -94,32 +99,11 @@
             .navbar-brand:hover {
                 color: #000000;
             }
-            .footer {
-                background-color: #000000;
-                /* min-height: fit-content; */
-                /* background-image: none; */
-                bottom: 0;
-                /* position: fixed; */
-            }
-
-            .footer p {
-                color: #999999 !important;
-            }
-
-            .footer a {
-                color: #999999 !important;
-            }
+          
 
             .bg-orange {
                 background-color: #ff6347 !important;
             }
-
-            .footer a:hover,
-            .footer .fa:hover,
-            .footer .fa:focus {
-                color: #ec971f !important;
-            }
-
             .text-warning {
                 color: #ec971f !important;
             }
@@ -132,115 +116,14 @@
             h1, h2, h3, h4, h5, h6 {
     font-family: "Jost", sans-serif;
   }
-            #myBtn {
-                display: none;
-                position: fixed;
-                bottom: 20px;
-                right: 30px;
-                z-index: 99;
-                font-size: 18px;
-                border: none;
-                outline: none;
-                background-color: #ec971f;
-                color: white;
-                cursor: pointer;
-                padding: 10px;
-                border-radius: 4px;
-            }
-
-            #myBtn:hover {
-                background-color: #ec971f;
-            }
-
-            .gallery {
-                overflow: hidden;
-            }
-            .swiper-slider {
-                width: 7em;
-            }
-            .swiper-slide img {
-                width: 30%;
-                /* border-radius: 50%; */
-            }
-            .gallery .swiper-pagination {
-                margin-top: 20px;
-                position: relative;
-            }
-            .gallery .swiper-pagination .swiper-pagination-bullet {
-                width: 12px;
-                height: 12px;
-                background-color: #fff;
-                opacity: 1;
-                border: 1px solid orange;
-            }
-            .gallery .swiper-pagination .swiper-pagination-bullet-active {
-                background-color: orange;
-            }
-            .gallery .swiper-slide-active {
-                text-align: center;
-            }
-
-            @media (max-width: 768px) {
-                .gallery .swiper-wrapper {
-                    padding: 40px 0;
-                }
-            }
-            @media (max-width: 468px) {
-                .swiper-slider {
-                    width: 50px;
-                }
-                .swiper-slide > img {
-                    width: 50%;
-                }
-            }
-            .carousel {
-                overflow: hidden;
-                margin: auto;
-            }
-
-            @media only screen and (max-width: 768px) {
-                .carousel {
-                    /* max-height: 500px; */
-                    overflow: hidden;
-                    margin: auto;
-                }
-                .carousel-inner .carousel-item > img {
-                    /* position: absolute; */
-                    object-fit: cover;
-                    height: 600px;
-                    width: 100%;
-                }
-            }
-
-            .carousel-inner .carousel-item > img {
-                /* position: absolute; */
-                object-fit: cover;
-                height: 600px;
-                width: 100%;
-            }
-
-            .pagination > li > a,
-            .pagination > li > span {
-                color: #ffffff;
-                background-color: #ec971f;
-            }
-
-            .pagination > .active > a,
-            .pagination > .active > a:focus,
-            .pagination > .active > a:hover,
-            .pagination > .active > span,
-            .pagination > .active > span:focus,
-            .pagination > .active > span:hover {
-                background-color: #ec971f;
-                border-color: #ec971f;
-                color: #ffffff;
-            }
+           
+            
         </style>
     </head>
 <body class="h-100">
     <nav class="navbar navbar-expand-lg ">
         <div class="container justify-content-center">
-            <h2 class="text-center title pt-2"><img src="{{asset('images/logo.jpeg') }}" alt="gg afrika" style="width: 50px; height: 40px; border-radius: 50px;"> GG Afrika</h2>
+            <h2 class="text-center title pt-2"><img src="{{asset('images/logo.jpeg') }}" alt="gg afrika" style="width: 50px; height: 40px; border-radius: 50px;"><a href="{{ url('/') }}">GG Afrika</a></h2>
         </div>
         </nav>
         

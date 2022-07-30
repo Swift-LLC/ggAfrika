@@ -20,8 +20,8 @@
 <br><br>
 
    <div class="display">
-      <div class="text-center">
-         <h3 class="title"><a href="{{ url('/') }}" class="new" >Home</a><i class="bi bi-slash"></i>{{ $name }}</h3>
+      <div class="text-left px-4">
+         <p class="lead"><a href="{{ url('/') }}" class="new"><i class="bi bi-arrow-left"></i>Home</a></p>
       </div>
    </div>
 
@@ -43,9 +43,6 @@
    <hr>
    @endforeach
         
-
-
-<h2 class="text-center title">{{ $name }} Videos </h2>
 <div class="row">
       @foreach ($videos as $video)
       @if ($video->published == 1) 

@@ -41,17 +41,14 @@ Route::get('/email/verify', function () {
     return view('auth.verify');
 })->middleware('auth')->name('verification.notice');
 
-
- //link verification
 Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
     $request->fulfill();
- 
     return redirect('/');
 })->middleware(['auth', 'signed'])->name('verification.verify');
 
+ 
 Route::post('/email/verification-notification', function (Request $request) {
     $request->user()->sendEmailVerificationNotification();
- 
     return back()->with('message', 'Verification link sent!');
 })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 
@@ -88,7 +85,7 @@ Route::get('/admin', [App\Http\Controllers\HomeController::class, 'adminHome'])
     ->name('admin')
     ->middleware('auth');
 
-//EDITORS
+//EDITORS---------------------------------------------------------------------------------------------------------------------
 Route::get('/all-editors', [
     App\Http\Controllers\HomeController::class,
     'alleditors',
@@ -120,19 +117,19 @@ Route::delete('/editors/delete/{user}', [
     ->name('deleteUser')
     ->middleware('auth');
 
-//CATEGORY
-Route::get('/category/{category}', [
+//CATEGORY---------------------------------------------------------------------------------------------------------------------
+Route::get('/category/{id}/{category}', [
     App\Http\Controllers\CategoryController::class,
     'showcat',
 ])->name('showcat');
 Route::get('/blog-categories', [
     App\Http\Controllers\CategoryController::class,
-    'allCategory',
+    'index',
 ])
     ->name('category')
     ->middleware('auth');
 
-Route::get('/category/create', [
+Route::get('/category/create/new', [
     App\Http\Controllers\CategoryController::class,
     'create',
 ])

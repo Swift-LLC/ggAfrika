@@ -40,7 +40,7 @@
                         <span >{{$category->name}}</span >
                       </td>
                       <td class="align-middle">
-                        <h6 class="mb-0"><span >{{$category->posts->count()}}</span></h6>
+                        <h6 class="mb-0"><span></span></h6>
                       </td>
                       <td class="align-middle d-flex w-20 justify-content-between">
                         <form method="POST" action="{{route('deleteCategory',['cat'=>$category->id])}}">

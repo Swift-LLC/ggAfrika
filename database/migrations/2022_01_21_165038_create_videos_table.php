@@ -17,6 +17,8 @@ class CreateVideosTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('url');
+            $table->integer('published')->default(0);
+            $table->string('category_id')->nullable();
             $table->timestamps();
         });
     }

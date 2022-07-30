@@ -37,7 +37,7 @@
           Back
         </a>
         <div class="row">
-          <div class="col-md-8 col-md-offset-2">
+          <div class="">
             <h4 class="text-center"> Create a blog post for readers. </h4>
             <div class="card-body">
               <form action="{{route('store')}}" method="POST" enctype='multipart/form-data'>
@@ -46,7 +46,7 @@
                 
                 <div class="form-group">
                   <label for="title" class="form-label">Blog Title <span class="require">*</span></label>
-                  <input type="text" class="form-control" name="title" />
+                  <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" />
                             @error('title')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -56,9 +56,9 @@
 
                 <div class="form-group">
                   <label for="category" class="form-label">Choose Blog Category</label>
-                  <select class="form-control" id="category" name="category">
+                  <select class="form-control @error('category') is-invalid @enderror" id="category" name="category">
                     @foreach ($categories as $category)
-                    <option value="{{ $category->name}}">{{$category->name}}</option>
+                    <option value="{{ $category->id}}">{{$category->name}}</option>
                     @endforeach
                   </select>
                    @error('category')
@@ -69,28 +69,17 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="image" class="form-label">blog Post Image </label>
-                  <input class="form-control form-control-file" value="" id="image" name="image" type="file">
+                  <label for="image" class="form-label">blog post feature Image </label>
+                  <input class="@error('image') is-invalid @enderror form-control-file" value="" id="image" name="image" type="file">
                    @error('image')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                             @enderror
                 </div>
-
-                <div class="form-group">
-                  <label for="description" class="form-label">Blog Description</label>
-                  <textarea  rows="5" class="form-control" name="description"></textarea>
-                   @error('description')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                            @enderror
-                </div>
-
                 <div class="form-group">
                   <label for="editor" class="form-label">Blog Content</label>
-                  <textarea  name="editor" id="editor"></textarea>
+                  <textarea  name="editor" id="editor" ></textarea>
                    @error('content')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>

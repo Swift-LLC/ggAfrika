@@ -18,7 +18,8 @@ class CategoryController extends Controller
     public function index()
     {
         //Show all the categories
-        $categories = Category::all();
+        $category = Category::all();
+        return view('category.index', ['category' => $category]);
     }
 
     //shows all categories
@@ -28,17 +29,17 @@ class CategoryController extends Controller
         return view('category.index', ['category' => $category]);
     }
 
-    public function showcat($cat)
+    public function showcat($category)
     {
         //show a blog post
         $categories = Category::all();
 
         $posts = Posts::with('categories')
-            ->where('category_name', $cat)
+            ->where('category_id', $category)
             ->latest()
             ->get();
 
-        $videos = Video::where('category_name', $cat)
+        $videos = Video::where('category_id', $category)
             ->latest()
             ->get();
 
@@ -46,7 +47,7 @@ class CategoryController extends Controller
 
         // dd($category);
 
-        $name = $cat;
+        $name = $category;
 
         return view(
             'blog.category',
