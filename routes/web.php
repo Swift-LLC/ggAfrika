@@ -22,7 +22,18 @@ use App\Http\Controllers\GoogleController;
 
 Auth::routes(['auth' => true, 'verify' => true]);
 
-//EMAIL VERIFICATIONS.
+//-Facebook Login---------------------------------------------------------------------------------------------------------------------
+Route::get('auth/facebook', [FbController::class, 'redirectToFacebook']);
+
+Route::get('auth/facebook/callback', [FbController::class, 'facebookSignin']);
+
+//-Google Signin ---------------------------------------------------------------------------------------------------------------------
+  
+Route::get('auth/google', [GoogleController::class, 'redirectToGoogle']);
+Route::get('auth/google/callback', [GoogleController::class, 'googleSignin']);
+
+//-Email Verifiation---------------------------------------------------------------------------------------------------------------------
+
 Route::get('/email-verification/error', 'Auth\VerificationController@error')->name('email-verification.error');
 
 
@@ -38,25 +49,13 @@ Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $requ
     return redirect('/');
 })->middleware(['auth', 'signed'])->name('verification.verify');
 
-
-//-Facebook Login---------------------------------------------------------------------------------------------------------------------
-Route::get('auth/facebook', [FbController::class, 'redirectToFacebook']);
-
-Route::get('auth/facebook/callback', [FbController::class, 'facebookSignin']);
-
-//-Google Signin ---------------------------------------------------------------------------------------------------------------------
-  
-Route::get('auth/google', [GoogleController::class, 'redirectToGoogle']);
-Route::get('auth/google/callback', [GoogleController::class, 'googleSignin']);
-
-//-Email Verifiation---------------------------------------------------------------------------------------------------------------------
-
 Route::post('/email/verification-notification', function (Request $request) {
     $request->user()->sendEmailVerificationNotification();
  
     return back()->with('message', 'Verification link sent!');
 })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 
+// Static Routes---------------------------------------------------------------------------------------------------------------------
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name(
     'home'
 );

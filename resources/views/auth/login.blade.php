@@ -25,7 +25,7 @@
                             border-radius: 20px;
                         "
                         class="btn"
-                        href="{{ route('register') }}"
+                        href="{{ url('auth/facebook') }}"
                     >
                         <i class="bi bi-facebook"></i>
                         {{ __('Continue with Facebook') }}
@@ -43,7 +43,7 @@
                             border-radius: 20px;
                         "
                         class="btn"
-                        href="{{ route('register') }}"
+                        href="{{ url('auth/google') }}"
                     >
                         <i class="bi bi-google"></i>
                         {{ __('Continue with Google') }}
