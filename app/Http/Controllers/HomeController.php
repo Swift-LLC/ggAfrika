@@ -35,27 +35,44 @@ class HomeController extends Controller
     public function about()
     {
         $categories = Category::all();
-        return view('blog.about', ['categories' => $categories]);
+        $posts = Posts::orderBy('updated_at', 'desc')
+        ->skip(0)
+        ->take(6)
+        ->get();
+        return view('blog.about', ['categories' => $categories, 'posts' => $posts]);
     }
 
     //support page
     public function support()
     {
         $categories = Category::all();
-        return view('blog.support', ['categories' => $categories]);
+        $posts = Posts::orderBy('updated_at', 'desc')
+        ->skip(0)
+        ->take(6)
+        ->get();
+        return view('blog.support', ['categories' => $categories, 'posts' => $posts]);
     }
 
     // advertising page
     public function advertising()
     {
         $categories = Category::all();
-        return view('blog.advertising', ['categories' => $categories]);
+        $posts = Posts::orderBy('updated_at', 'desc')
+        ->skip(0)
+        ->take(6)
+        ->get();
+        return view('blog.advertising', ['categories' => $categories, 'posts' => $posts]);
     }
 
     public function policy()
     {
         
-        return view('blog.policy');
+        $posts = Posts::orderBy('updated_at', 'desc')
+        ->skip(0)
+        ->take(6)
+        ->get();
+        $categories = Category::all();
+        return view('blog.policy', ['categories' => $categories, 'posts' => $posts]);
     }
     public function terms()
     {
@@ -66,17 +83,23 @@ class HomeController extends Controller
     //home page
     public function index()
     {
-        $post = Posts::orderBy('updated_at', 'desc')
-            ->skip(0)
-            ->take(4)
-            ->get();
+        $post = Posts::where('category_id', 1)->inRandomOrder()->get();
+
+        $any = Posts::inRandomOrder()->first();
+
         $posts = Posts::orderBy('updated_at', 'desc')
             ->skip(0)
-            ->take(6)
+            ->take(3)
             ->get();
         $popular = Posts::inRandomOrder('updated_at')
-            ->take(6)
+            ->take(3)
             ->get();
+        
+            $topopular = Posts::inRandomOrder('updated_at')
+            ->take(7)
+            ->get();
+
+        $latest = Posts::latest()->first();
 
         $slides = Slides::latest()->get();
 
@@ -84,15 +107,21 @@ class HomeController extends Controller
 
         $categories = Category::all();
 
-        // dd($categories);
+
+
+      
 
         return view('home', [
             'post' => $post,
+            'any' => $any,
             'posts' => $posts,
             'videos' => $videos,
             'categories' => $categories,
             'popular' => $popular,
+            'topopular' => $topopular,
             'slides' => $slides,
+            'latest' => $latest,
+         
         ]);
     }
 

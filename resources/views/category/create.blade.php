@@ -1,5 +1,5 @@
-@extends("layouts.admin")
-@section("content")
+@extends('layouts.admin')
+@section('content')
 
 <div class="container px-2 py-2">
   <form method="POST" action="{{route('newCat')}}">
@@ -16,4 +16,5 @@
     </div>
   </form>
 </div>
+
 @endsection

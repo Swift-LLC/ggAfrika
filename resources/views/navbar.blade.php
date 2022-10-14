@@ -73,7 +73,7 @@
             }
 
             .navbar {
-                background-color: #fffffff !important;
+                background-color: #ffffff !important;
             }
             .active-link {
                 color: #000;

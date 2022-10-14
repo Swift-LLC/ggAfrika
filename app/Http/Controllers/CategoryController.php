@@ -39,11 +39,15 @@ class CategoryController extends Controller
             ->latest()
             ->get();
 
+        $related = Posts::with('categories')
+            ->where('category_id', $category)
+            ->get();
+
         $videos = Video::where('category_id', $category)
             ->latest()
             ->get();
 
-        // $category = Category::where('name', $cat)->get();
+        // $name = Category::where('name', $category)->get();
 
         // dd($category);
 
@@ -55,6 +59,7 @@ class CategoryController extends Controller
                 'posts' => $posts,
                 'categories' => $categories,
                 'videos' => $videos,
+                'related' => $related
             ],
             compact('name')
         );

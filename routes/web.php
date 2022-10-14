@@ -129,7 +129,7 @@ Route::get('/blog-categories', [
     ->name('category')
     ->middleware('auth');
 
-Route::get('/category/create/new', [
+Route::get('/category/new', [
     App\Http\Controllers\CategoryController::class,
     'create',
 ])

@@ -1,10 +1,9 @@
 @extends('index')
 @section('title')
-support
+user support
 @endsection
 @section('content')
-<br><br>
-
+<main id="main">
 <div class="container">
     <h1 class="title text-center">Support and FAQs</h1>
     <h5 class="title">What is GG Afrika</h5>
@@ -31,4 +30,5 @@ support
     <p>Follow and order linked offers for coupons. Take a chance at discounted rates. Do not miss out, check posters for details.</p>
     
 </div>
+</main>
 @endsection

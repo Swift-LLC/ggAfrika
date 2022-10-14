@@ -100,7 +100,7 @@
       </nav>
     </div>
   </aside>
-<div style="margin-left" id="main">
+<div  id="main">
   <div class="preloader flex-column justify-content-center align-items-center">
     <img class="animation__wobble" src="https://i.postimg.cc/j2rTp7Hm/IMG-20220202-WA0008.jpg" alt="gg afrika logo" height="150" width="150" style="border-radius: 50px;">
   </div>
@@ -161,6 +161,7 @@ function closeNav() {
 <div class="text-center">
 
 @yield('content')
+
 </div>
 
 @endif
