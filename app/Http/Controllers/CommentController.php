@@ -48,7 +48,9 @@ class CommentController extends Controller
         $comment->name = $request->name;
         $comment->email = $request->email;
         $comment->message = $request->message;
-        $comment->post = Posts::find($id);
+        $comment->post_id = $id;
+
+        dd($comment);
 
         $comment->save();
 

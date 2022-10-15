@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Video;
+use App\Models\Comment;
 
 class PostsController extends Controller
 {
@@ -82,12 +83,15 @@ class PostsController extends Controller
             ->get();
         $posts = Posts::all();
 
+        $comments = Comment::where('post_id', $post)->get();
+
         $categories = Category::all();
         return view('blog.show', [
             'post' => $post,
             'categories' => $categories,
             'related' => $related,
             'posts' => $posts,
+            'comments' => $comments,
         ]);
     }
 

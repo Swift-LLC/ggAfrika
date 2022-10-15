@@ -18,7 +18,7 @@
                 <img src="/storage/{{ $post->potrait}} " alt="" class="img-fluid">
               </a>
               <div>
-                <div class="post-meta"><span class="date">Culture</span> <span class="mx-1">&bullet;</span> <span>{{ $post->created_at }}</span></div>
+                <div class="post-meta"><span class="date">{{ $name }}</span> <span class="mx-1">&bullet;</span> <span>{{ $post->created_at }}</span></div>
                 <h3><a href="{{ route('show', $post->id ) }}">{{ $post->title }}</a></h3>
                 <p>{!!  \Illuminate\Support\Str::limit($post->body, 200, $end='...') !!}</p>
                 <div class="d-flex align-items-center author">
@@ -33,7 +33,7 @@
           
             <div class="text-start py-4">
               <div class="custom-pagination">
-                <a href="#" class="prev">Prevous</a>
+                <a href="#" class="prev">Previous</a>
                 <a href="#" class="active">1</a>
                 <a href="#">2</a>
                 <a href="#">3</a>
@@ -67,7 +67,7 @@
                  
                   @foreach($related as $post)
                   <div class="post-entry-1 border-bottom">
-                    <div class="post-meta"><span class="date">Lifestyle</span> <span class="mx-1">&bullet;</span> <span>{{ $post->created_at }}</span></div>
+                    <div class="post-meta"><span class="date"></span> <span class="mx-1">&bullet;</span> <span>{{ $post->created_at }}</span></div>
                     <h2 class="mb-2"><a href="{{ route('show', $post->id ) }}">{{ $post->title }}</a></h2>
                     <span class="author mb-3 d-block">{{ $post->user->name }}</span>
                   </div>
@@ -81,7 +81,7 @@
                
                   @foreach($related as $post)
                   <div class="post-entry-1 border-bottom">
-                  <div class="post-meta"><span class="date">Lifestyle</span> <span class="mx-1">&bullet;</span> <span>{{ $post->created_at }}</span></div>
+                  <div class="post-meta"><span class="date"></span> <span class="mx-1">&bullet;</span> <span>{{ $post->created_at }}</span></div>
                   <h2 class="mb-2"><a href="{{ route('show', $post->id ) }}">{{ $post->title }}</a></h2>
                   <span class="author mb-3 d-block">{{ $post->user->name }}</span>
                   </div>
@@ -94,7 +94,7 @@
 
                 @foreach($related as $post)
                   <div class="post-entry-1 border-bottom">
-                  <div class="post-meta"><span class="date">Lifestyle</span> <span class="mx-1">&bullet;</span> <span>{{ $post->created_at }}</span></div>
+                  <div class="post-meta"><span class="date"></span> <span class="mx-1">&bullet;</span> <span>{{ $post->created_at }}</span></div>
                   <h2 class="mb-2"><a href="{{ route('show', $post->id ) }}">{{ $post->title }}</a></h2>
                   <span class="author mb-3 d-block">{{ $post->user->name }}</span>
                   </div>
@@ -112,7 +112,7 @@
               <div class="video-post">
                 <a href="https://www.youtube.com/embed/{{$video->url}}" class="glightbox link-video">
                   <span class="bi-play-fill"></span>
-                  <img src="assets/img/post-landscape-5.jpg" alt="{{ $video->name }}" class="img-fluid">
+                  <img src="{{ asset('post-landscape-5.jpg') }}" alt="{{ $video->name }}" class="img-fluid">
                 </a>
               </div>
               @endforeach

@@ -9,6 +9,8 @@
   <meta content="social interactions across Africa and to the world" name="description">
   <meta content="gg afrika, startup and smes, tourism and ecoculture,afrika, ggafrika market place, culture and heritage, gg la wananchi" name="keywords">
 
+  <meta name="robots" content="index, follow" />
+        <meta name="author" content="_wawiny" />
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">

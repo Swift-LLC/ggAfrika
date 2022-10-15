@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CommentController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Middleware\isAdmin;
@@ -228,6 +229,12 @@ Route::put('/admin/video/{post}/remove', [
 ])
     ->name('v_publish')
     ->middleware('auth');
+
+
+
+// COMMENT
+Route::post('/comment/{id}', [CommentController::class, 'store'])->name('comment.new');
+// Route::resource('comments', 'CommentController');
 
 //SLIDES
 Route::get('/all-slides', [SlideController::class, 'index'])

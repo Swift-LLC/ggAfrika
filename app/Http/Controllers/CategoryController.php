@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\Comment;
 use App\Models\Posts;
 use App\Models\Video;
 use Illuminate\Support\Facades\DB;
@@ -29,27 +30,27 @@ class CategoryController extends Controller
         return view('category.index', ['category' => $category]);
     }
 
-    public function showcat($category)
+    public function showcat($id, $category)
     {
         //show a blog post
         $categories = Category::all();
 
         $posts = Posts::with('categories')
-            ->where('category_id', $category)
+            ->where('category_id', $id)
             ->latest()
             ->get();
 
         $related = Posts::with('categories')
-            ->where('category_id', $category)
+            ->where('category_id', $id)
             ->get();
 
-        $videos = Video::where('category_id', $category)
+        $videos = Video::where('category_id', $id)
             ->latest()
             ->get();
 
-        // $name = Category::where('name', $category)->get();
+       
 
-        // dd($category);
+        
 
         $name = $category;
 
@@ -59,7 +60,8 @@ class CategoryController extends Controller
                 'posts' => $posts,
                 'categories' => $categories,
                 'videos' => $videos,
-                'related' => $related
+                'related' => $related,
+                
             ],
             compact('name')
         );

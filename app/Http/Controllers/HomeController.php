@@ -103,7 +103,9 @@ class HomeController extends Controller
 
         $slides = Slides::latest()->get();
 
-        $videos = Video::paginate(3);
+        $videos = Video::inRandomOrder()->first();
+
+        $video = Video::latest()->first();
 
         $categories = Category::all();
 
@@ -116,6 +118,7 @@ class HomeController extends Controller
             'any' => $any,
             'posts' => $posts,
             'videos' => $videos,
+            'video' => $video,
             'categories' => $categories,
             'popular' => $popular,
             'topopular' => $topopular,
