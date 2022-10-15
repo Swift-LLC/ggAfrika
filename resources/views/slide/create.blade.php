@@ -12,7 +12,7 @@
     @csrf
     @method('POST')
     <div class="form-group">
-      <label for="name" class="form-label">Reference Name</label>
+      <label for="name" class="form-label">Title</label>
       <input type="text" id="name" name="name" class="form-control" id="name" aria-describedby="textHelp" placeholder="Enter a name relating to the content">
     </div>
 

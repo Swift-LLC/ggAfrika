@@ -55,14 +55,16 @@
       </nav><!-- .navbar -->
 
       <div class="position-relative">
+        @guest
         <a href="https://m.facebook.com/GG-Afrika-107646545139344" target="_blank" class="mx-2"><span class="bi-facebook"></span></a>
         <a href="#" class="mx-2"><span class="bi-twitter"></span></a>
         <a href="https://www.instagram.com/ggafrika/" target="_blank" class="mx-2"><span class="bi-instagram"></span></a>
-        <a href="#" class="mx-2"><span class="bi-person"></span></a>
-
+        <a href="{{ route('login') }}" class="mx-2"><span class="bi bi-box-arrow-in-right"></span> login</a>
         <a href="#" class="mx-2 js-search-open"><span class="bi-search"></span></a>
         <i class="bi bi-list mobile-nav-toggle"></i>
 
+
+        
         <!-- ======= Search Form ======= -->
         <div class="search-form-wrap js-search-form-wrap">
           <form action="search-result.html" class="search-form">
@@ -71,6 +73,26 @@
             <button class="btn js-search-close"><span class="bi-x"></span></button>
           </form>
         </div><!-- End Search Form -->
+        @endguest
+        @auth
+        <a href="{{ route('admin') }}" class="mx-2"><span class="bi bi-speedometer"> dashboard</span></a>
+        <a
+                                    href="{{ route('logout') }}"
+                                    class="mx-2"
+                                    onclick="event.preventDefault();
+                                                         document.getElementById('logout-form').submit();"
+                                >
+                                <span class="bi bi-box-arrow-left"> {{ __('logout') }}
+                                </a>
+                                <form
+                                    id="logout-form"
+                                    action="{{ route('logout') }}"
+                                    method="POST"
+                                    class="d-none"
+                                >
+                                    @csrf
+                                </form>
+        @endauth
 
       </div>
 

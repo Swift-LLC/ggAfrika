@@ -10,7 +10,7 @@
         />
         <meta
             name="description"
-            content="Social media across Afika to the world.The hub of future innovations and budding entreprenuers. Do take a snap, tour with us and be part if Afrika's journey.Market place for all outlooks and outfits for growing businesses. Young and budding entreprenuers advertise across Afrika.
+            content="Market place for all outlooks and outfits for growing businesses. Young and budding entreprenuers advertise across Afrika.
           Reach out, build, innovate and grow to your full potential.Take courage to invent the future. Make a difference. Let love be won and shared."
         />
         <meta name="robots" content="index, follow" />
@@ -18,10 +18,8 @@
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-            rel="stylesheet"
-        />
+        <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
         <!-- Bootstrap core CSS -->
         <!-- CSS only -->
         <link
@@ -39,9 +37,7 @@
         <!-- <link rel="stylesheet" href="{{asset('css/resp.css')}}"> -->
         <link href="{{asset('css/swiper-bundle.min.css')}}" rel="stylesheet" />
         <style>
-            .title {
-                font-family: "Jost", sans-serif;
-            }
+           
             .btn-warning {
                 color: #fff;
                 background-color: #ec971f !important;
@@ -109,12 +105,12 @@
             }
 
             body {
-                font-family: "Open Sans", sans-serif;
+                font-family: 'EB Garamond', serif; 
                 min-height: 90vh;
-                background: #fffffff;
+                background: #ffffff;
             }
             h1, h2, h3, h4, h5, h6 {
-    font-family: "Jost", sans-serif;
+                font-family: 'EB Garamond', serif; 
   }
            
             
@@ -123,7 +119,7 @@
 <body class="h-100">
     <nav class="navbar navbar-expand-lg ">
         <div class="container justify-content-center">
-            <h2 class="text-center title pt-2"><img src="{{asset('images/logo.jpeg') }}" alt="gg afrika" style="width: 50px; height: 40px; border-radius: 50px;"><a href="{{ url('/') }}">GG Afrika</a></h2>
+            <h2 class="text-center  pt-2"><img src="{{asset('gg2.png') }}" alt="gg afrika" style="width: 50px; height: 40px; border-radius: 50px;"><a href="{{ url('/') }}">GG Afrika</a></h2>
         </div>
         </nav>
         
