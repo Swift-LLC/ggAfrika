@@ -95,7 +95,7 @@
                 @foreach($related as $post)
                 <div class="post-entry-1 border-bottom">
                   <div class="post-meta"><span class="date"></span> <span class="mx-1">&bullet;</span> <span>{{ $post->created_at }}</span></div>
-                  <h2 class="mb-2"><a href="#">{{ $post->title }}</a></h2>
+                  <h2 class="mb-2"><a href="{{ route('show', $post->id ) }}">{{ $post->title }}</a></h2>
                   <span class="author mb-3 d-block">{{ $post->user->name }}</span>
                 </div>
                 @endforeach
@@ -108,7 +108,7 @@
                 @foreach($related as $post)
                 <div class="post-entry-1 border-bottom">
                 <div class="post-meta"><span class="date"></span> <span class="mx-1">&bullet;</span> <span>{{ $post->created_at }}</span></div>
-                <h2 class="mb-2"><a href="#">{{ $post->title }}</a></h2>
+                <h2 class="mb-2"><a href="{{ route('show', $post->id ) }}">{{ $post->title }}</a></h2>
                 <span class="author mb-3 d-block">{{ $post->user->name }}</span>
                 </div>
                 @endforeach
@@ -121,7 +121,7 @@
                   @foreach($related as $post)
                     <div class="post-entry-1 border-bottom">
                     <div class="post-meta"><span class="date">Lifestyle</span> <span class="mx-1">&bullet;</span> <span>{{ $post->created_at }}</span></div>
-                    <h2 class="mb-2"><a href="#">{{ $post->title }}</a></h2>
+                    <h2 class="mb-2"><a href="{{ route('show', $post->id ) }}">{{ $post->title }}</a></h2>
                     <span class="author mb-3 d-block">{{ $post->user->name }}</span>
                     </div>
                     @endforeach

@@ -38,14 +38,20 @@ class CategoryController extends Controller
         $posts = Posts::with('categories')
             ->where('category_id', $id)
             ->latest()
+            ->inRandomOrder()
+            ->take(4)
             ->get();
 
         $related = Posts::with('categories')
             ->where('category_id', $id)
+            ->take(6)
+            ->inRandomOrder()
             ->get();
 
         $videos = Video::where('category_id', $id)
             ->latest()
+            ->inRandomOrder()
+            ->take(4)
             ->get();
 
        

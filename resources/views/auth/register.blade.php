@@ -18,7 +18,7 @@
                     </h5>
                 </div>
 
-                <div class="">
+                <!-- <div class="">
                     <br />
                     <a
                         style="
@@ -59,9 +59,14 @@
                 <div class="text-center">
                     ________OR________
                 </div>
-                <br>
+                <br> -->
 
                 <div class="card-body px-2 pt-2">
+                <div class="alert alert-danger text-center">
+                    @if($errors->any())
+                    <span class="text-danger text-center">{{$errors->first()}}</span>
+                    @endif
+                    </div>
                     <small class="pb-1" style="margin-left: 40px" >
                         <b>{{ __('Sign up with your email address') }}</b>
                         </small>

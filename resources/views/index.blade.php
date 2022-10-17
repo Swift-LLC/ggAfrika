@@ -42,7 +42,7 @@
       <a href="{{ route('home') }}" class="logo d-flex align-items-center">
       
         <!-- <img src="{{ asset('gg2.png') }}" alt="" style="border-radius: 50;"> -->
-        <h1>gg afrika</h1>
+        <h1>GG Afrika</h1>
       </a>
 
       <nav id="navbar" class="navbar">
@@ -56,12 +56,10 @@
 
       <div class="position-relative">
         @guest
-        <a href="https://m.facebook.com/GG-Afrika-107646545139344" target="_blank" class="mx-2"><span class="bi-facebook"></span></a>
-        <a href="#" class="mx-2"><span class="bi-twitter"></span></a>
         <a href="https://www.instagram.com/ggafrika/" target="_blank" class="mx-2"><span class="bi-instagram"></span></a>
         <a href="{{ route('login') }}" class="mx-2"><span class="bi bi-box-arrow-in-right"></span> login</a>
         <a href="#" class="mx-2 js-search-open"><span class="bi-search"></span></a>
-        <i class="bi bi-list mobile-nav-toggle"></i>
+        <i class="bi bi-list text-black mobile-nav-toggle"></i>
 
 
         
@@ -142,10 +140,10 @@
 
           @foreach($posts as $post )
             <li>
-              <a href="single-post.html" class="d-flex align-items-center">
-                <img src="/storage/{{ $post->potrait }}" alt="" class="img-fluid me-3">
+              <a href="{{ route('show', $post->id ) }}" class="d-flex align-items-center">
+                <img src="/storage/{{ $post->potrait }}" alt="{{ $post->title }}" class="img-fluid me-3">
                 <div>
-                  <div class="post-meta d-block"><span class="date">Culture</span> <span class="mx-1">&bullet;</span> <span>{{ $post->created_at }}</span></div>
+                  <div class="post-meta d-block"><span class="date"></span> <span class="mx-1">&bullet;</span> <span>{{ $post->created_at }}</span></div>
                   <span>{{ $post->title }}</span>
                 </div>
               </a>

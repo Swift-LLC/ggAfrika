@@ -7,7 +7,9 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use App\Models\Category;
-
+use App\Models\Posts;
+use App\Models\Slides;
+use App\Models\Video;
 class LoginController extends Controller
 {
     /*
@@ -28,7 +30,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = '/admin';
 
     /**
      * Create a new controller instance.
@@ -44,6 +46,31 @@ class LoginController extends Controller
     {
         $categories = Category::all();
         $input = $request->all();
+        $post = Posts::where('category_id', 1)->inRandomOrder()->get();
+
+        $any = Posts::inRandomOrder()->first();
+
+        $posts = Posts::orderBy('updated_at', 'desc')
+            ->skip(0)
+            ->take(3)
+            ->get();
+        $popular = Posts::inRandomOrder('updated_at')
+            ->take(3)
+            ->get();
+        
+            $topopular = Posts::inRandomOrder('updated_at')
+            ->take(7)
+            ->get();
+
+        $latest = Posts::latest()->first();
+
+        $slides = Slides::latest()->get();
+
+        $videos = Video::inRandomOrder()->first();
+
+        $video = Video::latest()->first();
+
+        $categories = Category::all();
 
         $this->validate($request, [
             'email' => 'required|email',
@@ -56,7 +83,7 @@ class LoginController extends Controller
                 'password' => $input['password'],
             ])
         ) {
-            return redirect()->route('home');
+            return redirect()->route('admin');
         } else {
             return Redirect::back()->withErrors([
                 'Wrong Login credential, try again!!',

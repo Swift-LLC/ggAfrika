@@ -21,7 +21,7 @@ use App\Http\Controllers\GoogleController;
 |
 */
 
-Auth::routes(['auth' => true, 'verify' => true]);
+Auth::routes(['auth' => true]);
 
 //-Facebook Login---------------------------------------------------------------------------------------------------------------------
 Route::get('auth/facebook', [FbController::class, 'redirectToFacebook']);
